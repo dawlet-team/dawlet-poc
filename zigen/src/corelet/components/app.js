@@ -1,26 +1,42 @@
-import React from 'react';
-import * as Tone from "tone";
+import React, { useState, useEffect } from 'react';
+import * as Tone from 'tone';
 
-const notes = ["C4",  "C4", null,  "D#4",  "E4", null, "E#4", "G4", "G#4", "A4", "A#4" ];
-const App = (props) => {
+const notes = ['C4', 'C4', 'D#4', 'E4', 'E#4', 'G4', 'G#4', 'A4', 'A#4'];
+import { Score, Note, Frame } from '../../score';
+const score = new Score();
+for (let i = 0; i < 16; i++) {
+  score.frames.push(new Frame([new Note(notes[Math.floor(Math.random() * notes.length)], '16n')], i));
+}
+
+const App = props => {
   const { synth } = props;
+  const [playing, setPlaying] = useState(false);
+  useEffect(() => {
+    const setPlayingFalse = () => setPlaying(false);
+    Tone.Transport.on('stop', setPlayingFalse);
+    Tone.Transport.on('pause', setPlayingFalse);
+    return function cleanup() {
+      Tone.Transport.off('stop', setPlayingFalse);
+      Tone.Transport.off('pause', setPlayingFalse);
+    };
+  });
   const play = () => {
-    const loop = new Tone.Sequence(function(time, note){
-      console.log(time, note)
-      if (note) {
-        synth.triggerAttackRelease(note, "32n", time);
-      }
-    }, notes, "16n").start(0);
-    Tone.Transport.start();
+    setPlaying(true);
+    synth.play(score);
   };
   const stop = () => {
+    setPlaying(false);
     Tone.Transport.stop();
   };
   return (
     <div>
       <h1>Core Dawlet</h1>
-      <button onClick={play}>Play</button>
-      <button onClick={stop}>Stop</button>
+      <button disabled={playing} onClick={play}>
+        Play
+      </button>
+      <button disabled={!playing} onClick={stop}>
+        Stop
+      </button>
     </div>
   );
 };
