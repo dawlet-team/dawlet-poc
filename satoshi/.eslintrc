@@ -6,6 +6,11 @@
       "jsx": true
     }
   },
+  "env": {
+    "browser": true,
+    "node": true,
+    "jest": true
+  },
   "extends": ["eslint:recommended", "plugin:prettier/recommended", "plugin:react/recommended"],
   "rules": {
     "semi": ["error", "always"]
