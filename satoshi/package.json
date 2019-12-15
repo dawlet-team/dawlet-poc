@@ -1,0 +1,16 @@
+{
+  "name": "satoshi",
+  "version": "1.0.0",
+  "main": "main.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "copyfiles -f ./package.json ./src/main.js dist && parcel watch src/renderer/index.html  --public-url ./ --no-hmr --target=electron",
+    "start": "electron ./dist"
+  },
+  "devDependencies": {
+    "copyfiles": "^2.1.1",
+    "electron": "^7.1.5",
+    "jest": "^24.9.0",
+    "parcel-bundler": "^1.12.4"
+  }
+}
