@@ -1,3 +1,4 @@
+// @flow
 import * as InterpolationTypes from '../../constants/interpolation-types';
 
 declare interface IScore {

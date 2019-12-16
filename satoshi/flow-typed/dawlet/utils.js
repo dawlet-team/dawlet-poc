@@ -1,3 +1,4 @@
+// @flow
 declare type int = number;
 declare type uint = number;
 declare type float = number;
@@ -20,3 +21,4 @@ declare type MidiNoteNumber = uint7;
 declare type Freq = ufloat;
 /** In midi note number. Negative/float value is acceptable. */
 declare type PitchBend = float;
+declare type AttributeValue = number | string | boolean;
