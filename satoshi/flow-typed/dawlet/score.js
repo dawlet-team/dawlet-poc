@@ -12,40 +12,40 @@ declare interface INote {
   noteOn: INoteOn;
   noteOff: INoteOff;
   modulations: Array<IModulation>;
-  noteNumber: IAttribute<MidiNoteNumber>;
-  offsetTime: IAttribute<Tick>;
-  selected: IAttribute<boolean>;
-  interpolation: IAttribute<$Values<typeof InterpolationTypes>>;
+  noteNumber: Attribute<MidiNoteNumber>;
+  offsetTime: Attribute<Tick>;
+  selected: Attribute<boolean>;
+  interpolation: Attribute<$Values<typeof InterpolationTypes>>;
 }
 
 declare interface INoteOn {
   id: Id;
   noteId: Id;
-  noteOnVelocity: IAttribute<NormalizedFloat>;
-  pitchBend: IAttribute<NormalizedFloat>;
-  timbre: IAttribute<NormalizedFloat>;
-  pressure: IAttribute<NormalizedFloat>;
-  selected: IAttribute<boolean>;
+  noteOnVelocity: Attribute<NormalizedFloat>;
+  pitchBend: Attribute<NormalizedFloat>;
+  timbre: Attribute<NormalizedFloat>;
+  pressure: Attribute<NormalizedFloat>;
+  selected: Attribute<boolean>;
 }
 
 declare interface INoteOff {
   id: Id;
   noteId: Id;
-  offsetTime: IAttribute<Tick>;
-  noteOffVelocity: IAttribute<NormalizedFloat>;
-  pitchBend?: IAttribute<NormalizedFloat>;
-  timbre?: IAttribute<NormalizedFloat>;
-  pressure?: IAttribute<NormalizedFloat>;
-  selected: IAttribute<boolean>;
+  offsetTime: Attribute<Tick>;
+  noteOffVelocity: Attribute<NormalizedFloat>;
+  pitchBend?: Attribute<NormalizedFloat>;
+  timbre?: Attribute<NormalizedFloat>;
+  pressure?: Attribute<NormalizedFloat>;
+  selected: Attribute<boolean>;
 }
 
 declare interface IModulation {
   id: Id;
   noteId: Id;
-  offsetTime: IAttribute<Tick>;
-  noteOffVelocity: IAttribute<NormalizedFloat>;
-  pitchBend?: IAttribute<NormalizedFloat>;
-  timbre?: IAttribute<NormalizedFloat>;
-  pressure?: IAttribute<NormalizedFloat>;
-  selected: IAttribute<boolean>;
+  offsetTime: Attribute<Tick>;
+  noteOffVelocity: Attribute<NormalizedFloat>;
+  pitchBend?: Attribute<NormalizedFloat>;
+  timbre?: Attribute<NormalizedFloat>;
+  pressure?: Attribute<NormalizedFloat>;
+  selected: Attribute<boolean>;
 }
