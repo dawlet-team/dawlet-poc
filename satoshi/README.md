@@ -15,7 +15,7 @@ yarn start
 yarn flow
 
 # test
-yarn jest
+yarn jest --watch
 
 # lint
 yarn lint
