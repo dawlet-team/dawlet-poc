@@ -4,7 +4,7 @@
   "main": "main.js",
   "license": "MIT",
   "scripts": {
-    "build": "copyfiles -f ./package.json ./src/main.js dist && parcel watch src/renderer/index.html  --public-url ./ --no-hmr --target=electron",
+    "build:watch": "copyfiles -f ./package.json ./src/main.js dist && parcel watch src/renderer/index.html  --public-url ./ --no-hmr --target=electron",
     "start": "electron ./dist",
     "lint": "eslint --ext .js,.jsx src/"
   },

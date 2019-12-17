@@ -3,7 +3,7 @@
 # install deps
 yarn
 # build app with watch option
-yarn build 
+yarn build:watch 
 # start electron app on another process
 yarn start
 ``` 
