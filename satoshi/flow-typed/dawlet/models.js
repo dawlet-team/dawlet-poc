@@ -1,11 +1,6 @@
 // @flow
 import * as InterpolationTypes from '../../constants/interpolation-types';
 
-declare interface IScore {
-  id: Id;
-  tracks: Array<INote>;
-}
-
 declare interface INote {
   id: Id;
   clipId: Id;
