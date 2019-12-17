@@ -1,7 +1,7 @@
 // @flow
 import { Constant, Expression } from '../core/Attribute';
 import { Note } from './models/Note';
-import score from '.';
+import { score } from '.';
 
 describe('create Note', () => {
   beforeEach(() => {
@@ -17,7 +17,6 @@ describe('create Note', () => {
     const noteId = Note.create({
       noteNumber: new Constant(122)
     });
-    console.log(score);
     expect(score.notes.length).toBe(1);
     expect(score.notes.data[noteId].noteNumber.value).toBe(122);
   });
@@ -25,7 +24,6 @@ describe('create Note', () => {
     const noteId = Note.create({
       noteNumber: new Expression('40 * 2')
     });
-    console.log(score);
     expect(score.notes.length).toBe(1);
     expect(score.notes.data[noteId].noteNumber.value).toBe(80);
   });
