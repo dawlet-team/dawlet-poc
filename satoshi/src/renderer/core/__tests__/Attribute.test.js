@@ -1,5 +1,5 @@
 // @flow
-import { Constant, Expression } from './Attribute';
+import { Constant, Expression } from '../Attribute';
 
 test('instanciates constant', () => {
   const attribute = new Constant(3);

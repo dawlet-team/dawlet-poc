@@ -1,5 +1,5 @@
 // @flow
-import { Container } from './Container';
+import { Container } from '../Container';
 
 describe('Container', () => {
   it('registers class instance', () => {
