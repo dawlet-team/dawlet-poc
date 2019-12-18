@@ -1,5 +1,5 @@
-import getFromContainer from './Container';
-jest.mock('./Container');
+import getFromContainer from './getFromContainer';
+jest.mock('./getFromContainer');
 
 describe('a mock of getFromContainer', () => {
   it('should return 42', () => {
