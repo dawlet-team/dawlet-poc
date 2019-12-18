@@ -24,3 +24,5 @@ declare type NoteOptions = {
   selected?: Attribute<boolean>,
   interpolation?: Attribute<$Values<typeof InterpolationTypes>>
 };
+
+declare type GetFromContainer = <T>(SomeClass: Class<T>) => T;

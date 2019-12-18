@@ -27,11 +27,12 @@ export class Note implements INote {
     this.interpolation = defaultedOptions.interpolation;
   }
 
+  // eslint-disable-next-line
   static get(id: number) {
     return {};
   }
 
-  save(options?: NoteOptions) {
+  save() {
     this._score.notes.data[this.id] = this;
     return this.id;
   }

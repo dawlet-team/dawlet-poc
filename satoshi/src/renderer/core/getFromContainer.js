@@ -1,18 +1,7 @@
 // @flow
-import { factory } from './factory';
-import { Container } from './Container';
 
-const registerInstances = (container: Container): void => {
-  factory().forEach((instance: ClassInstance) => {
-    container.register(instance);
-  });
-};
+import { composeGetFromContainer } from './initContainer';
 
-const container = new Container();
-registerInstances(container);
-
-export const getFromContainer = <T>(SomeClass: Class<T>): T => {
-  return container.get(SomeClass);
-};
+export const getFromContainer = composeGetFromContainer();
 
 export default getFromContainer;

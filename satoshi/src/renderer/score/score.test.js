@@ -1,30 +1,32 @@
 // @flow
+import { composeGetFromContainer } from '../core/initContainer';
 import { Constant, Expression } from '../core/Attribute';
 import { Note } from './models/Note';
-import { score } from '.';
+import getFromContainer from '../core/getFromContainer';
+import { Score } from './Score';
+jest.mock('../core/getFromContainer');
 
-describe('create Note', () => {
-  beforeEach(() => {
-    jest.mock('.', () => {
-      const { Score } = require('./Score');
-      return {
-        __esModule: true,
-        score: new Score()
-      };
-    });
-  });
-  test('with Constant', () => {
-    const noteId = Note.create({
+describe('Note', () => {
+  it('is created with Constant', () => {
+    // $flow-disable-line
+    getFromContainer.mockImplementation(composeGetFromContainer());
+    const note = new Note({
       noteNumber: new Constant(122)
     });
+    note.save();
+    const score = getFromContainer(Score);
     expect(score.notes.length).toBe(1);
-    expect(score.notes.data[noteId].noteNumber.value).toBe(122);
+    expect(score.notes.data[note.id].noteNumber.value).toBe(122);
   });
-  test('with Expression', () => {
-    const noteId = Note.create({
+  it('is created with Expression', () => {
+    // $flow-disable-line
+    getFromContainer.mockImplementation(composeGetFromContainer());
+    const note = new Note({
       noteNumber: new Expression('40 * 2')
     });
+    note.save();
+    const score = getFromContainer(Score);
     expect(score.notes.length).toBe(1);
-    expect(score.notes.data[noteId].noteNumber.value).toBe(80);
+    expect(score.notes.data[note.id].noteNumber.value).toBe(80);
   });
 });
