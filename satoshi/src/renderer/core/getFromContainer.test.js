@@ -7,7 +7,7 @@ describe('a mock of getFromContainer', () => {
     expect(getFromContainer()).toBe(42);
   });
   it('should be a jest.fn', () => {
-    const mockFn = jest.fn(x => x * 2)
+    const mockFn = jest.fn((x) => x * 2);
     getFromContainer.mockImplementation(mockFn);
     expect(getFromContainer(2)).toBe(4);
     expect(mockFn).toBeCalledTimes(1);
