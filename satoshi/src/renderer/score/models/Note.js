@@ -3,7 +3,7 @@ import * as InterpolationTypes from '../../../../constants/interpolation-types';
 import { defaultNoteOptions } from '../../defaultOptions';
 import { IdFactory } from '../../core/modules/IdFactory';
 import { Score } from '../Score';
-import { getFromContainer } from '../../core/Container';
+import { getFromContainer } from '../../core/getFromContainer';
 
 export class Note implements INote {
   id: Id;
