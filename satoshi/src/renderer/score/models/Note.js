@@ -1,7 +1,7 @@
 // @flow
 import * as InterpolationTypes from '../../../../constants/interpolation-types';
 import { defaultNoteOptions } from '../../defaultOptions';
-import { IdFactory } from '../../core/modules/IdFactory';
+import { IdFactory } from '../../core/IdFactory';
 import { Score } from '../Score';
 import { getFromContainer } from '../../core/getFromContainer';
 

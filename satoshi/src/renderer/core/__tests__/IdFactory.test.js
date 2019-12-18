@@ -1,5 +1,5 @@
 // @flow
-import { IdFactory } from './IdFactory';
+import { IdFactory } from '../IdFactory';
 
 test('generate ids', () => {
   const idFactory = new IdFactory();
