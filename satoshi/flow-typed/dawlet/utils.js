@@ -22,3 +22,6 @@ declare type Freq = ufloat;
 /** In midi note number. Negative/float value is acceptable. */
 declare type PitchBend = float;
 declare type AttributeValue = number | string | boolean;
+declare type ClassInstance = Object;
+declare type ClassConstructor = Class<Object>;
+declare type ClassName = string;

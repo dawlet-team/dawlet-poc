@@ -1,12 +1,13 @@
 // @flow
-import { idFactory } from '../../core/modules';
 import * as InterpolationTypes from '../../../../constants/interpolation-types';
 import { defaultNoteOptions } from '../../defaultOptions';
-import { score } from '..';
+import { IdFactory } from '../../core/modules/IdFactory';
+import { Score } from '../Score';
+import { getFromContainer } from '../../core/Container';
 
 export class Note implements INote {
-  id: number;
-  clipId: number;
+  id: Id;
+  clipId: Id;
   noteOn: INoteOn;
   noteOff: INoteOff;
   modulations: Array<IModulation>;
@@ -14,10 +15,12 @@ export class Note implements INote {
   offsetTime: Attribute<Tick>;
   selected: Attribute<boolean>;
   interpolation: Attribute<$Values<typeof InterpolationTypes>>;
+  _score: IScore;
 
   constructor(options?: NoteOptions) {
     const defaultedOptions = Object.assign({}, defaultNoteOptions, options);
-    this.id = idFactory.make();
+    this._score = getFromContainer<Score>(Score);
+    this.id = getFromContainer<IdFactory>(IdFactory).make();
     this.noteNumber = defaultedOptions.noteNumber;
     this.offsetTime = defaultedOptions.offsetTime;
     this.selected = defaultedOptions.selected;
@@ -28,10 +31,9 @@ export class Note implements INote {
     return {};
   }
 
-  static create(options?: NoteOptions) {
-    const id = idFactory.make();
-    score.notes.data[id] = new Note(options);
-    return id;
+  save(options?: NoteOptions) {
+    this._score.notes.data[this.id] = this;
+    return this.id;
   }
   get modulations() {
     return [];
