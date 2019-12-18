@@ -20,12 +20,17 @@ export class Container {
   }
 }
 
-const container = new Container();
+const registerInstances = (container: Container): void => {
+  factory().forEach((instance: ClassInstance) => {
+    container.register(instance);
+  });
+};
 
-factory().forEach((instance: ClassInstance) => {
-  container.register(instance);
-});
+const container = new Container();
+registerInstances(container);
 
 export const getFromContainer = <T>(SomeClass: Class<T>): T => {
   return container.get(SomeClass);
 };
+
+export default getFromContainer;
