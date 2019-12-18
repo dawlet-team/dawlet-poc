@@ -1,7 +1,6 @@
 // @flow
+import { containerManager } from './ContainerManager';
 
-import { composeGetFromContainer } from './initContainer';
-
-export const getFromContainer = composeGetFromContainer();
+export const getFromContainer = containerManager.composeGetFromContainer();
 
 export default getFromContainer;

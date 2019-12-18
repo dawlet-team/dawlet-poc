@@ -1,6 +1,6 @@
 // @flow
-import { Score } from '../score/Score';
-import { IdFactory } from './IdFactory';
+import { Score } from '../../score/Score';
+import { IdFactory } from '../IdFactory';
 
 export const factory = (): Array<ClassInstance> => {
   return [new Score(), new IdFactory()];

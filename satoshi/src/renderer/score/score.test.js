@@ -1,15 +1,13 @@
 // @flow
-import { composeGetFromContainer } from '../core/initContainer';
+import { containerManager } from '../core/ContainerManager';
 import { Constant, Expression } from '../core/Attribute';
 import { Note } from './models/Note';
-import getFromContainer from '../core/getFromContainer';
+import { getFromContainer } from '../core/getFromContainer';
 import { Score } from './Score';
-jest.mock('../core/getFromContainer');
 
 describe('Note', () => {
   it('is created with Constant', () => {
-    // $flow-disable-line
-    getFromContainer.mockImplementation(composeGetFromContainer());
+    containerManager.initContainer();
     const note = new Note({
       noteNumber: new Constant(122)
     });
@@ -19,8 +17,7 @@ describe('Note', () => {
     expect(score.notes.data[note.id].noteNumber.value).toBe(122);
   });
   it('is created with Expression', () => {
-    // $flow-disable-line
-    getFromContainer.mockImplementation(composeGetFromContainer());
+    containerManager.initContainer();
     const note = new Note({
       noteNumber: new Expression('40 * 2')
     });
