@@ -7,11 +7,12 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "fix": "prettier --write \"./**/*.js\"",
     "start": "electron .",
-    "bundler": "parcel watch src/corelet/index.html  --public-url ./ --no-hmr --target=electron"
+    "bundler": "parcel watch src/corelet/index.html src/dawlets/simple/index.html --public-url ./  --no-hmr --target=electron"
   },
   "author": "zigen <zigen@horol.org>",
   "license": "ISC",
   "dependencies": {
+    "debug": "^4.1.1",
     "electron": "^7.1.5",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
