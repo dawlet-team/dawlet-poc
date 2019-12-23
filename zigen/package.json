@@ -7,19 +7,29 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "fix": "prettier --write \"./**/*.js\"",
     "start": "electron .",
-    "bundler": "parcel watch src/corelet/index.html src/dawlets/simple/index.html --public-url ./  --no-hmr --target=electron"
+    "bundler": "webpack --watch"
   },
   "author": "zigen <zigen@horol.org>",
   "license": "ISC",
   "dependencies": {
     "debug": "^4.1.1",
     "electron": "^7.1.5",
+    "eventemitter3": "^4.0.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-redux": "^7.1.3",
+    "redux": "^4.0.4",
     "tone": "^13.8.25"
   },
   "devDependencies": {
-    "parcel-bundler": "^1.12.4",
-    "prettier": "^1.19.1"
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "@babel/preset-react": "^7.7.4",
+    "babel-loader": "^8.0.6",
+    "electron-devtools-installer": "^2.2.4",
+    "html-webpack-plugin": "^3.2.0",
+    "prettier": "^1.19.1",
+    "webpack": "^4.41.4",
+    "webpack-cli": "^3.3.10"
   }
 }

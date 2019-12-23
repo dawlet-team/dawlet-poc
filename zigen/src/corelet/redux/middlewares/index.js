@@ -1,0 +1,1 @@
+import ipcMiddleware from './ipcMiddleware';

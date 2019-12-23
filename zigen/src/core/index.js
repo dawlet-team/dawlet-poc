@@ -1,9 +1,8 @@
-class Core {
-  constructor() {}
-  play() {}
-  loadScore() {}
-
-  exportScore() {}
+import EventEmitter from 'eventemitter3';
+class Bus extends EventEmitter {
+  constructor() {
+    super();
+  }
 }
 
-export default Core;
+export { Bus };
