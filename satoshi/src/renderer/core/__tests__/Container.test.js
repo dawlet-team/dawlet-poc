@@ -7,9 +7,8 @@ describe('Container', () => {
     class MockClass {}
     const mockInstance = new MockClass();
     container.register(mockInstance);
-    expect(container._instances).toHaveProperty('MockClass');
-    expect(container._instances.MockClass).toBe(mockInstance);
-    expect(container._instances.MockClass).toEqual(mockInstance);
+    expect(container.instances.MockClass).toBe(mockInstance);
+    expect(container.instances.MockClass).toEqual(mockInstance);
   });
   it('gets mock instance', () => {
     const container = new Container();

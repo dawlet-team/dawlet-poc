@@ -14,4 +14,7 @@ export class Container {
   get(SomeClass: ClassConstructor): ClassInstance {
     return this._instances[SomeClass.name];
   }
+  get instances() {
+    return this._instances;
+  }
 }
