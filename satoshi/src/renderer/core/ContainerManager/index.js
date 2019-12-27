@@ -14,6 +14,9 @@ export class ContainerManager {
       this._container.register(instance);
     });
   }
+  setContainer(container: Container) {
+    this._container = container;
+  }
   getContainer(): Container {
     if (!this._container)
       throw new Error('Run initContainer before getContainer');
