@@ -1,6 +1,7 @@
 // @flow
 import * as InterpolationTypes from '../../constants/interpolation-types';
 import { Entity } from '../../src/renderer/core/Entity';
+import { Container } from '../../src/renderer/core/Container';
 
 declare interface Attribute<T: AttributeValue> {
   +value: T;
@@ -26,3 +27,10 @@ declare type NoteOptions = {
 };
 
 declare type GetFromContainer = <T>(SomeClass: Class<T>) => T;
+
+declare interface IContainerManager {
+  initContainer(): void;
+  setContainer(container: Container): void;
+  getContainer(): Container;
+  composeGetFromContainer(): GetFromContainer;
+}

@@ -2,10 +2,10 @@
 import { Container } from '../Container';
 import { moduleFactory } from './moduleFactory';
 
-export class ContainerManager {
+export class ContainerManager implements IContainerManager {
   _container: Container;
 
-  initContainer() {
+  initContainer(): void {
     this._container = new Container();
     this.registerInstances();
   }
@@ -31,7 +31,7 @@ export class ContainerManager {
   }
 }
 
-const initContainerManager = (): ContainerManager => {
+const initContainerManager = (): IContainerManager => {
   const containerManager = new ContainerManager();
   containerManager.initContainer();
   return containerManager;
