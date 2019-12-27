@@ -1,6 +1,9 @@
 import getFromContainer from '../getFromContainer';
 jest.mock('../getFromContainer');
 
+/**
+ * Only for illustrating how to implement mocks of getFromContainer
+ */
 describe('a mock of getFromContainer', () => {
   it('should return 42', () => {
     getFromContainer.mockImplementation(() => 42);
