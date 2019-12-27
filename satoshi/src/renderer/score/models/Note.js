@@ -4,6 +4,7 @@ import { defaultNoteOptions } from '../../defaultOptions';
 import { IdFactory } from '../../core/IdFactory';
 import { Score } from '../Score';
 import { getFromContainer } from '../../core/getFromContainer';
+import { deepEqual } from 'assert';
 
 export class Note implements INote {
   id: Id;
@@ -27,24 +28,33 @@ export class Note implements INote {
     this.interpolation = defaultedOptions.interpolation;
   }
 
-  // eslint-disable-next-line
-  static get(id: number) {
-    return {};
+  static find(idOrConditions: number | Object) {
+    const score = getFromContainer(Score);
+    if (typeof idOrConditions === 'number') {
+      const id = idOrConditions;
+      return score.notes.data[id];
+    }
+    if (typeof idOrConditions === 'object') {
+      const conditions = idOrConditions;
+      return score.notes.values.find((note) => {
+        try {
+          Object.keys(conditions).forEach((key) => {
+            deepEqual(conditions[key], (note: any)[key].value);
+          });
+          return true;
+        } catch {
+          return false;
+        }
+      });
+    }
+  }
+
+  static all() {
+    return getFromContainer(Score).notes.values;
   }
 
   save() {
     this._score.notes.data[this.id] = this;
     return this.id;
-  }
-  get modulations() {
-    return [];
-  }
-
-  get noteOn() {
-    return {};
-  }
-
-  get noteOff() {
-    return {};
   }
 }

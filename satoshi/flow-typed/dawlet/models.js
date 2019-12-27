@@ -11,6 +11,7 @@ declare interface INote {
   offsetTime: Attribute<Tick>;
   selected: Attribute<boolean>;
   interpolation: Attribute<$Values<typeof InterpolationTypes>>;
+  save(): Id;
 }
 
 declare interface INoteOn {

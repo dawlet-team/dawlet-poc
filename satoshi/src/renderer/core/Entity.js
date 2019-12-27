@@ -8,4 +8,7 @@ export class Entity<T> {
   get length(): number {
     return Object.keys(this.data).length;
   }
+  get values(): T[] {
+    return Object.keys(this.data).map((key) => this.data[Number(key)]);
+  }
 }
