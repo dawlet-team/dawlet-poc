@@ -16,12 +16,10 @@ export class Note implements INote {
   offsetTime: Attribute<Tick>;
   selected: Attribute<boolean>;
   interpolation: Attribute<$Values<typeof InterpolationTypes>>;
-  _score: IScore;
 
   constructor(options?: NoteOptions) {
     const defaultedOptions = Object.assign({}, defaultNoteOptions, options);
-    this._score = getFromContainer<Score>(Score);
-    this.id = getFromContainer<IdFactory>(IdFactory).make();
+    this.id = getFromContainer(IdFactory).make();
     this.noteNumber = defaultedOptions.noteNumber;
     this.offsetTime = defaultedOptions.offsetTime;
     this.selected = defaultedOptions.selected;
@@ -54,7 +52,7 @@ export class Note implements INote {
   }
 
   save() {
-    this._score.notes.data[this.id] = this;
+    getFromContainer(Score).notes.data[this.id] = this;
     return this.id;
   }
 }
