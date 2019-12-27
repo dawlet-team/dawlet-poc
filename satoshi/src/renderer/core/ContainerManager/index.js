@@ -1,6 +1,6 @@
 // @flow
 import { Container } from '../Container';
-import { factory } from './factory';
+import { moduleFactory } from './moduleFactory';
 
 export class ContainerManager {
   _container: Container;
@@ -10,7 +10,7 @@ export class ContainerManager {
     this.registerInstances();
   }
   registerInstances(): void {
-    factory().forEach((instance: ClassInstance) => {
+    moduleFactory().forEach((instance: ClassInstance) => {
       this._container.register(instance);
     });
   }
