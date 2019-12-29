@@ -2,7 +2,6 @@ import React from 'react';
 import { render } from 'react-dom';
 import * as Tone from 'tone';
 
-const { ipcRenderer } = require('electron');
 import Synth from './synth';
 import { Provider } from 'react-redux';
 import createStore from './redux/createStore';

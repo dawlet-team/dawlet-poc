@@ -6,6 +6,9 @@ let mainWindow,
   windows = {};
 
 function createWindow() {
+  if (process.env.NODE_ENV === 'development') {
+    installDevTools();
+  }
   mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
@@ -67,9 +70,9 @@ app.on('activate', function() {
   if (mainWindow === null) createWindow();
 });
 
-const { default: installExtension, REACT_DEVELOPER_TOOLS, REDUX_DEVTOOLS } = require('electron-devtools-installer');
+function installDevTools() {
+  const { default: installExtension, REACT_DEVELOPER_TOOLS, REDUX_DEVTOOLS } = require('electron-devtools-installer');
 
-if (process.NODE_ENV === 'development') {
   installExtension(REACT_DEVELOPER_TOOLS)
     .then(name => console.log(`Added Extension:  ${name}`))
     .catch(err => console.log('An error occurred: ', err));
