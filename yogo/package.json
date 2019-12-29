@@ -1,0 +1,14 @@
+{
+  "name": "dawlet-poc",
+  "version": "0.0.1",
+  "main": "index.js",
+  "author": "Yuichi Yogo",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "typescript": "^3.7.4"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}
