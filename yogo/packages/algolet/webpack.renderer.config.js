@@ -17,5 +17,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/renderer/index.html'
     })
-  ]
+  ],
+  resolve: {
+    extensions: [".js", "jsx", ".json", ".ts", ".tsx"]
+  }
 };
