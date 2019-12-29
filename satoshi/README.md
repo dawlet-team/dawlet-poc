@@ -2,12 +2,9 @@
 ```shell script
 # install deps
 yarn
-# build app with watch option
-yarn build:watch 
-# start electron app on another process
-yarn start
+# start development with watch mode
+yarn dev
 ``` 
-**Build process and electron process should be run concurrently**  
 
 # Dev Commands
 ```shell script

@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "build:watch": "copyfiles -f ./package.json ./src/main.js dist && parcel watch src/renderer/index.html  --public-url ./ --no-hmr --target=electron",
-    "start": "electron ./dist",
+    "dev": "npm run build:watch & electron ./dist",
     "lint": "eslint --ext .js,.jsx src/",
     "jest:debug": "node --inspect-brk node_modules/.bin/jest --runInBand"
   },
