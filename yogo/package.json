@@ -6,6 +6,7 @@
   "license": "MIT",
   "private": true,
   "devDependencies": {
+    "ts-node": "^8.5.4",
     "typescript": "^3.7.4"
   },
   "workspaces": [
