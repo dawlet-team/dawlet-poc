@@ -19,29 +19,34 @@ function createWindow() {
     mainWindow = null;
   });
 }
-function createDawletWindow() {
+function createDawletWindow(name) {
+  if (windows[name]) {
+    return;
+  }
   const dawletWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 400,
+    height: 400,
+    x: 0,
+    y: 0,
     webPreferences: {
       nodeIntegration: true,
       webSecurity: false,
     },
   });
 
-  dawletWindow.loadFile('dist/simple.html');
+  dawletWindow.loadFile(`dist/${name}.html`);
   dawletWindow.on('closed', function() {
-    if (windows['simple']) {
-      windows['simple'] = null;
+    if (windows[name]) {
+      windows[name] = null;
     }
   });
   return dawletWindow;
 }
 
-ipcMain.on('openDawlet', e => {
-  console.log('open dawlet');
-  const dawletWindow = createDawletWindow();
-  windows['simple'] = dawletWindow;
+ipcMain.on('open-dawlet', (e, name) => {
+  console.log('open dawlet', name);
+  const dawletWindow = createDawletWindow(name);
+  windows[name] = dawletWindow;
 });
 
 ipcMain.on('fetch-available-dawlets', event => {
