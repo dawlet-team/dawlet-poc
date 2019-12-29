@@ -1,0 +1,4 @@
+[ignore]
+.*/node_modules/@parcel/watcher/test/tmp/config.json
+[options]
+suppress_comment= \\(.\\|\n\\)*\\$flow-disable-line

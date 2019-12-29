@@ -1,0 +1,11 @@
+#app {
+    color: lightgray;
+}
+body {
+    background: rgb(30, 30, 30);
+}
+.dawlet {
+    border: 2px dimgrey solid;
+    padding: 1rem;
+    background: darkslategray;
+}
