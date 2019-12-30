@@ -56,8 +56,24 @@ ipcMain.on('fetch-available-dawlets', event => {
   const dawletNames = fs
     .readdirSync('./dist')
     .filter(name => name.endsWith('.html'))
+    .filter(filename => filename != 'corelet.html')
     .map(name => name.replace('.html', ''));
   event.returnValue = dawletNames;
+});
+
+ipcMain.handle('dawlet:invoke', (e, req) => {
+  console.log('invoke ', req.name);
+  const dawletWindow = windows[req.name];
+  if (!dawletWindow) return Promise.reject(`dawlet ${req.name} doesn't activated`);
+  const contents = dawletWindow.webContents;
+  if (!contents) return Promise.reject(`dawlet ${req.name} doesn't activated`);
+  return new Promise((resolve, reject) => {
+    ipcMain.once(`dawlet:invoked:${req.name}`, (e, args) => {
+      console.log('dwalet invoked ');
+      resolve(args);
+    });
+    contents.send('invoke', req);
+  });
 });
 
 app.on('ready', createWindow);
