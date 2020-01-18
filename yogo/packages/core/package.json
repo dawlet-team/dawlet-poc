@@ -1,12 +1,14 @@
 {
   "name": "core",
   "version": "0.0.1",
-  "main": "index.js",
+  "main": "lib/app.js",
   "author": "Yuichi Yogo",
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "ts-node src/app.ts"
+    "start": "ts-node src/app.ts",
+    "start:prod": "node lib/app.js",
+    "build": "tsc"
   },
   "dependencies": {
     "@types/graphql": "^14.5.0",
