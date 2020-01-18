@@ -6,7 +6,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "ts-node src/app.ts",
+    "start": "nodemon",
     "start:prod": "node lib/app.js",
     "build": "tsc"
   },
