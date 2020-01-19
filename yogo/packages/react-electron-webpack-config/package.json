@@ -1,0 +1,8 @@
+{
+  "name": "react-electron-webpack-config",
+  "version": "0.0.1",
+  "main": "webpack.config.js",
+  "author": "Yuichi Yogo",
+  "license": "MIT",
+  "private": true
+}

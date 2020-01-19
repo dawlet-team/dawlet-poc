@@ -1,6 +1,3 @@
-const mainConfig = require('./webpack.main.config')
-const rendererConfig = require('./webpack.renderer.config')
-module.exports = [
-  mainConfig,
-  rendererConfig
-];
+const config = require('react-electron-webpack-config')
+
+module.exports = config

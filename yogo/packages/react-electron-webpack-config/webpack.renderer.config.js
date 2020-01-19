@@ -10,7 +10,7 @@ module.exports = {
     use: [{ loader: 'ts-loader' }]
   }] },
   output: {
-    path: __dirname + "/lib/renderer",
+    path: process.cwd() + "/lib/renderer",
     filename: 'bundle.js'
   },
   plugins: [
