@@ -1,4 +1,4 @@
-import { fetchAvailableDawlets, readPackagesFolder, filterUnrelatedFolders } from './fs'
+import { fetchAvailableDawlets, readPackagesFolder, filterUnrelatedFolders, getPackageJson } from './fs'
 describe('fetchAvailableDawlets', () => {
   it('reads packages folder', () => {
     const dawlets = readPackagesFolder()
@@ -11,5 +11,12 @@ describe('fetchAvailableDawlets', () => {
   })
   it('fetches available dawlets', () => {
     expect(fetchAvailableDawlets()).toMatchSnapshot()
+  })
+})
+
+describe('getPackageJson', () => {
+  it('gets package json', () => {
+    const json = getPackageJson(fetchAvailableDawlets()[0])
+    expect(json).toHaveProperty('name')
   })
 })
