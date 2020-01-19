@@ -11,6 +11,10 @@
     "start": "npm run build && electron .",
     "watch": "webpack --mode=development --watch"
   },
+  "dawlet": {
+    "localizable": true
+  },
+  "description": "Algolet lets you write your own custom logic to generate music.",
   "dependencies": {
     "apollo-boost": "^0.4.7",
     "common-utils": "0.0.1",

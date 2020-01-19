@@ -15,3 +15,11 @@ Array [
   "react-electron-webpack-config",
 ]
 `;
+
+exports[`retrieveDawletConfig gets dawlet config 1`] = `
+Object {
+  "description": "Algolet lets you write your own custom logic to generate music.",
+  "localizable": true,
+  "name": "algolet",
+}
+`;

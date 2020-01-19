@@ -11,6 +11,15 @@ export const readPackagesFolder = () => {
   return fs.readdirSync(join(process.cwd(), '../'))
 }
 
+export const retrieveDawletConfig = (folderPath: string): Dawlet.Config => {
+  const packageJson = getPackageJson(folderPath)
+  return {
+    name: packageJson.name || folderPath,
+    description: packageJson.description || "Dawlets are Awesome!",
+    localizable: packageJson["dawlet"].localizable || false
+  }
+}
+
 export const getPackageJson = (folder: string) => {
   const path = join(process.cwd(), '../', folder, 'package.json')
   const file = fs.readFileSync(path, { encoding: 'utf-8' })

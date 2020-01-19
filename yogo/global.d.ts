@@ -1,6 +1,7 @@
 declare namespace Dawlet { 
   export interface Config {
     name: string;
-    localize: boolean;
+    description: string;
+    localizable: boolean;
   }
 }
