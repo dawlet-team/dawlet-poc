@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import { activateDawlet } from '../redux/modules/dawlets';
 
 const Dawlets = props => {
-  console.log(props);
   const { dawlets, activate } = props;
   return (
     <div>
