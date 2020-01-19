@@ -1,0 +1,11 @@
+{
+  "name": "utils",
+  "version": "0.0.1",
+  "main": "lib/index.js",
+  "author": "Yuichi Yogo",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "tsc"
+  }
+}
