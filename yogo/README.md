@@ -1,7 +1,11 @@
-#
+# Dawlet POC
 
-![dawlet-logo](./dawlet-logo-animation.gif)
+![dawlet-logo](./assets/dawlet-logo-animation.gif)
+
+## Concept Image
+
+![concept](./assets/dawlet-poc-concept.png)
 
 ## Currently Planned Sequence
 
-![sequence](./docs/sequence.svg)
+![sequence](./assets/sequence.svg)
