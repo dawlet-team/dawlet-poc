@@ -6,7 +6,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "lerna run start --parallel"
+    "start": "lerna run watch --parallel",
+    "build": "lerna run build"
   },
   "devDependencies": {
     "lerna": "^3.20.0",

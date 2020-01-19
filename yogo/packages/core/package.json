@@ -9,7 +9,8 @@
   "scripts": {
     "build": "tsc",
     "start": "nodemon",
-    "start:prod": "node lib/app.js"
+    "start:prod": "node lib/app.js",
+    "watch": "tsc --watch"
   },
   "dependencies": {
     "@types/graphql": "^14.5.0",

@@ -7,9 +7,9 @@
   "main": "lib/main/index.js",
   "scripts": {
     "build": "webpack --mode=production",
-    "build:dev": "webpack --mode=development --watch",
     "electron": "electron .",
-    "start": "npm run build && electron ."
+    "start": "npm run build && electron .",
+    "watch": "webpack --mode=development --watch"
   },
   "dependencies": {
     "common-utils": "0.0.1",

@@ -6,6 +6,7 @@
   "author": "Yuichi Yogo",
   "main": "lib/index.js",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "watch": "tsc --watch"
   }
 }
