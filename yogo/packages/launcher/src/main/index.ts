@@ -1,5 +1,6 @@
 import { app, BrowserWindow } from 'electron'
 import { spawn } from 'child_process'
+import { installDevTools } from 'common-utils'
 
 function createWindow () {
   // Create the browser window.
@@ -10,6 +11,8 @@ function createWindow () {
       nodeIntegration: true
     }
   });
+
+  installDevTools()
  
   win.loadFile('lib/renderer/index.html')
   // tmp
