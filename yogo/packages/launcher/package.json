@@ -1,15 +1,21 @@
 {
   "name": "launcher",
   "version": "0.0.1",
-  "main": "lib/main/index.js",
-  "author": "Yuichi Yogo",
-  "license": "MIT",
   "private": true,
+  "license": "MIT",
+  "author": "Yuichi Yogo",
+  "main": "lib/main/index.js",
   "scripts": {
-    "start": "npm run build && electron .",
     "build": "webpack --mode=production",
     "build:dev": "webpack --mode=development --watch",
-    "electron": "electron ."
+    "electron": "electron .",
+    "start": "npm run build && electron ."
+  },
+  "dependencies": {
+    "common-utils": "0.0.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-electron-webpack-config": "0.0.1"
   },
   "devDependencies": {
     "@types/react": "^16.9.17",
@@ -20,11 +26,5 @@
     "ts-loader": "^6.2.1",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10"
-  },
-  "dependencies": {
-    "common-utils": "0.0.1",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-electron-webpack-config": "0.0.1"
   }
 }
