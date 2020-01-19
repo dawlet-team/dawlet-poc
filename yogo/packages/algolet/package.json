@@ -7,7 +7,7 @@
   "private": true,
   "scripts": {
     "start": "npm run build && electron .",
-    "build": "webpack --mode=development",
+    "build": "webpack --mode=production",
     "build:dev": "webpack --mode=development --watch",
     "electron": "electron ."
   },
