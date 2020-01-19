@@ -10,6 +10,7 @@
   ],
   "scripts": {
     "build": "lerna run build",
+    "clean": "rimraf ./**/node_modules/ ./**/lib/",
     "start": "lerna run watch --parallel"
   },
   "devDependencies": {
