@@ -1,24 +1,24 @@
-import React from 'react';
-import { gql } from 'apollo-boost';
-import { Query } from 'react-apollo';
+import React, { useEffect, useState } from "react";
+import { fetchAvailableDawlets } from "common-utils";
 
-const GET_HELLO = gql`
-  query {
-    hello
-  }
-`
+const App = () => {
+  const [dawlets, setDawlets] = useState<Array<string>>([]);
 
-const App = () => (
-  <Query query={GET_HELLO}>
-    {({ loading, error, data }: any) => {
-      if (loading) return <div>Loading...</div>;
-      if (error) return <div>Error :(</div>;
+  useEffect(() => {
+    const availableDawlets = fetchAvailableDawlets();
+    setDawlets(availableDawlets);
+  }, []);
 
-      return (
-        <div>{JSON.stringify(data)}</div>
-      )
-    }}
-  </Query>
-)
+  return (
+    <div>
+      <h1>Dawlet Launcher</h1>
+      <ul>
+        {dawlets.map(dawlet => (
+          <li>{dawlet}</li>
+        ))}
+      </ul>
+    </div>
+  );
+};
 
-export default App
+export default App;
