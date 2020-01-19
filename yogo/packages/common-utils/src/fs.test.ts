@@ -1,4 +1,4 @@
-import { fetchAvailableDawlets, readPackagesFolder, filterUnrelatedFolders } from './'
+import { fetchAvailableDawlets, readPackagesFolder, filterUnrelatedFolders } from './fs'
 describe('fetchAvailableDawlets', () => {
   it('reads packages folder', () => {
     const dawlets = readPackagesFolder()
