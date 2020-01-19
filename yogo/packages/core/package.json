@@ -17,5 +17,6 @@
     "reflect-metadata": "^0.1.13",
     "type-graphql": "^0.17.6",
     "typedi": "^0.8.0"
-  }
+  },
+  "types": "./index.d.ts"
 }
