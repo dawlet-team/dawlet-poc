@@ -1,0 +1,32 @@
+@startuml
+actor User
+database fs
+
+
+== Initialization ==
+
+User -> Launcher: Click Launcher App
+Launcher -> Launcher: Opens GUI
+Launcher -> fs: Fetches Available Dawlets
+fs --> Launcher: [ Algolet, Mobilelet ]
+User -> Launcher: Sets Algolet with IPC
+User -> Launcher: Sets with http
+Launcher -> Corelet: Boots Apollo Server Up
+Corelet -> Algolet: Boots Algolet Up (Spawn)
+Launcher -> Mobilelet: Boots Mobilelet Up
+
+== Example of Algolet ==
+
+Algolet -> Corelet: Dispatch mutations to generate score (IPC)
+Corelet -> Corelet: Updates State
+Corelet --> Algolet: Broadcast updated state
+Corelet --> Mobilelet: Broadcast updated state
+
+== Example of Mobilelet ==
+
+Mobilelet -> Corelet: Dispatch Mutations to quantize (HTTP)
+Corelet -> Corelet: Updates State
+Corelet --> Algolet: Broadcast updated state
+Corelet --> Mobilelet: Broadcast updated state
+
+@enduml
