@@ -1,7 +1,6 @@
 import { Resolver, Query} from 'type-graphql'
 import { Score } from './entity'
 import { Service } from 'typedi'
-import { IScore } from './interface'
 import { ScoreService } from './service'
 
 @Service()
@@ -9,7 +8,7 @@ import { ScoreService } from './service'
 export class ScoreResolver {
   constructor(private readonly scoreService: ScoreService){}
   @Query(returns => Score)
-  async getScore(): Promise<IScore> {
+  async getScore(): Promise<IScore.Entity> {
     return this.scoreService.get()
   }
 }
