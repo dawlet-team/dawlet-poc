@@ -11,7 +11,8 @@
   "scripts": {
     "build": "lerna run build",
     "clean": "rimraf ./**/node_modules/ ./**/lib/",
-    "start": "lerna run watch --parallel"
+    "launch": "lerna run --scope launcher electron",
+    "watch": "lerna run watch --parallel"
   },
   "devDependencies": {
     "@types/jest": "^24.9.0",
