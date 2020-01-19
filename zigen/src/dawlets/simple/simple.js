@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
-class SimpleDawelet extends React.Component {
+import { ipcRenderer } from 'electron';
+class SimpleDawlet extends React.Component {
   render() {
     return (
       <div>
@@ -9,7 +10,12 @@ class SimpleDawelet extends React.Component {
     );
   }
 }
+ipcRenderer.on('invoke', (e, args) => {
+  console.log(e, args);
+  const score = args.score;
+  ipcRenderer.send('dawlet:invoked:simple', score);
+});
 
 const root = document.querySelector('#root');
 if (!root) throw new Error('#root element not found');
-render(<SimpleDawelet />, root);
+render(<SimpleDawlet />, root);

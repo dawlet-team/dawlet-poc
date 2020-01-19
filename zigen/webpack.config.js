@@ -23,6 +23,7 @@ module.exports = {
   mode: 'development',
   entry: entries,
   target: 'electron-renderer',
+  devtool: 'eval-source-map',
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
