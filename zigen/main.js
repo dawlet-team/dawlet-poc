@@ -22,6 +22,7 @@ function createWindow() {
     mainWindow = null;
   });
 }
+
 function createDawletWindow(name) {
   if (windows[name]) {
     return;
@@ -46,6 +47,7 @@ function createDawletWindow(name) {
   return dawletWindow;
 }
 
+// core -> main -> dawlet
 ipcMain.on('open-dawlet', (e, name) => {
   console.log('open dawlet', name);
   const dawletWindow = createDawletWindow(name);
@@ -67,6 +69,7 @@ ipcMain.handle('dawlet:invoke', (e, req) => {
   if (!dawletWindow) return Promise.reject(`dawlet ${req.name} doesn't activated`);
   const contents = dawletWindow.webContents;
   if (!contents) return Promise.reject(`dawlet ${req.name} doesn't activated`);
+
   return new Promise((resolve, reject) => {
     ipcMain.once(`dawlet:invoked:${req.name}`, (e, args) => {
       console.log('dwalet invoked ');
@@ -76,6 +79,22 @@ ipcMain.handle('dawlet:invoke', (e, req) => {
   });
 });
 
+// dawlet -> main -> core -> main -> dawlet
+ipcMain.on('corelet:getState', (e, req) => {
+  console.log('corelet:getState request', req);
+  ipcMain.once(`corelet:gotState:${req.name}`, (e, args) => {
+    console.log('got state', args);
+    const dawletWindow = windows[req.name];
+    if (!dawletWindow) return Promise.reject(`dawlet ${req.name} doesn't activated`);
+    const contents = dawletWindow.webContents;
+    if (!contents) return Promise.reject(`dawlet ${req.name} doesn't activated`);
+    contents.send('dawlet:gotState', args);
+  });
+  mainWindow.webContents.send('getState', req);
+  console.log('send getState to corelet');
+});
+
+// system
 app.on('ready', createWindow);
 
 app.on('window-all-closed', function() {

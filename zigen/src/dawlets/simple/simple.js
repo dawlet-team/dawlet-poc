@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { ipcRenderer } from 'electron';
-class SimpleDawelet extends React.Component {
+class SimpleDawlet extends React.Component {
   render() {
     return (
       <div>
@@ -18,4 +18,4 @@ ipcRenderer.on('invoke', (e, args) => {
 
 const root = document.querySelector('#root');
 if (!root) throw new Error('#root element not found');
-render(<SimpleDawelet />, root);
+render(<SimpleDawlet />, root);
