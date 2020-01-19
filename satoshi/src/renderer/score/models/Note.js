@@ -1,10 +1,12 @@
 // @flow
 import * as InterpolationTypes from '../../../../constants/interpolation-types';
 import { defaultNoteOptions } from '../../defaultOptions';
-import { IdFactory } from '../../core/IdFactory';
-import { Score } from '../Score';
-import { getFromContainer } from '../../core/getFromContainer';
 import { deepEqual } from 'assert';
+import { getScore } from '../../redux/interactors/getScore';
+import { generateId } from '../generateId';
+import { updateScore } from '../../redux/modules/score';
+import { store } from '../../redux/store';
+import { cloneDeep } from 'lodash';
 
 export class Note implements INote {
   id: Id;
@@ -19,7 +21,7 @@ export class Note implements INote {
 
   constructor(options?: NoteOptions) {
     const defaultedOptions = Object.assign({}, defaultNoteOptions, options);
-    this.id = getFromContainer(IdFactory).make();
+    this.id = generateId();
     this.noteNumber = defaultedOptions.noteNumber;
     this.offsetTime = defaultedOptions.offsetTime;
     this.selected = defaultedOptions.selected;
@@ -27,7 +29,7 @@ export class Note implements INote {
   }
 
   static find(idOrConditions: number | Object) {
-    const score = getFromContainer(Score);
+    const score = getScore();
     if (typeof idOrConditions === 'number') {
       const id = idOrConditions;
       return score.notes.data[id];
@@ -48,11 +50,13 @@ export class Note implements INote {
   }
 
   static all() {
-    return getFromContainer(Score).notes.values;
+    return getScore().notes.values;
   }
 
   save() {
-    getFromContainer(Score).notes.data[this.id] = this;
+    const score = cloneDeep(getScore());
+    score.notes.data[this.id] = this;
+    store.dispatch(updateScore(score));
     return this.id;
   }
 }

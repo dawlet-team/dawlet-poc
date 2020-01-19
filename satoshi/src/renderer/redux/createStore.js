@@ -1,4 +1,3 @@
-// @flow
 import { createStore as _createStore, compose } from 'redux';
 import { middlewares } from './middleware';
 import { reducers } from './modules';

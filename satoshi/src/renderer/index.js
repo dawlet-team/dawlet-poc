@@ -1,14 +1,8 @@
 import ReactDOM from 'react-dom';
 import { App } from './App';
 import React from 'react';
-import { containerManager } from './core/ContainerManager';
-import { insertMockData } from './score/mock';
-import { createStore } from './redux/createStore';
 import { Provider } from 'react-redux';
-
-containerManager.initContainer();
-insertMockData();
-const store = createStore();
+import { store } from './redux/store';
 
 window.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
