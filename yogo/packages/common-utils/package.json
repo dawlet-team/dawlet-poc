@@ -1,5 +1,5 @@
 {
-  "name": "utils",
+  "name": "common-utils",
   "version": "0.0.1",
   "main": "lib/index.js",
   "author": "Yuichi Yogo",
