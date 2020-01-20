@@ -1,21 +1,16 @@
 // @flow
-import { containerManager } from '../core/ContainerManager';
 import { Constant, Expression } from '../core/Attribute';
 import { Note } from './models/Note';
-import { getFromContainer } from '../core/getFromContainer';
-import { Score } from './Score';
 import { noteFactory } from '../../utils/factory';
+import { getScore } from '../redux/interactors/getScore';
 
 describe('Note', () => {
-  beforeEach(() => {
-    containerManager.initContainer();
-  });
   it('is created with Constant', () => {
     const note = new Note({
       noteNumber: new Constant(122)
     });
     note.save();
-    const score = getFromContainer(Score);
+    const score = getScore();
     expect(score.notes.length).toBe(1);
     expect(score.notes.data[note.id].noteNumber.value).toBe(122);
   });
@@ -24,7 +19,7 @@ describe('Note', () => {
       noteNumber: new Expression('40 * 2')
     });
     note.save();
-    const score = getFromContainer(Score);
+    const score = getScore();
     expect(score.notes.length).toBe(1);
     expect(score.notes.data[note.id].noteNumber.value).toBe(80);
   });
