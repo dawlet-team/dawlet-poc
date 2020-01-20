@@ -21,7 +21,7 @@ export class Note implements INote {
 
   constructor(options?: NoteOptions) {
     const defaultedOptions = Object.assign({}, defaultNoteOptions, options);
-    this.id = generateId();
+    this.id = generateId(this.constructor.name);
     this.noteNumber = defaultedOptions.noteNumber;
     this.offsetTime = defaultedOptions.offsetTime;
     this.selected = defaultedOptions.selected;

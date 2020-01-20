@@ -1,14 +1,7 @@
 // @flow
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
-import { Note as NoteClass } from '../score/models/Note';
-import { getScore } from '../redux/interactors/getScore';
-
-const evaluate = (script) => {
-  const Note = NoteClass;
-  const score = getScore();
-  return eval(script);
-};
+import { evaluate } from '../../utils/evaluate';
 
 export const ScriptEditor = () => {
   const handleChange = (event) => {

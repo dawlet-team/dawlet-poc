@@ -3,6 +3,7 @@ import { App } from './App';
 import React from 'react';
 import { Provider } from 'react-redux';
 import { store } from './redux/store';
+import { insertMockData } from './score/mock';
 
 window.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
@@ -12,3 +13,5 @@ window.addEventListener('DOMContentLoaded', () => {
     document.getElementById('root')
   );
 });
+
+insertMockData();
