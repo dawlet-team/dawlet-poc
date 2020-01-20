@@ -4,7 +4,7 @@ import { join } from 'path'
 export const filterUnrelatedFolders = (folders: string[]) => folders.filter(folder => !UNRELATED_FOLDERS.includes(folder))
 
 export const fetchAvailableDawlets = () => {
-  return filterUnrelatedFolders(readPackagesFolder())
+  return filterUnrelatedFolders(readPackagesFolder()).map(retrieveDawletConfig)
 }
 
 export const readPackagesFolder = () => {

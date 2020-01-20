@@ -2,7 +2,11 @@
 
 exports[`fetchAvailableDawlets fetches available dawlets 1`] = `
 Array [
-  "algolet",
+  Object {
+    "description": "Algolet lets you write your own custom logic to generate music.",
+    "localizable": true,
+    "name": "algolet",
+  },
 ]
 `;
 
