@@ -6,6 +6,7 @@
   "author": "Yuichi Yogo",
   "main": "index.js",
   "workspaces": [
+    "dawlets/*",
     "packages/*"
   ],
   "scripts": {
