@@ -10,13 +10,9 @@ Array [
 ]
 `;
 
-exports[`fetchAvailableDawlets reads packages folder 1`] = `
+exports[`fetchAvailableDawlets reads dawlets folder 1`] = `
 Array [
   "algolet",
-  "common-utils",
-  "core",
-  "launcher",
-  "react-electron-webpack-config",
 ]
 `;
 
