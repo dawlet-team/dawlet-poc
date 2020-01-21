@@ -1,6 +1,7 @@
 import { app, BrowserWindow } from 'electron'
+import { spawn } from 'child_process'
 import { installDevTools } from 'common-utils'
- 
+
 function createWindow () {
   // Create the browser window.
   let win = new BrowserWindow({
@@ -14,6 +15,8 @@ function createWindow () {
   installDevTools()
  
   win.loadFile('lib/renderer/index.html')
+  // tmp
+  spawn("electron", ["../algolet/"]);
 }
  
 app.on('ready', createWindow);

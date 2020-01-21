@@ -1,5 +1,7 @@
 ### https://raw.github.com/github/gitignore/18654b47c86bef38add5cd091ec2dac7d6e6e37b/Node.gitignore
 
+packages/**/lib/
+
 # Logs
 logs
 *.log

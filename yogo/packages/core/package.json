@@ -1,15 +1,23 @@
 {
   "name": "core",
   "version": "0.0.1",
-  "main": "index.js",
-  "author": "Yuichi Yogo",
-  "license": "MIT",
   "private": true,
+  "license": "MIT",
+  "author": "Yuichi Yogo",
+  "main": "lib/app.js",
+  "types": "./index.d.ts",
   "scripts": {
-    "start": "ts-node src/index.ts"
+    "build": "tsc",
+    "start": "nodemon",
+    "start:prod": "node lib/app.js",
+    "watch": "tsc --watch"
   },
   "dependencies": {
+    "@types/graphql": "^14.5.0",
     "apollo-server": "^2.9.15",
-    "graphql": "^14.5.8"
+    "graphql": "^14.5.8",
+    "reflect-metadata": "^0.1.13",
+    "type-graphql": "^0.17.6",
+    "typedi": "^0.8.0"
   }
 }

@@ -12,7 +12,7 @@ module.exports = {
     ]
   },
   output: {
-    path: __dirname + "/lib/main",
+    path: process.cwd() + "/lib/main",
     filename: 'index.js'
   }
 };

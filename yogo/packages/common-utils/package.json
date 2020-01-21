@@ -1,0 +1,16 @@
+{
+  "name": "common-utils",
+  "version": "0.0.1",
+  "private": true,
+  "license": "MIT",
+  "author": "Yuichi Yogo",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "watch": "tsc --watch"
+  },
+  "devDependencies": {
+    "electron-devtools-installer": "^2.2.4"
+  }
+}
