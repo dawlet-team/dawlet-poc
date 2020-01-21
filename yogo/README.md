@@ -1,5 +1,7 @@
 # Dawlet POC
 
+![gh actions status](https://github.com/dawlet-team/dawlet-poc/workflows/Node%20CI(yogo)/badge.svg)
+
 ![dawlet-logo](./assets/dawlet-logo-animation.gif)
 
 ## Concept Image
