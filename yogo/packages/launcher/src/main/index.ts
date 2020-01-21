@@ -1,22 +1,26 @@
-import { app, BrowserWindow } from 'electron'
-import { spawn } from 'child_process'
+import { app, BrowserWindow, ipcMain } from 'electron'
 import { installDevTools } from 'common-utils'
+import { spawnDawlet } from './utils'
+import { DawletIPC } from '../common/types'
 
 function createWindow () {
-  // Create the browser window.
-  let win = new BrowserWindow({
+  const win = new BrowserWindow({
     width: 800,
     height: 600,
     webPreferences: {
       nodeIntegration: true
     }
   });
-
   installDevTools()
- 
   win.loadFile('lib/renderer/index.html')
-  // tmp
-  spawn("electron", ["../algolet/"]);
+}
+
+
+const onSpawnDawlet: DawletIPC.spawnDawlet = (_, name) => spawnDawlet(name)
+
+const main = () => {
+  app.on('ready', createWindow);
+  ipcMain.on(DawletIPC.events.SPAWN_DAWLET, onSpawnDawlet) 
 }
  
-app.on('ready', createWindow);
+main()
