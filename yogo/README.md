@@ -16,8 +16,8 @@
   - [ ] Enable Switching Apollo Link
   - [ ] Enable Using IPC
 - [ ] Launcher
-  - [ ] Enable Configuring Dawlets
-  - [ ] Add Launching Utils
+  - [ ] Enable Configuring Dawlets (WIP)
+  - [x] Add Launching Utils
 - [ ] Algolet
   - [ ] Setup Monaco Editor
   - [ ] Add Simple API
@@ -27,3 +27,5 @@
 - [ ] Midilet
   - [ ] Enable Midi Recording
   - [ ] Enable Preview
+- [ ] Doc
+  - [ ] Generate API Doc (or GraphQL Schema Doc)
