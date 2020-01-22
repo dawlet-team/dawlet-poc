@@ -13,7 +13,7 @@ const renderer = {
   plugins: [
     ..._renderer.plugins,
     new MonacoWebpackPlugin({
-      languages: ['javascript']
+      languages: ['javascript', 'typescript']
     }) 
   ],
   module: {
