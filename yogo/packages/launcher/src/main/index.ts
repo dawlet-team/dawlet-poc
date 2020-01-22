@@ -20,6 +20,10 @@ const onSpawnDawlet: DawletIPC.spawnDawlet = (_, name) => spawnDawlet(name)
 
 const main = () => {
   app.on('ready', createWindow);
+  /**
+   * TODO:
+   * should start a core server, too.
+   */
   ipcMain.on(DawletIPC.events.SPAWN_DAWLET, onSpawnDawlet) 
 }
  
