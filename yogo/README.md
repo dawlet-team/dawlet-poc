@@ -16,7 +16,7 @@
 
 |           Name           |   Status    | Description                                                                                                  |
 | :----------------------: | :---------: | :----------------------------------------------------------------------------------------------------------- |
-| 🚀&#160;Algolet&#160;🚀  |     WIP     | Algolet lets you write your own custom logic to generate music.                                              |
+| 🚀&#160;Algolet&#160;🚀  |   **WIP**   | Algolet lets you write your own custom logic to generate music.                                              |
 | 🎼&#160;Sheetlet&#160;🎼 | COMING SOON | Sheetlet displays the music represented as a sheetmusic.                                                     |
 | 🎸&#160;Synthlet&#160;🎸 | COMING SOON | Synthlet provides a simple synthesizer to playback the music. It has a dedicated local transport on its own. |
 | 🎹&#160;Rolelet&#160;🎹  | COMING SOON | Rolelet is a DawletScore-compliant piano roll. It accepts an incoming midi to perform a realtime recording.  |
