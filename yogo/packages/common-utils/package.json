@@ -8,6 +8,7 @@
   "scripts": {
     "build": "tsc",
     "test": "jest",
+    "lint": "tsc --noEmit",
     "watch": "tsc --watch"
   },
   "devDependencies": {
