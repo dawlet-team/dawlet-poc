@@ -4,9 +4,9 @@
   "private": true,
   "license": "MIT",
   "author": "Yuichi Yogo",
-  "main": "",
+  "main": "./lib/index.js",
   "scripts": {
-    "build": "",
+    "build": "tsc",
     "start": "",
     "watch": "webpack --mode=development --watch"
   },
