@@ -8,7 +8,7 @@
   "scripts": {
     "build": "tsc",
     "start": "",
-    "watch": "webpack --mode=development --watch"
+    "watch": "tsc --watch"
   },
   "dependencies": {
     "opensheetmusicdisplay": "^0.7.3",
