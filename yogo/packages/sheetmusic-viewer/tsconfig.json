@@ -8,5 +8,6 @@
     "esModuleInterop": true,
     "outDir": "./lib",
     "declaration": true
-  }
+  },
+  "exclude": ["src/**/*.stories.jsx"]
 }
