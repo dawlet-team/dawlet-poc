@@ -1,0 +1,22 @@
+{
+  "name": "sheetmusic-viewer",
+  "version": "0.0.1",
+  "private": true,
+  "license": "MIT",
+  "author": "Yuichi Yogo",
+  "main": "",
+  "scripts": {
+    "build": "",
+    "start": "",
+    "watch": "webpack --mode=development --watch"
+  },
+  "dependencies": {
+    "opensheetmusicdisplay": "^0.7.3",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.17",
+    "@types/react-dom": "^16.9.4"
+  }
+}
