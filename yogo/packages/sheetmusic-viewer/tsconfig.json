@@ -9,5 +9,5 @@
     "outDir": "./lib",
     "declaration": true
   },
-  "exclude": ["src/**/*.stories.jsx"]
+  "exclude": ["src/**/*.stories.jsx", "./lib/*"]
 }
