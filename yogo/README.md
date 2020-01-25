@@ -31,12 +31,13 @@
   - [x] Add Launching Utils
 - [ ] Algolet
   - [x] Setup Monaco Editor
-  - [ ] split pane support
+  - [x] split pane support
   - [ ] Add Simple API
 - [ ] Midilet
   - [ ] Enable Midi Recording
   - [ ] Enable Preview
 - [ ] Sheetlet
-  - [ ] Standalone Capability
+  - [x] Standalone Capability
+  - [ ] Add utilities to convert DawletScore <=> MusicXML
 - [ ] Doc
   - [ ] Generate API Doc (or GraphQL Schema Doc)
