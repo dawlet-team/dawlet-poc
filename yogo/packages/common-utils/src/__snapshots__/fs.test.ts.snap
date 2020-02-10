@@ -7,12 +7,18 @@ Array [
     "localizable": true,
     "name": "algolet",
   },
+  Object {
+    "description": "Sheetlet displays the music represented as a sheetmusic.",
+    "localizable": true,
+    "name": "sheetlet",
+  },
 ]
 `;
 
 exports[`fetchAvailableDawlets reads dawlets folder 1`] = `
 Array [
   "algolet",
+  "sheetlet",
 ]
 `;
 
