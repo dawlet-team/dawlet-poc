@@ -8,4 +8,9 @@ export class ScoreService implements IScore.Service {
   get() {
     return this.score
   }
+
+  append(note: INote.Entity) {
+    this.score.notes.push(note)
+    return this.score
+  }
 }
