@@ -966,6 +966,13 @@
   dependencies:
     regenerator-runtime "^0.13.2"
 
+"@babel/runtime@^7.8.3", "@babel/runtime@^7.8.4":
+  version "7.8.4"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.8.4.tgz#d79f5a2040f7caa24d53e563aad49cbc05581308"
+  integrity sha512-neAp3zt80trRVBI1x0azq6c57aNBqYZH8KhMm3TaB7wEI5Q4A2SHfBHE8w9gOhI/lrqxtEbXZgQIrHP+wvSGwQ==
+  dependencies:
+    regenerator-runtime "^0.13.2"
+
 "@babel/template@^7.4.0", "@babel/template@^7.8.0", "@babel/template@^7.8.3":
   version "7.8.3"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.8.3.tgz#e02ad04fe262a657809327f578056ca15fd4d1b8"
@@ -4101,6 +4108,14 @@ atob@^2.1.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
+
+automation-events@^1.0.13:
+  version "1.0.14"
+  resolved "https://registry.yarnpkg.com/automation-events/-/automation-events-1.0.14.tgz#b5c77004788572d76e46557d18c6c8aa4198104a"
+  integrity sha512-qCpIEkzqDIffxyOiMlatvWqkiXUQxzc/ZYMTdY4obcmdsWvkv5/KMRbqK7SgAGA/Mtqjs0wfalJ1HE3im9hpHA==
+  dependencies:
+    "@babel/runtime" "^7.8.4"
+    tslib "^1.10.0"
 
 autoprefixer@^9.7.2:
   version "9.7.4"
@@ -13934,6 +13949,15 @@ stack-utils@^1.0.1:
   resolved "https://registry.yarnpkg.com/stack-utils/-/stack-utils-1.0.2.tgz#33eba3897788558bebfc2db059dc158ec36cebb8"
   integrity sha512-MTX+MeG5U994cazkjd/9KNAapsHnibjMLnfXodlkXw76JEea0UiNzrqidzo1emMwk7w5Qhc9jd4Bn9TBb1MFwA==
 
+standardized-audio-context@^23.1.2:
+  version "23.1.2"
+  resolved "https://registry.yarnpkg.com/standardized-audio-context/-/standardized-audio-context-23.1.2.tgz#69a322cb7ce28f272cf5855b38dd678617313158"
+  integrity sha512-77IRSz8Yl96GabO6+Ak2+iroIwP3X4RWJI+adupp8NCQNIJ8llBFND3rkOGJ6/CyQWseaDh4qj3Xaslc2F//lg==
+  dependencies:
+    "@babel/runtime" "^7.8.3"
+    automation-events "^1.0.13"
+    tslib "^1.10.0"
+
 state-toggle@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/state-toggle/-/state-toggle-1.0.2.tgz#75e93a61944116b4959d665c8db2d243631d6ddc"
@@ -14591,6 +14615,14 @@ toidentifier@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/toidentifier/-/toidentifier-1.0.0.tgz#7e1be3470f1e77948bc43d94a3c8f4d7752ba553"
   integrity sha512-yaOH/Pk/VEhBWWTlhI+qXxDFXlejDGcQipMlyxda9nthulaxLZUNcUqFxokp0vcYnvteJln5FNQDRrxj3YcbVw==
+
+tone@^14.5.35:
+  version "14.5.35"
+  resolved "https://registry.yarnpkg.com/tone/-/tone-14.5.35.tgz#ef4372165214ecac9c397de3f4b89a9ce9fa3d9e"
+  integrity sha512-AFIZIL69oXIZct9Mij/2HIh+SXgF4rDmhiJSpQQyj74NaksDGGCg7dMIQcOmrlD6UCfT/Si1DGFviraWF6i4Ig==
+  dependencies:
+    standardized-audio-context "^23.1.2"
+    tslib "^1.10.0"
 
 toposort@^1.0.0:
   version "1.0.7"
