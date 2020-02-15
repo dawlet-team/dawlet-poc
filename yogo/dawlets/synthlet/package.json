@@ -17,12 +17,14 @@
   "description": "Synthlet provides a simple synthesizer to playback the music. It has a dedicated local transport on its own. ",
   "dependencies": {
     "apollo-boost": "^0.4.7",
+    "apollo-link-ws": "^1.0.19",
     "common-utils": "0.0.1",
     "react": "^16.12.0",
     "react-apollo": "^3.1.3",
     "react-dom": "^16.12.0",
     "react-electron-webpack-config": "0.0.1",
-    "react-split-pane": "^0.1.89"
+    "react-split-pane": "^0.1.89",
+    "subscriptions-transport-ws": "^0.9.16"
   },
   "devDependencies": {
     "@types/react": "^16.9.17",
