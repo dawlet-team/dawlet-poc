@@ -8,5 +8,5 @@
     "declaration": true,
     "skipLibCheck": true
   },
-  "include": ["./src", "../../global.d.ts"]
+  "include": ["./src", "../../index.d.ts"]
 }
