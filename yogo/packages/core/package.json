@@ -8,6 +8,7 @@
   "types": "./index.d.ts",
   "scripts": {
     "build": "tsc",
+    "lint": "tsc --noEmit",
     "start": "nodemon",
     "start:prod": "node lib/app.js",
     "watch": "tsc --watch"
