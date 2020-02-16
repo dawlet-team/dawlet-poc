@@ -7,5 +7,6 @@
     "emitDecoratorMetadata": true,
     "esModuleInterop": true,
     "outDir": "./lib"
-  }
+  },
+  "include": ["../../index.d.ts", "./src"]
 }
