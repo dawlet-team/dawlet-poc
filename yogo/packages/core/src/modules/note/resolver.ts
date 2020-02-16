@@ -17,7 +17,7 @@ export class NoteResolver {
 
   // maybe this shouldn't return the new score
   @Mutation(returns => Score)
-  createNote(@Arg('params') params: CreateNoteInput, @PubSub("SCORE_UPDATED") publish: Publisher<IScore.Entity>): IScore.Entity {
+  createNote(@Arg('params') params: CreateNoteInput, @PubSub("SCORE_UPDATED") publish: Publisher<Dawlet.IScore.Entity>): Dawlet.IScore.Entity {
     const note = this.noteService.create(params)
     this.scoreService.append(note)
     const score = this.scoreService.get()

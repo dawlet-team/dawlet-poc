@@ -1,6 +1,6 @@
 import { Container } from 'typedi'
 
-const initialScore: IScore.Entity = {
+const initialScore: Dawlet.IScore.Entity = {
   notes: []
 }
 

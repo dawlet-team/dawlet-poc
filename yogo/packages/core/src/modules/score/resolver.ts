@@ -8,7 +8,7 @@ import { ScoreService } from './service'
 export class ScoreResolver {
   constructor(private readonly scoreService: ScoreService){}
   @Query(returns => Score)
-  async getScore(): Promise<IScore.Entity> {
+  async getScore(): Promise<Dawlet.IScore.Entity> {
     return this.scoreService.get()
   }
 

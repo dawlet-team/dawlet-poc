@@ -1,7 +1,7 @@
 import { ObjectType, Field, ID, Float } from 'type-graphql'
 
 @ObjectType()
-export class Note implements INote.Entity {
+export class Note implements Dawlet.INote.Entity {
   @Field(of => ID)
   id: string
   

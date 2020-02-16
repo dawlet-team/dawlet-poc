@@ -4,8 +4,8 @@ import { Args } from 'type-graphql'
 import { CreateNoteInput } from './input'
 
 @Service()
-export class NoteService implements INote.Service {
-  create(@Args() params: CreateNoteInput): INote.Entity {
+export class NoteService implements Dawlet.INote.Service {
+  create(@Args() params: CreateNoteInput): Dawlet.INote.Entity {
     /**
      * TODO: use uuid
      */

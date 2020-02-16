@@ -2,9 +2,9 @@ import { ObjectType, Field } from 'type-graphql'
 import { Note } from '../note/entity'
 
 @ObjectType()
-export class Score implements IScore.Entity {
+export class Score implements Dawlet.IScore.Entity {
   @Field()
   id: string
   @Field(type => Note)
-  notes: INote.Entity[]
+  notes: Dawlet.INote.Entity[]
 }
