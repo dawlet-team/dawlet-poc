@@ -7,16 +7,24 @@ Array [
     "localizable": true,
     "name": "algolet",
   },
+  Object {
+    "description": "Sheetlet displays the music represented as a sheetmusic.",
+    "localizable": true,
+    "name": "sheetlet",
+  },
+  Object {
+    "description": "Synthlet provides a simple synthesizer to playback the music. It has a dedicated local transport on its own. ",
+    "localizable": true,
+    "name": "synthlet",
+  },
 ]
 `;
 
-exports[`fetchAvailableDawlets reads packages folder 1`] = `
+exports[`fetchAvailableDawlets reads dawlets folder 1`] = `
 Array [
   "algolet",
-  "common-utils",
-  "core",
-  "launcher",
-  "react-electron-webpack-config",
+  "sheetlet",
+  "synthlet",
 ]
 `;
 

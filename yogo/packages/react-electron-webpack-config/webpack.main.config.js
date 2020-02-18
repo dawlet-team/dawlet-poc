@@ -14,5 +14,8 @@ module.exports = {
   output: {
     path: process.cwd() + "/lib/main",
     filename: 'index.js'
+  },
+  resolve: {
+    extensions: ['.ts', '.js', '.json']
   }
 };

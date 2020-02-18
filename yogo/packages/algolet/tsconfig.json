@@ -1,3 +1,0 @@
-{
-  "extends": "../react-electron-webpack-config/tsconfig"
-}

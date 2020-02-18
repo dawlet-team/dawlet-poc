@@ -1,4 +1,4 @@
 {
   "extends": "../react-electron-webpack-config/tsconfig",
-  "include": ["./src/", "../../global.d.ts"]
+  "include": ["./src/", "../../index.d.ts"]
 }

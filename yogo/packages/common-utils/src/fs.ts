@@ -1,14 +1,14 @@
 import *  as fs from 'fs'
 import { join } from 'path'
 
-export const filterUnrelatedFolders = (folders: string[]) => folders.filter(folder => !UNRELATED_FOLDERS.includes(folder))
+export const pathToDawletsDir = join(process.cwd(), '../../dawlets')
 
 export const fetchAvailableDawlets = () => {
-  return filterUnrelatedFolders(readPackagesFolder()).map(retrieveDawletConfig)
+  return readDawletsDir().map(retrieveDawletConfig)
 }
 
-export const readPackagesFolder = () => {
-  return fs.readdirSync(join(process.cwd(), '../'))
+export const readDawletsDir = () => {
+  return fs.readdirSync(pathToDawletsDir)
 }
 
 export const retrieveDawletConfig = (folderPath: string): Dawlet.Config => {
@@ -21,10 +21,8 @@ export const retrieveDawletConfig = (folderPath: string): Dawlet.Config => {
 }
 
 export const getPackageJson = (folder: string) => {
-  const path = join(process.cwd(), '../', folder, 'package.json')
+  const path = join(pathToDawletsDir, folder, 'package.json')
   const file = fs.readFileSync(path, { encoding: 'utf-8' })
   const json = JSON.parse(file)
   return json
 }
-
-const UNRELATED_FOLDERS = ['common-utils', 'core', 'launcher', 'react-electron-webpack-config']

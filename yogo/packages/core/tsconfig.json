@@ -2,10 +2,11 @@
   "compilerOptions": {
     "target": "es2016",
     "module": "commonjs",
-    "lib": ["es2016", "esnext.asynciterable"],
+    "lib": ["es2016", "esnext.asynciterable", "dom"],
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "esModuleInterop": true,
     "outDir": "./lib"
-  }
+  },
+  "include": ["../../index.d.ts", "./src"]
 }

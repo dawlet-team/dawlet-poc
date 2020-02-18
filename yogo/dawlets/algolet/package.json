@@ -1,0 +1,44 @@
+{
+  "name": "algolet",
+  "version": "0.0.1",
+  "private": true,
+  "license": "MIT",
+  "author": "Yuichi Yogo",
+  "main": "lib/main/index.js",
+  "scripts": {
+    "build": "webpack --mode=production",
+    "electron": "electron .",
+    "start": "npm run build && electron .",
+    "watch": "webpack --mode=development --watch"
+  },
+  "dawlet": {
+    "localizable": true
+  },
+  "description": "Algolet lets you write your own custom logic to generate music.",
+  "dependencies": {
+    "apollo-boost": "^0.4.7",
+    "common-utils": "0.0.1",
+    "monaco-editor": "^0.19.3",
+    "react": "^16.12.0",
+    "react-apollo": "^3.1.3",
+    "react-dom": "^16.12.0",
+    "react-electron-webpack-config": "0.0.1",
+    "react-monaco-editor": "^0.33.0",
+    "react-split-pane": "^0.1.89",
+    "sheetmusic-viewer": "0.0.1"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.17",
+    "@types/react-dom": "^16.9.4",
+    "@types/webpack": "^4.41.0",
+    "css-loader": "^3.4.2",
+    "electron": "^7.1.7",
+    "file-loader": "^5.0.2",
+    "html-webpack-plugin": "^3.2.0",
+    "monaco-editor-webpack-plugin": "^1.8.2",
+    "style-loader": "^1.1.3",
+    "ts-loader": "^6.2.1",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  }
+}
