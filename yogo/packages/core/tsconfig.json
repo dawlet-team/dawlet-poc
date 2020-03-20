@@ -6,7 +6,8 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "esModuleInterop": true,
-    "outDir": "./lib"
+    "outDir": "./lib",
+    "strictNullChecks": true
   },
   "include": ["../../index.d.ts", "./src"]
 }
