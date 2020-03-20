@@ -6,6 +6,7 @@
   "author": "Yuichi Yogo",
   "main": "webpack.config.js",
   "devDependencies": {
+    "ts-jest": "^25.2.1",
     "ts-node": "^8.7.0",
     "typescript": "^3.8.3"
   }
