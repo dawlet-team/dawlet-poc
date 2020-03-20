@@ -6,7 +6,7 @@
   "author": "Yuichi Yogo",
   "main": "index.js",
   "scripts": {
-    "postinstall": "lerna run bootstrap --hoist --strict",
+    "postinstall": "lerna bootstrap --hoist --strict",
     "build": "lerna run build",
     "test": "lerna run test --parallel",
     "clean": "rimraf ./**/node_modules/ ./**/lib/",
