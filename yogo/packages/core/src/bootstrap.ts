@@ -14,5 +14,8 @@ export async function bootstrap() {
   // Start the server
   const { url } = await server.listen(4000);
   console.log(`Server is running, GraphQL Playground available at ${url}`);
-  return server
+  return {
+    server,
+    url
+  }
 }
