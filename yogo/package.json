@@ -20,8 +20,7 @@
     "nodemon": "^2.0.2",
     "rimraf": "^3.0.0",
     "ts-jest": "^24.3.0",
-    "ts-node": "^8.5.4",
-    "typescript": "^3.7.4"
+    "ts-node": "^8.5.4"
   },
   "dependencies": {
     "@material-ui/core": "^4.8.3"
