@@ -1,12 +1,10 @@
 import "reflect-metadata";
 import { ApolloServer } from 'apollo-server'
 import { assembleSchema } from './modules/schema'
-import { mockContainer } from './helpers/useMocks'
+import { prepareContainer } from './container'
 
 async function bootstrap() {
-  if (process.env.NODE_ENV === 'development') {
-    mockContainer()
-  }
+  prepareContainer()
   const schema = await assembleSchema() 
   const server = new ApolloServer({
     schema,

@@ -6,7 +6,7 @@ const initialScore: Dawlet.IScore.Entity = {
 
 const groupMap:Dawlet.IGroup.Map = {}
 
-export const mockContainer = () => {
+export const prepareContainer = () => {
   Container.set({id: "SCORE", value: initialScore})
   Container.set({id: "GROUP", value: groupMap})
 }
