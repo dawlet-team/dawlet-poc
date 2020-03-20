@@ -5,11 +5,8 @@
   "license": "MIT",
   "author": "Yuichi Yogo",
   "main": "index.js",
-  "workspaces": [
-    "dawlets/*",
-    "packages/*"
-  ],
   "scripts": {
+    "postinstall": "lerna bootstrap --hoist --strict",
     "build": "lerna run build",
     "test": "lerna run test --parallel",
     "clean": "rimraf ./**/node_modules/ ./**/lib/",
@@ -17,14 +14,8 @@
     "watch": "lerna run watch --parallel"
   },
   "devDependencies": {
-    "@types/jest": "^24.9.0",
-    "jest": "^24.9.0",
     "lerna": "^3.20.0",
-    "nodemon": "^2.0.2",
-    "rimraf": "^3.0.0",
-    "ts-jest": "^24.3.0",
-    "ts-node": "^8.5.4",
-    "typescript": "^3.7.4"
+    "rimraf": "^3.0.0"
   },
   "dependencies": {
     "@material-ui/core": "^4.8.3"
