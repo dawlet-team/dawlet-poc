@@ -9,6 +9,7 @@
   "scripts": {
     "build": "tsc",
     "lint": "tsc --noEmit",
+    "test": "jest",
     "start": "nodemon",
     "start:prod": "node lib/app.js",
     "watch": "tsc --watch"
