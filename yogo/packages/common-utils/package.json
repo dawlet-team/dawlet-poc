@@ -12,6 +12,7 @@
     "watch": "tsc --watch"
   },
   "devDependencies": {
-    "electron-devtools-installer": "^2.2.4"
+    "electron-devtools-installer": "^2.2.4",
+    "typescript": "^3.8.3"
   }
 }

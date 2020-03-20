@@ -4,5 +4,8 @@
   "private": true,
   "license": "MIT",
   "author": "Yuichi Yogo",
-  "main": "webpack.config.js"
+  "main": "webpack.config.js",
+  "devDependencies": {
+    "typescript": "^3.8.3"
+  }
 }
