@@ -5,10 +5,6 @@
   "license": "MIT",
   "author": "Yuichi Yogo",
   "main": "index.js",
-  "workspaces": [
-    "dawlets/*",
-    "packages/*"
-  ],
   "scripts": {
     "build": "lerna run build",
     "test": "lerna run test --parallel",
