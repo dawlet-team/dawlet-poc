@@ -24,16 +24,16 @@ describe("e2e", () => {
     expect(server).toBeDefined();
     expect(url).toBe("http://localhost:4000/");
   });
-  it("client is defiend", () => {
+  it("client is defined", () => {
     expect(client).toBeDefined();
   });
 
   describe("Group", () => {
-    it("creates group", async () => {
+    it("creates groups", async () => {
       const res = await client?.query({
         query: `
         mutation {
-          createGroup(id: "hoge"){
+          createGroup(id: "my-group"){
             id
             notes{
               id
@@ -48,11 +48,36 @@ describe("e2e", () => {
       expect(res?.data).toMatchInlineSnapshot(`
         Object {
           "createGroup": Object {
-            "id": "hoge",
+            "id": "my-group",
             "notes": Array [],
           },
         }
       `);
+    });
+    it("finds groups", async () => {
+      const res = await client?.query({
+        query: `
+          query{
+            findGroupBy(id: "my-group"){
+              id
+              notes {
+                id
+                freq
+                duration
+                offset
+              }
+            }
+          }
+        `
+      });
+      expect(res?.data).toMatchInlineSnapshot(`
+Object {
+  "findGroupBy": Object {
+    "id": "my-group",
+    "notes": Array [],
+  },
+}
+`);
     });
   });
 });
