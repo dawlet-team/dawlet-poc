@@ -14,6 +14,7 @@
     "watch": "lerna run watch --parallel"
   },
   "devDependencies": {
+    "conventional-changelog-cli": "^2.0.31",
     "lerna": "^3.20.0",
     "rimraf": "^3.0.0"
   },
