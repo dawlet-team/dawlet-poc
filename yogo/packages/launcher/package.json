@@ -1,6 +1,6 @@
 {
   "name": "launcher",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "private": true,
   "license": "MIT",
   "author": "Yuichi Yogo",
@@ -13,10 +13,10 @@
   },
   "dependencies": {
     "@material-ui/core": "^4.9.7",
-    "common-utils": "0.0.1",
+    "common-utils": "^0.1.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-electron-webpack-config": "0.0.1"
+    "react-electron-webpack-config": "^0.1.0"
   },
   "devDependencies": {
     "@types/jest": "^25.1.4",
