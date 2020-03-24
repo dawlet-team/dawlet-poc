@@ -79,5 +79,47 @@ Object {
 }
 `);
     });
+    it("pushes notes to groups", async () => {
+      const res = await client?.mutate({
+        mutation: `
+        mutation {
+          pushNote(id:"my-group", payload: {
+            notes: [
+              {
+                id: "4",
+                freq:440,
+                duration:400,
+                offset:45
+              }
+            ]
+          }){
+            id
+            notes {
+              id
+              freq
+              duration
+              offset
+            }
+          }
+        }  
+        `
+      });
+      expect(res?.data).toMatchInlineSnapshot(`
+Object {
+  "pushNote": Object {
+    "id": "my-group",
+    "notes": Array [
+      Object {
+        "duration": 400,
+        "freq": 440,
+        "id": "4",
+        "offset": 45,
+      },
+    ],
+  },
+}
+`);
+    });
+    it("")
   });
 });
