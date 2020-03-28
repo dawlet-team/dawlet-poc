@@ -1,5 +1,5 @@
 {
-  "name": "react-electron-webpack-config",
+  "name": "@dawlet/webpack",
   "version": "0.1.0",
   "private": true,
   "license": "MIT",
