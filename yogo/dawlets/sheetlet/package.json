@@ -1,5 +1,5 @@
 {
-  "name": "sheetlet",
+  "name": "@dawlet/sheetlet",
   "version": "0.1.0",
   "private": true,
   "license": "MIT",
