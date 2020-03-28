@@ -1,5 +1,5 @@
 {
-  "name": "core",
+  "name": "@dawlet/core",
   "version": "0.1.0",
   "private": true,
   "license": "MIT",
