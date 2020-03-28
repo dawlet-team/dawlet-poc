@@ -1,9 +1,6 @@
 name: Node CI(yogo)
 
-on:
-  push:
-    branches:
-      - yogo
+on: push
 
 jobs:
   build:
