@@ -1,4 +1,11 @@
-import { fetchAvailableDawlets, readDawletsDir, getPackageJson, retrieveDawletConfig, pathToDawletsDir } from './fs'
+import {
+  fetchAvailableDawlets,
+  readDawletsDir,
+  getPackageJson,
+  retrieveDawletConfig,
+  pathToDawletsDir,
+  pkgNameWithoutPrefix
+} from "./fs";
 
 describe("path to dawlets folder", () => {
   it("contains an absolute path", () => {
@@ -6,15 +13,18 @@ describe("path to dawlets folder", () => {
   });
 });
 
-describe('fetchAvailableDawlets', () => {
-  it('reads dawlets folder', () => {
-    const dawlets = readDawletsDir()
-    expect(dawlets).toMatchSnapshot()
+describe("pkgNameWithoutPrefix", () => {
+  it("throws error if the package is not a dawlet package", () => {
+    expect(() => {
+      pkgNameWithoutPrefix("example-let");
+    }).toThrowErrorMatchingInlineSnapshot(
+      `"example-let is not a Dawlet package"`
+    );
+  });
+  it("returns pkgName without @dawlet", () => {
+    expect(pkgNameWithoutPrefix("@dawlet/algolet")).toEqual("algolet")
   })
-  it('fetches available dawlets', () => {
-    expect(fetchAvailableDawlets()).toMatchSnapshot()
-  })
-})
+});
 
 describe("fetchAvailableDawlets", () => {
   it("reads dawlets folder", () => {
