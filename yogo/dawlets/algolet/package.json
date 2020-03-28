@@ -17,7 +17,7 @@
   "description": "Algolet lets you write your own custom logic to generate music.",
   "dependencies": {
     "apollo-boost": "^0.4.7",
-    "common-utils": "^0.1.0",
+    "@dawlet/utils": "^0.1.0",
     "monaco-editor": "^0.19.3",
     "react": "^16.12.0",
     "react-apollo": "^3.1.3",
