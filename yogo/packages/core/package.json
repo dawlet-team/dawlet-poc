@@ -12,7 +12,8 @@
     "test": "jest",
     "start": "nodemon",
     "start:prod": "node lib/app.js",
-    "watch": "tsc --watch"
+    "watch": "tsc --watch",
+    "generate:docs": "graphdoc -s ./schema.gql -o ../../docs/schema"
   },
   "dependencies": {
     "@types/graphql": "^14.5.0",

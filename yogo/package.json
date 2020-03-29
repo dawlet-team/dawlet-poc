@@ -11,7 +11,8 @@
     "test": "lerna run test --parallel",
     "clean": "rimraf ./**/node_modules/ ./**/lib/",
     "launch": "lerna run --scope @dawlet/launcher electron",
-    "watch": "lerna run watch --parallel"
+    "watch": "lerna run watch --parallel",
+    "generate:docs": "lerna run generate:docs"
   },
   "devDependencies": {
     "conventional-changelog-cli": "^2.0.31",
