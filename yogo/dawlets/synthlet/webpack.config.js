@@ -1,1 +1,1 @@
-module.exports = require('react-electron-webpack-config')
+module.exports = require('@dawlet/webpack')

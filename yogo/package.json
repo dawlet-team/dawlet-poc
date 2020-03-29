@@ -10,7 +10,7 @@
     "build": "lerna run build",
     "test": "lerna run test --parallel",
     "clean": "rimraf ./**/node_modules/ ./**/lib/",
-    "launch": "lerna run --scope launcher electron",
+    "launch": "lerna run --scope @dawlet/launcher electron",
     "watch": "lerna run watch --parallel"
   },
   "devDependencies": {

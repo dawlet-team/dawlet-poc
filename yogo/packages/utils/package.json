@@ -1,5 +1,5 @@
 {
-  "name": "common-utils",
+  "name": "@dawlet/utils",
   "version": "0.1.0",
   "private": true,
   "license": "MIT",

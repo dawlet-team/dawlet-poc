@@ -5,17 +5,17 @@ Array [
   Object {
     "description": "Algolet lets you write your own custom logic to generate music.",
     "localizable": true,
-    "name": "algolet",
+    "name": "@dawlet/algolet",
   },
   Object {
     "description": "Sheetlet displays the music represented as a sheetmusic.",
     "localizable": true,
-    "name": "sheetlet",
+    "name": "@dawlet/sheetlet",
   },
   Object {
     "description": "Synthlet provides a simple synthesizer to playback the music. It has a dedicated local transport on its own. ",
     "localizable": true,
-    "name": "synthlet",
+    "name": "@dawlet/synthlet",
   },
 ]
 `;
@@ -32,6 +32,6 @@ exports[`retrieveDawletConfig gets dawlet config 1`] = `
 Object {
   "description": "Algolet lets you write your own custom logic to generate music.",
   "localizable": true,
-  "name": "algolet",
+  "name": "@dawlet/algolet",
 }
 `;

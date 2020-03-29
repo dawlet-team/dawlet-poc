@@ -5,7 +5,7 @@ import MonacoEditor from "react-monaco-editor";
 import SplitPane from 'react-split-pane'
 import { join } from "path";
 import { readFileSync } from "fs";
-import { SheetMusicViewer } from "sheetmusic-viewer";
+import { SheetMusicViewer } from "@dawlet/sheetmusic-viewer";
 
 const GET_HELLO = gql`
   query {

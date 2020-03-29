@@ -3,7 +3,7 @@ import { ipcRenderer } from "electron"
 import { useConfiguredDawlets } from './hooks/dawlets'
 import { Button, Typography } from '@material-ui/core'
 import { DawletList } from './components/DawletList'
-import { fetchAvailableDawlets } from "common-utils";
+import { fetchAvailableDawlets } from "@dawlet/utils";
 import { DawletIPC } from '../common/types'
 
 // Very very bad.

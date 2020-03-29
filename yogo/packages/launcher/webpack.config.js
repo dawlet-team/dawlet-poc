@@ -1,3 +1,3 @@
-const config = require('react-electron-webpack-config')
+const config = require('@dawlet/webpack')
 
 module.exports = config

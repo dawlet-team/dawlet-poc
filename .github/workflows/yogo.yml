@@ -1,9 +1,6 @@
 name: Node CI(yogo)
 
-on:
-  push:
-    branches:
-      - yogo
+on: push
 
 jobs:
   build:
@@ -22,10 +19,10 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: install
       working-directory: ./yogo
-      run: yarn
+      run: npm install
     - name: build
       working-directory: ./yogo
-      run: yarn build
+      run: npm run build
     - name: test
       working-directory: ./yogo
-      run: yarn test
+      run: npm run test

@@ -3,6 +3,13 @@ import { join } from 'path'
 
 export const pathToDawletsDir = join(process.cwd(), '../../dawlets')
 
+export const pkgNameWithoutPrefix = (pkgName: string) => {
+  if (pkgName.includes('@dawlet')) {
+    return pkgName.replace("@dawlet/", "")
+  }
+  throw new Error(`${pkgName} is not a Dawlet package`)
+}
+
 export const fetchAvailableDawlets = () => {
   return readDawletsDir().map(retrieveDawletConfig)
 }

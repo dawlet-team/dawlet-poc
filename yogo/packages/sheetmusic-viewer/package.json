@@ -1,5 +1,5 @@
 {
-  "name": "sheetmusic-viewer",
+  "name": "@dawlet/sheetmusic-viewer",
   "version": "0.1.0",
   "private": true,
   "license": "MIT",

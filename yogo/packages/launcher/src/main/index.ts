@@ -1,5 +1,5 @@
 import { app, BrowserWindow, ipcMain } from 'electron'
-import { installDevTools } from 'common-utils'
+import { installDevTools } from '@dawlet/utils'
 import { spawnDawlet } from './utils'
 import { DawletIPC } from '../common/types'
 

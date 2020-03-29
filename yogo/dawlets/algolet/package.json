@@ -1,5 +1,5 @@
 {
-  "name": "algolet",
+  "name": "@dawlet/algolet",
   "version": "0.1.0",
   "private": true,
   "license": "MIT",
@@ -17,15 +17,15 @@
   "description": "Algolet lets you write your own custom logic to generate music.",
   "dependencies": {
     "apollo-boost": "^0.4.7",
-    "common-utils": "^0.1.0",
+    "@dawlet/utils": "^0.1.0",
     "monaco-editor": "^0.19.3",
     "react": "^16.12.0",
     "react-apollo": "^3.1.3",
     "react-dom": "^16.12.0",
-    "react-electron-webpack-config": "^0.1.0",
+    "@dawlet/webpack": "^0.1.0",
     "react-monaco-editor": "^0.33.0",
     "react-split-pane": "^0.1.89",
-    "sheetmusic-viewer": "^0.1.0"
+    "@dawlet/sheetmusic-viewer": "^0.1.0"
   },
   "devDependencies": {
     "@types/jest": "^25.1.4",
