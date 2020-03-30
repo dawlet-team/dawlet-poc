@@ -12,6 +12,10 @@
 
 ![sequence](./assets/sequence.svg)
 
+## Core API
+
+[GraphQL Schema](https://dawlet-schema.now.sh/)
+
 ## List of Dawlets
 
 |           Name           |   Status    | Description                                                                                                  |
