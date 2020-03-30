@@ -1,6 +1,6 @@
 {
   "name": "@dawlet/algolet",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "license": "MIT",
   "author": "Yuichi Yogo",
@@ -16,9 +16,9 @@
   },
   "description": "Algolet lets you write your own custom logic to generate music.",
   "dependencies": {
-    "@dawlet/sheetmusic-viewer": "^0.1.0",
-    "@dawlet/utils": "^0.1.0",
-    "@dawlet/webpack": "^0.1.0",
+    "@dawlet/sheetmusic-viewer": "^0.2.0",
+    "@dawlet/utils": "^0.2.0",
+    "@dawlet/webpack": "^0.2.0",
     "apollo-boost": "^0.4.7",
     "monaco-editor": "^0.19.3",
     "react": "^16.12.0",
