@@ -3,6 +3,8 @@ import { gql } from "apollo-boost";
 import { Query } from "react-apollo";
 import MonacoEditor from "react-monaco-editor";
 import SplitPane from 'react-split-pane'
+// @ts-ignore
+import Pane from 'react-split-pane/lib/Pane';
 import { join } from "path";
 import { readFileSync } from "fs";
 import { SheetMusicViewer } from "@dawlet/sheetmusic-viewer";
@@ -40,21 +42,25 @@ const App = () => (
       };
 
       return (
-        <SplitPane split="vertical" defaultSize="400">
-          <div id="monaco-wrapper" style={{height: '100%'}}>
-            <MonacoEditor
-              language="javascript"
-              theme="vs-dark"
-              value={code}
-              options={{
-                selectOnLineNumbers: true,
-                automaticLayout: true
-              }}
-              onChange={onChange}
-              editorDidMount={onDidMount}
-            />
-          </div>
-          <SheetMusicViewer options={{ autoResize: true }} file={sampleFile} />
+        <SplitPane split="vertical">
+          <Pane>
+            <div id="monaco-wrapper" style={{height: '100%', opacity: 0.7}}>
+              <MonacoEditor
+                language="javascript"
+                theme="vs-dark"
+                value={code}
+                options={{
+                  selectOnLineNumbers: true,
+                  automaticLayout: true
+                }}
+                onChange={onChange}
+                editorDidMount={onDidMount}
+              />
+            </div>
+          </Pane>
+          <Pane style={{background: 'white'}}>
+            <SheetMusicViewer options={{ autoResize: true }} file={sampleFile} />
+          </Pane>
         </SplitPane>
       );
     }}

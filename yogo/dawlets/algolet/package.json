@@ -16,16 +16,16 @@
   },
   "description": "Algolet lets you write your own custom logic to generate music.",
   "dependencies": {
-    "apollo-boost": "^0.4.7",
+    "@dawlet/sheetmusic-viewer": "^0.1.0",
     "@dawlet/utils": "^0.1.0",
+    "@dawlet/webpack": "^0.1.0",
+    "apollo-boost": "^0.4.7",
     "monaco-editor": "^0.19.3",
     "react": "^16.12.0",
     "react-apollo": "^3.1.3",
     "react-dom": "^16.12.0",
-    "@dawlet/webpack": "^0.1.0",
     "react-monaco-editor": "^0.33.0",
-    "react-split-pane": "^0.1.89",
-    "@dawlet/sheetmusic-viewer": "^0.1.0"
+    "react-split-pane": "^2.0.3"
   },
   "devDependencies": {
     "@types/jest": "^25.1.4",
@@ -33,7 +33,7 @@
     "@types/react-dom": "^16.9.4",
     "@types/webpack": "^4.41.0",
     "css-loader": "^3.4.2",
-    "electron": "^7.1.7",
+    "electron": "^8.2.0",
     "file-loader": "^5.0.2",
     "html-webpack-plugin": "^3.2.0",
     "jest": "^25.1.0",
