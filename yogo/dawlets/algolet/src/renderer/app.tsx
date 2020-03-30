@@ -44,7 +44,7 @@ const App = () => (
       return (
         <SplitPane split="vertical">
           <Pane>
-            <div id="monaco-wrapper" style={{height: '100%'}}>
+            <div id="monaco-wrapper" style={{height: '100%', opacity: 0.7}}>
               <MonacoEditor
                 language="javascript"
                 theme="vs-dark"
@@ -58,7 +58,7 @@ const App = () => (
               />
             </div>
           </Pane>
-          <Pane>
+          <Pane style={{background: 'white'}}>
             <SheetMusicViewer options={{ autoResize: true }} file={sampleFile} />
           </Pane>
         </SplitPane>

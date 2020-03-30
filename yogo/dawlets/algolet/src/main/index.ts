@@ -8,7 +8,8 @@ function createWindow () {
     height: 800,
     webPreferences: {
       nodeIntegration: true
-    }
+    },
+    transparent: true,
   });
 
   installDevTools()
