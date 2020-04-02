@@ -6,10 +6,14 @@
   "author": "Yuichi Yogo",
   "main": "lib/main/index.js",
   "scripts": {
-    "build": "webpack --mode=production",
+    "build": "run-p build:*",
+    "build:main": "tsc --outDir lib/main",
+    "build:renderer": "webpack --mode=production",
     "electron": "electron .",
-    "start": "npm run build && electron .",
-    "watch": "webpack --mode=development --watch"
+    "start": "run-p watch electron",
+    "watch": "run-p watch:*",
+    "watch:main": "tsc --watch",
+    "watch:renderer": "webpack --mode=development --watch"
   },
   "dawlet": {
     "localizable": true
