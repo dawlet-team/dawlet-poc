@@ -1,4 +1,5 @@
-const [main, _renderer] = require('@dawlet/webpack')
+const main = require('./webpack.main.config')
+const _renderer = require('./webpack.renderer.config')
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 
 const monacoRules = [{
