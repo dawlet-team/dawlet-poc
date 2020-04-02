@@ -8,6 +8,11 @@ module.exports = {
         test: /\.ts$/,
         include: /src/,
         use: [{ loader: "ts-loader" }]
+      },
+      {
+        test: /\.mjs$/,
+        include: /node_modules/,
+        type: "javascript/auto",
       }
     ]
   },
