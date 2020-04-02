@@ -19,10 +19,10 @@ function createWindow () {
 
 const onSpawnDawlet: DawletIPC.spawnDawlet = (_, name) => spawnDawlet(name)
 
-const main = () => {
+const main = async () => {
   app.on('ready', createWindow);
   ipcMain.on(DawletIPC.events.SPAWN_DAWLET, onSpawnDawlet) 
-  bootstrap()
+  await bootstrap()
 }
  
-main()
+main().catch(console.error)
