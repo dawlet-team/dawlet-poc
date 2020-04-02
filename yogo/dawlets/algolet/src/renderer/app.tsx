@@ -44,7 +44,7 @@ const App = () => (
       return (
         <SplitPane split="vertical">
           <Pane>
-            <div id="monaco-wrapper" style={{height: '100%', opacity: 0.7}}>
+            <div id="monaco-wrapper" style={{height: '100%', opacity: 0.9}}>
               <MonacoEditor
                 language="javascript"
                 theme="vs-dark"

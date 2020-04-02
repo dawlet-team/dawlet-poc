@@ -2,6 +2,7 @@ import { app, BrowserWindow, ipcMain } from 'electron'
 import { installDevTools } from '@dawlet/utils'
 import { spawnDawlet } from './utils'
 import { DawletIPC } from '../common/types'
+import { bootstrap } from '@dawlet/core'
 
 function createWindow () {
   const win = new BrowserWindow({
@@ -18,13 +19,10 @@ function createWindow () {
 
 const onSpawnDawlet: DawletIPC.spawnDawlet = (_, name) => spawnDawlet(name)
 
-const main = () => {
+const main = async () => {
   app.on('ready', createWindow);
-  /**
-   * TODO:
-   * should start a core server, too.
-   */
   ipcMain.on(DawletIPC.events.SPAWN_DAWLET, onSpawnDawlet) 
+  await bootstrap()
 }
  
-main()
+main().catch(console.error)

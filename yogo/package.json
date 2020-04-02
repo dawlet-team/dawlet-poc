@@ -6,11 +6,11 @@
   "author": "Yuichi Yogo",
   "main": "index.js",
   "scripts": {
-    "postinstall": "lerna bootstrap --hoist --strict",
+    "postinstall": "lerna bootstrap",
     "build": "lerna run build",
     "test": "lerna run test --parallel",
     "clean": "rimraf ./**/node_modules/ ./**/lib/",
-    "launch": "lerna run --scope @dawlet/launcher electron",
+    "launch": "lerna run --stream --scope @dawlet/launcher electron",
     "watch": "lerna run watch --parallel",
     "generate:docs": "lerna run generate:docs"
   },

@@ -4,8 +4,7 @@
   "private": true,
   "license": "MIT",
   "author": "Yuichi Yogo",
-  "main": "lib/app.js",
-  "types": "./index.d.ts",
+  "main": "lib/bootstrap.js",
   "scripts": {
     "build": "tsc",
     "lint": "tsc --noEmit",

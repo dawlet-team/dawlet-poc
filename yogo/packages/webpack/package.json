@@ -1,8 +1,0 @@
-{
-  "name": "@dawlet/webpack",
-  "version": "0.2.0",
-  "private": true,
-  "license": "MIT",
-  "author": "Yuichi Yogo",
-  "main": "webpack.config.js"
-}
