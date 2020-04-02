@@ -1,0 +1,9 @@
+{
+  "extends": ["config:base"],
+  "packageRules": [
+    {
+      "packagePatterns": ["^deprecated"],
+      "enabled": false
+    }
+  ]
+}
