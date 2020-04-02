@@ -18,7 +18,6 @@
   "dependencies": {
     "@dawlet/sheetmusic-viewer": "^0.2.0",
     "@dawlet/utils": "^0.2.0",
-    "@dawlet/webpack": "^0.2.0",
     "apollo-boost": "^0.4.7",
     "electron": "^8.2.0",
     "react": "^16.12.0",
