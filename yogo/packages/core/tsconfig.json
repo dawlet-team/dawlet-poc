@@ -5,8 +5,10 @@
     "lib": ["es2016", "esnext.asynciterable", "dom"],
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
+    "declaration": true,
     "esModuleInterop": true,
-    "outDir": "./lib"
+    "outDir": "./lib",
+    "strictNullChecks": true
   },
   "include": ["../../index.d.ts", "./src"]
 }

@@ -23,6 +23,41 @@ declare namespace Dawlet {
       append(note: INote.Entity): Entity
     }
   }
+
+  namespace IGroup {
+    type Map = {
+      [key:string]: Entity
+    }
+    interface Entity {
+      /**
+       * unique identifier
+       */
+      id: string
+      /**
+       * Notes belonging to the group
+       */
+      notes: INote.Entity[]
+    }
+    interface Service {
+      /**
+       * creates a new group
+       */
+      create(id: string): Entity
+      /**
+       * Retrieves the specified group
+       */
+      findBy(id: string): Entity
+      /**
+       * Add notes to the group
+       */
+      push(id:string, payload: PushNoteInput): Entity
+    }
+
+    interface PushNoteInput {
+      notes: INote.Entity[]
+    }
+  }
+
   namespace INote {
     interface Entity {
       /**

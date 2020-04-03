@@ -1,5 +1,5 @@
 import { app, BrowserWindow } from 'electron'
-import { installDevTools } from 'common-utils'
+import { installDevTools } from '@dawlet/utils'
  
 function createWindow () {
   // Create the browser window.

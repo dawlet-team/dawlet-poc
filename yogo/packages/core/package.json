@@ -1,17 +1,18 @@
 {
-  "name": "core",
-  "version": "0.0.1",
+  "name": "@dawlet/core",
+  "version": "0.3.0",
   "private": true,
   "license": "MIT",
   "author": "Yuichi Yogo",
-  "main": "lib/app.js",
-  "types": "./index.d.ts",
+  "main": "lib/bootstrap.js",
   "scripts": {
     "build": "tsc",
     "lint": "tsc --noEmit",
+    "test": "jest",
     "start": "nodemon",
     "start:prod": "node lib/app.js",
-    "watch": "tsc --watch"
+    "watch": "tsc --watch",
+    "generate:docs": "graphdoc -s ./schema.gql -o ../../docs/schema"
   },
   "dependencies": {
     "@types/graphql": "^14.5.0",
@@ -20,5 +21,16 @@
     "reflect-metadata": "^0.1.13",
     "type-graphql": "^0.17.6",
     "typedi": "^0.8.0"
+  },
+  "devDependencies": {
+    "@2fd/graphdoc": "^2.4.0",
+    "@types/jest": "^25.1.4",
+    "apollo-server-testing": "^2.11.0",
+    "jest": "^25.1.0",
+    "nodemon": "^2.0.2",
+    "prettier": "^1.19.1",
+    "ts-jest": "^25.2.1",
+    "ts-node": "^8.7.0",
+    "typescript": "^3.8.3"
   }
 }
