@@ -1,9 +1,4 @@
 {
   "extends": ["config:base"],
-  "packageRules": [
-    {
-      "packagePatterns": ["^deprecated"],
-      "enabled": false
-    }
-  ]
+  "ignorePaths": ["./zigen/package.json", "./satoshi/package.json"]
 }
