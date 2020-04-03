@@ -22,11 +22,11 @@
     "redux-actions": "^2.6.5"
   },
   "devDependencies": {
-    "@babel/preset-env": "7.7.6",
-    "@babel/preset-flow": "7.7.4",
-    "@babel/preset-react": "7.7.4",
+    "@babel/preset-env": "7.9.0",
+    "@babel/preset-flow": "7.9.0",
+    "@babel/preset-react": "7.9.4",
     "@types/jest": "24.0.23",
-    "babel-eslint": "10.0.3",
+    "babel-eslint": "10.1.0",
     "copyfiles": "2.1.1",
     "electron": "7.1.5",
     "electron-devtools-installer": "2.2.4",
