@@ -14,14 +14,14 @@ const monacoRules = [
 
 /** @type import('webpack').Configuration */
 module.exports = {
-  entry: "./src/renderer/index.tsx",
+  entry: "./renderer/index.tsx",
   target: "electron-renderer",
   devtool: "source-map",
   module: {
     rules: [
       {
         test: /\.ts(x?)$/,
-        include: /src/,
+        include: /renderer/,
         use: [{ loader: "ts-loader" }]
       },
       ...monacoRules
@@ -33,7 +33,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/renderer/index.html"
+      template: "./renderer/index.html"
     }),
     new MonacoWebpackPlugin({
       languages: ["javascript", "typescript"]
