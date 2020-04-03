@@ -1,12 +1,20 @@
 # Dawlet POC
 
-![gh actions status](<https://github.com/dawlet-team/dawlet-poc/workflows/Node%20CI(yogo)/badge.svg>)
+![Node CI(yogo)](https://github.com/dawlet-team/dawlet-poc/workflows/Node%20CI(yogo)/badge.svg)
 
 ![dawlet-logo](./assets/dawlet-logo-animation.gif)
 
 ## Concept Image
 
 ![concept](./assets/dawlet-poc-concept.png)
+
+## RoadMaps
+
+[Github Project](https://github.com/orgs/dawlet-team/projects/1)
+
+## Ideas (In Japanese)
+
+[miro](https://miro.com/app/board/o9J_ku1DEhQ=/)
 
 ## Currently Planned Sequence
 
