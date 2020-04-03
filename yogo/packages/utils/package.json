@@ -12,7 +12,7 @@
     "watch": "tsc --watch"
   },
   "devDependencies": {
-    "@types/jest": "25.1.5",
+    "@types/jest": "25.2.1",
     "@types/node": "13.11.0",
     "electron-devtools-installer": "2.2.4",
     "jest": "25.2.6",

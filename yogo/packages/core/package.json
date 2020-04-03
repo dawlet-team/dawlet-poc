@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "@2fd/graphdoc": "2.4.0",
-    "@types/jest": "25.1.5",
+    "@types/jest": "25.2.1",
     "apollo-server-testing": "2.11.0",
     "jest": "25.2.6",
     "nodemon": "2.0.2",
