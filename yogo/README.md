@@ -7,6 +7,7 @@
   - [RoadMaps](#roadmaps)
   - [Ideas (In Japanese)](#ideas-in-japanese)
   - [Currently Planned Sequence](#currently-planned-sequence)
+  - [Community](#community)
   - [Core API](#core-api)
   - [List of Dawlets](#list-of-dawlets)
 
@@ -15,7 +16,7 @@
 # Dawlet POC
 
 ![Node CI(yogo)](https://github.com/dawlet-team/dawlet-poc/workflows/Node%20CI(yogo)/badge.svg)
-![Discord](https://img.shields.io/discord/695758741655519273?color=%23606abb&label=Discord&style=appyor)
+[![Discord](https://img.shields.io/discord/695758741655519273?color=%23606abb&label=Discord&style=appyor)](https://discord.gg/H6YFDsd)
 
 ![dawlet-logo](./assets/dawlet-logo-animation.gif)
 
@@ -34,6 +35,11 @@
 ## Currently Planned Sequence
 
 ![sequence](./assets/sequence.svg)
+
+## Community
+
+Excited about Dawlet?  
+Join Our Community on [Discord](https://discord.gg/H6YFDsd)!
 
 ## Core API
 
