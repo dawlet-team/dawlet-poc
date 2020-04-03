@@ -15,6 +15,7 @@
 # Dawlet POC
 
 ![Node CI(yogo)](https://github.com/dawlet-team/dawlet-poc/workflows/Node%20CI(yogo)/badge.svg)
+![Discord](https://img.shields.io/discord/695758741655519273?color=%23606abb&label=Discord&style=appyor)
 
 ![dawlet-logo](./assets/dawlet-logo-animation.gif)
 
