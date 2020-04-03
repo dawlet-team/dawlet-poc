@@ -1,7 +1,9 @@
 import { app, BrowserWindow } from 'electron'
+import { version } from '../package.json'
 import { installDevTools } from '@dawlet/utils'
  
 function createWindow () {
+  const title = `Algolet ${version}`
   // Create the browser window.
   let win = new BrowserWindow({
     width: 1200,
@@ -10,6 +12,8 @@ function createWindow () {
       nodeIntegration: true
     },
     transparent: true,
+    frame: false,
+    title,
   });
 
   installDevTools()

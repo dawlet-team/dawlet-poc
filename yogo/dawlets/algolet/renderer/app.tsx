@@ -1,4 +1,5 @@
 import React from "react";
+import { remote } from 'electron'
 import { gql } from "apollo-boost";
 import { Query } from "react-apollo";
 import MonacoEditor from "react-monaco-editor";
@@ -25,8 +26,11 @@ const App = () => (
     {({ loading, error, data }: any) => {
       if (loading) return <div>Loading...</div>;
       if (error) console.error(error);
-      // const code = this.state.code;
-      const code = "const pitch = Math.floor(Math.random() * 60)";
+      const title = remote.getCurrentWindow().getTitle()
+      const code = `
+      /* ${title} */
+      const pitch = Math.floor(Math.random() * 60)
+      `;
 
       /**
        * TODO:
