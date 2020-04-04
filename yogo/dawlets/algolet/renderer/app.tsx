@@ -6,20 +6,15 @@ import MonacoEditor from "react-monaco-editor";
 import SplitPane from 'react-split-pane'
 // @ts-ignore
 import Pane from 'react-split-pane/lib/Pane';
-import { join } from "path";
-import { readFileSync } from "fs";
 import { SheetMusicViewer } from "@dawlet/sheetmusic-viewer";
+// @ts-ignore
+import sampleFile from './sample.xml' // FIX_ME: hackie escape
 
 const GET_HELLO = gql`
   query {
     hello
   }
 `;
-
-const sampleFile = readFileSync(
-  join(process.cwd(), "../../packages/sheetmusic-viewer/public/sample.xml"),
-  { encoding: "utf-8" }
-);
 
 const App = () => (
   <Query query={GET_HELLO}>

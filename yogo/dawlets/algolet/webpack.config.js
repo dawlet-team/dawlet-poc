@@ -24,6 +24,10 @@ module.exports = {
         include: /renderer/,
         use: [{ loader: "ts-loader" }]
       },
+      {
+        test: /\.xml$/,
+        use: 'raw-loader'
+      },
       ...monacoRules
     ]
   },
