@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.1](https://github.com/dawlet-team/dawlet-poc/compare/v0.3.0...v0.3.1) (2020-04-04)
+
+
+### Bug Fixes
+
+* **deps:** update dependency monaco-editor to v0.20.0 ([509a250](https://github.com/dawlet-team/dawlet-poc/commit/509a2500ea0fe89301cb0fe688dcc8fa73b73f83))
+* **deps:** update dependency react-apollo to v3.1.4 ([c94003e](https://github.com/dawlet-team/dawlet-poc/commit/c94003e463ddf0a965dd55b54553e8cf25afc4bf))
+* **deps:** update dependency react-monaco-editor to v0.35.0 ([a1506cd](https://github.com/dawlet-team/dawlet-poc/commit/a1506cdb2b943b623f76c90f56698fdbe9107d8a))
+
+
+
+
+
 # [0.3.0](https://github.com/dawlet-team/dawlet-poc/compare/v0.2.0...v0.3.0) (2020-04-03)
 
 
