@@ -38,7 +38,7 @@ jobs:
         working-directory: ./yogo/dawlets/algolet # WHEN MIGRATED TO A SEPARATE REPO, REMOVE THIS
         # working-directory: ./yogo # WHEN MIGRATED TO A SEPARATE REPO, REMOVE THIS
         run: env
-        with:
+        env:
           mac_csc_link: ${{ secrets.mac_certs }} 
           # mac_csc_link_password: ${{ secrets.mac_certs_password }} 
       # - name: Cleanup artifacts
