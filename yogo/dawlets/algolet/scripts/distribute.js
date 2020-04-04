@@ -1,6 +1,19 @@
 const { execSync } = require("child_process")
 
 const run = (cmd, cwd) => execSync(cmd, { encoding: "utf8", stdio: "inherit", cwd });
+const setEnv = (name, value) => {
+	if (value) {
+		process.env[name.toUpperCase()] = value.toString();
+	}
+};
+const getEnv = name => process.env[name.toUpperCase()] || null;
+const getInput = (name, required) => {
+	const value = getEnv(`INPUT_${name}`);
+	if (required && !value) {
+		throw new Error(`"${name}" input variable is not defined`);
+	}
+	return value;
+};
 const getPlatform = () => {
 	switch (process.platform) {
 		case "darwin":
@@ -16,7 +29,13 @@ const platform = getPlatform()
 console.log(`creating distribution for ${platform}`)
 
 if (platform === 'mac') {
-  console.log(process.env.MAC_CSC_LINK)
+  setEnv("CSC_LINK", getInput("mac_csc_link"));
+  setEnv("CSC_KEY_PASSWORD", getInput("mac_csc_link_password"));
+  run(
+		`npx electron-builder --${platform}`,
+		// `CSC_LINK=${process.env.MAC_CSC_LINK} CSC_KEY_PASSWORD=${process.env.MAC_CSC_LINK_PASSWORD} npx electron-builder --${platform} --publish always`,
+		process.cwd(),
+	);
 }
 if (platform === 'windows') {
   throw new Error('not supported yet') // TODO
