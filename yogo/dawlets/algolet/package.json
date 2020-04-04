@@ -18,8 +18,8 @@
     "watch:renderer": "webpack --mode=development --watch"
   },
   "build": {
-    "appId": "com.electron.algolet",
-    "productName": "Algolet"
+    "appId": "com.electron.algolet-beta",
+    "productName": "Algolet@Beta"
   },
   "dawlet": {
     "localizable": true
