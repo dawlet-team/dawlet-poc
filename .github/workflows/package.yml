@@ -34,9 +34,12 @@ jobs:
       - name: Build 
         working-directory: ./yogo # WHEN MIGRATED TO A SEPARATE REPO, REMOVE THIS
         run: npm run build
-      # - name: Publish
-      #   run: |
-      #     yarn run dist
+      - name: Publish
+        working-directory: ./yogo # WHEN MIGRATED TO A SEPARATE REPO, REMOVE THIS
+        run: npm run dist
+        env:
+          MAC_CSC_LINK: ${{ secrets.mac_certs }} 
+          MAC_CSC_LINK_PASSWORD: ${{ secrets.mac_certs_password }} 
       # - name: Cleanup artifacts
       #   run: |
       #     npx rimraf "dist/!(*.exe|*.deb|*.AppImage|*.dmg)"
