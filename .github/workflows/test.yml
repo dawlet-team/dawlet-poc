@@ -1,4 +1,4 @@
-name: Node CI(yogo)
+name: Node CI(test)
 
 on: push
 
