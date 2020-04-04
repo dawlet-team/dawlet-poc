@@ -45,4 +45,4 @@
 // }
 
 console.log('ping')
-console.log(process.env["mac_csc_link"])
+console.log(process.env)
