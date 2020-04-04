@@ -28,19 +28,18 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12.x
-      # - name: Install
-      #   working-directory: ./yogo # WHEN MIGRATED TO A SEPARATE REPO, REMOVE THIS
-      #   run: npm install
+      - name: Install
+        working-directory: ./yogo # WHEN MIGRATED TO A SEPARATE REPO, REMOVE THIS
+        run: npm install
       # - name: Build 
       #   working-directory: ./yogo # WHEN MIGRATED TO A SEPARATE REPO, REMOVE THIS
       #   run: npm run build
       - name: Publish
-        working-directory: ./yogo/dawlets/algolet # WHEN MIGRATED TO A SEPARATE REPO, REMOVE THIS
-        # working-directory: ./yogo # WHEN MIGRATED TO A SEPARATE REPO, REMOVE THIS
-        run: env
+        working-directory: ./yogo # WHEN MIGRATED TO A SEPARATE REPO, REMOVE THIS
+        run: npm run dist
         env:
           mac_csc_link: ${{ secrets.mac_certs }} 
-          # mac_csc_link_password: ${{ secrets.mac_certs_password }} 
+          mac_csc_link_password: ${{ secrets.mac_certs_password }} 
       # - name: Cleanup artifacts
       #   run: |
       #     npx rimraf "dist/!(*.exe|*.deb|*.AppImage|*.dmg)"
