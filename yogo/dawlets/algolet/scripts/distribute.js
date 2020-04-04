@@ -29,8 +29,8 @@ const platform = getPlatform()
 console.log(`creating distribution for ${platform}`)
 
 if (platform === 'mac') {
-  setEnv("CSC_LINK", getInput("mac_csc_link"));
-  setEnv("CSC_KEY_PASSWORD", getInput("mac_csc_link_password"));
+  setEnv("CSC_LINK", getInput("mac_csc_link", true));
+  setEnv("CSC_KEY_PASSWORD", getInput("mac_csc_link_password", true));
   run(
 		`npx electron-builder --${platform}`,
 		// `CSC_LINK=${process.env.MAC_CSC_LINK} CSC_KEY_PASSWORD=${process.env.MAC_CSC_LINK_PASSWORD} npx electron-builder --${platform} --publish always`,

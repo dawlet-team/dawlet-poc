@@ -38,8 +38,8 @@ jobs:
         working-directory: ./yogo # WHEN MIGRATED TO A SEPARATE REPO, REMOVE THIS
         run: npm run dist
         env:
-          MAC_CSC_LINK: ${{ secrets.mac_certs }} 
-          MAC_CSC_LINK_PASSWORD: ${{ secrets.mac_certs_password }} 
+          mac_csc_link: ${{ secrets.mac_certs }} 
+          mac_csc_link_password: ${{ secrets.mac_certs_password }} 
       # - name: Cleanup artifacts
       #   run: |
       #     npx rimraf "dist/!(*.exe|*.deb|*.AppImage|*.dmg)"
