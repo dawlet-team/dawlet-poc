@@ -9,11 +9,17 @@
     "build": "run-p build:*",
     "build:main": "tsc",
     "build:renderer": "webpack --mode=production",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
     "electron": "electron .",
     "start": "run-p watch electron",
     "watch": "run-p watch:*",
     "watch:main": "tsc --watch",
     "watch:renderer": "webpack --mode=development --watch"
+  },
+  "build": {
+    "appId": "com.electron.algolet",
+    "productName": "Algolet"
   },
   "dawlet": {
     "localizable": true
