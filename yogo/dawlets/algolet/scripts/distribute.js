@@ -8,7 +8,7 @@ const setEnv = (name, value) => {
 };
 const getEnv = name => process.env[name.toUpperCase()] || null;
 const getInput = (name, required) => {
-	const value = getEnv(`INPUT_${name}`);
+	const value = getEnv(name);
 	if (required && !value) {
 		throw new Error(`"${name}" input variable is not defined`);
 	}
