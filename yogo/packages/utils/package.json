@@ -12,7 +12,8 @@
     "watch": "tsc --watch"
   },
   "dependencies": {
-    "electron-devtools-installer": "2.2.4"
+    "electron-devtools-installer": "2.2.4",
+    "electron-unhandled": "^3.0.2"
   },
   "devDependencies": {
     "@types/jest": "25.2.1",
