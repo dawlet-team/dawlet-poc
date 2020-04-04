@@ -1,6 +1,10 @@
 name: Electron CD
 
 on: [push]
+# on:
+#   push: 
+#     tags:
+#       - '*'
 
 jobs:
   build:
@@ -25,10 +29,10 @@ jobs:
         with:
           node-version: 12.x
       - name: Install
-        working-directory: ./yogo
+        working-directory: ./yogo # WHEN MIGRATED TO A SEPARATE REPO, REMOVE THIS
         run: npm install
       - name: Build 
-        working-directory: ./yogo
+        working-directory: ./yogo # WHEN MIGRATED TO A SEPARATE REPO, REMOVE THIS
         run: npm run build
       # - name: Publish
       #   run: |
