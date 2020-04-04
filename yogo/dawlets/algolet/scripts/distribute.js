@@ -44,4 +44,5 @@
 //   throw new Error('not supported yet') // TODO
 // }
 
+console.log('ping')
 console.log(process.env["mac_csc_link"])
