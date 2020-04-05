@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/dawlet-team/dawlet-poc/compare/v0.4.0...v0.5.0) (2020-04-05)
+
+
+### Bug Fixes
+
+* release dist path ([4945e93](https://github.com/dawlet-team/dawlet-poc/commit/4945e93a52eb069dd7ee0b3cf6f2805c8a78c9b9))
+* release path ([fd46ccc](https://github.com/dawlet-team/dawlet-poc/commit/fd46ccc086e2f1bfb60ce23ef660b75eabd9a484))
+
+
+### Features
+
+* **algolet:** release ([f55b73f](https://github.com/dawlet-team/dawlet-poc/commit/f55b73ffc9669ace95c8a2d375071488d2f1ca2a))
+* add CD action ([7090423](https://github.com/dawlet-team/dawlet-poc/commit/7090423fee533ad3c2b6c82d3f0ecf8ba9afed7c))
+
+
+
+
+
 # [0.4.0](https://github.com/dawlet-team/dawlet-poc/compare/v0.3.1...v0.4.0) (2020-04-04)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/dawlet-team/dawlet-poc/compare/v0.4.0...v0.5.0) (2020-04-05)
+
+
+### Features
+
+* **algolet:** release ([f55b73f](https://github.com/dawlet-team/dawlet-poc/commit/f55b73ffc9669ace95c8a2d375071488d2f1ca2a))
+
+
+
+
+
 # [0.4.0](https://github.com/dawlet-team/dawlet-poc/compare/v0.3.1...v0.4.0) (2020-04-04)
 
 
