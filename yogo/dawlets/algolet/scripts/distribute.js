@@ -1,48 +1,43 @@
-// const { execSync } = require("child_process")
+const { execSync } = require("child_process")
 
-// const run = (cmd, cwd) => execSync(cmd, { encoding: "utf8", stdio: "inherit", cwd });
-// const setEnv = (name, value) => {
-// 	if (value) {
-// 		process.env[name.toUpperCase()] = value.toString();
-// 	}
-// };
-// const getEnv = name => process.env[name.toUpperCase()] || null;
-// const getInput = (name, required) => {
-// 	const value = getEnv(name);
-// 	if (required && !value) {
-// 		throw new Error(`"${name}" input variable is not defined`);
-// 	}
-// 	return value;
-// };
-// const getPlatform = () => {
-// 	switch (process.platform) {
-// 		case "darwin":
-// 			return "mac";
-// 		case "win32":
-// 			return "windows";
-// 		default:
-// 			return "linux";
-// 	}
-// };
+const run = (cmd, cwd) => execSync(cmd, { encoding: "utf8", stdio: "inherit", cwd });
+const setEnv = (name, value) => {
+	if (value) {
+		process.env[name.toUpperCase()] = value.toString();
+	}
+};
+const getPlatform = () => {
+	switch (process.platform) {
+		case "darwin":
+			return "mac";
+		case "win32":
+			return "windows";
+		default:
+			return "linux";
+	}
+};
 
-// const platform = getPlatform()
-// console.log(`creating distribution for ${platform}`)
+const platform = getPlatform()
+console.log(`creating distribution for ${platform}`)
 
-// if (platform === 'mac') {
-//   setEnv("CSC_LINK", getInput("mac_csc_link", true));
-//   setEnv("CSC_KEY_PASSWORD", getInput("mac_csc_link_password", true));
-//   run(
-// 		`npx electron-builder --${platform}`,
-// 		// `CSC_LINK=${process.env.MAC_CSC_LINK} CSC_KEY_PASSWORD=${process.env.MAC_CSC_LINK_PASSWORD} npx electron-builder --${platform} --publish always`,
-// 		process.cwd(),
-// 	);
-// }
-// if (platform === 'windows') {
-//   throw new Error('not supported yet') // TODO
-// }
-// if (platform === 'linux') {
-//   throw new Error('not supported yet') // TODO
-// }
+if (platform === 'mac') {
+  const CSC_LINK = process.env["mac_csc_link"]
+  if(!CSC_LINK) throw new Error("CSC_LINK is not defined")
+  setEnv("CSC_LINK", CSC_LINK);
 
-console.log('ping')
-console.log(process.env)
+  const CSC_LINK_PASSWORD = process.env["mac_csc_link_password"]
+  if(!CSC_LINK_PASSWORD) throw new Error("CSC_LINK_PASSWORD is not defined")
+  setEnv("CSC_KEY_PASSWORD", CSC_LINK_PASSWORD);
+
+  run(
+		`npx electron-builder --${platform}`,
+		// `CSC_LINK=${process.env.MAC_CSC_LINK} CSC_KEY_PASSWORD=${process.env.MAC_CSC_LINK_PASSWORD} npx electron-builder --${platform} --publish always`,
+		process.cwd(),
+	);
+}
+if (platform === 'windows') {
+  throw new Error('not supported yet') // TODO
+}
+if (platform === 'linux') {
+  throw new Error('not supported yet') // TODO
+}

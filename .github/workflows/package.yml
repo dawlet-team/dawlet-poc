@@ -31,9 +31,9 @@ jobs:
       - name: Install
         working-directory: ./yogo # WHEN MIGRATED TO A SEPARATE REPO, REMOVE THIS
         run: npm install
-      # - name: Build 
-      #   working-directory: ./yogo # WHEN MIGRATED TO A SEPARATE REPO, REMOVE THIS
-      #   run: npm run build
+      - name: Build 
+        working-directory: ./yogo # WHEN MIGRATED TO A SEPARATE REPO, REMOVE THIS
+        run: npm run build
       - name: Publish
         working-directory: ./yogo # WHEN MIGRATED TO A SEPARATE REPO, REMOVE THIS
         run: npm run dist
