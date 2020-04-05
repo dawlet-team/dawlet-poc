@@ -10,7 +10,7 @@
     "build:main": "tsc",
     "build:renderer": "webpack --mode=production",
     "pack": "electron-builder --dir",
-    "dist": "electron-builder",
+    "dist": "node ./scripts/distribute",
     "electron": "electron .",
     "start": "run-p watch electron",
     "watch": "run-p watch:*",

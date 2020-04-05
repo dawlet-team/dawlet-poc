@@ -16,6 +16,10 @@
 # Dawlet POC
 
 ![Node CI(yogo)](https://github.com/dawlet-team/dawlet-poc/workflows/Node%20CI(yogo)/badge.svg)
+![github-last-commit-image](https://img.shields.io/github/last-commit/dawlet-team/dawlet-poc.svg?style=appyor)
+![github-commit-activity-image](https://img.shields.io/github/commit-activity/y/dawlet-team/dawlet-poc.svg?style=appyor)
+![github-release-date-image](https://img.shields.io/github/release-date/dawlet-team/dawlet-poc.svg?style=appyor)
+![github-contributors-image](https://img.shields.io/github/contributors/dawlet-team/dawlet-poc.svg?style=appyor)
 [![Discord](https://img.shields.io/discord/695758741655519273?color=%23606abb&label=Discord&style=appyor)](https://discord.gg/H6YFDsd)
 
 ![dawlet-logo](./assets/dawlet-logo-animation.gif)

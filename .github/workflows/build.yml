@@ -1,0 +1,48 @@
+name: build
+
+on:
+  push: 
+    tags:
+      - '*'
+
+jobs:
+  build:
+
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [macOS-10.14]
+        # os: [macOS-10.14, windows-2016, ubuntu-18.04]
+
+    steps:
+      - name: Context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
+      - uses: actions/checkout@v1
+        with:
+          fetch-depth: 1
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: Install
+        working-directory: ./yogo # WHEN MIGRATED TO A SEPARATE REPO, REMOVE THIS
+        run: npm install
+      - name: Build 
+        working-directory: ./yogo # WHEN MIGRATED TO A SEPARATE REPO, REMOVE THIS
+        run: npm run build
+      - name: Package
+        working-directory: ./yogo # WHEN MIGRATED TO A SEPARATE REPO, REMOVE THIS
+        run: npm run dist
+        env:
+          mac_csc_link: ${{ secrets.mac_certs }} 
+          mac_csc_link_password: ${{ secrets.mac_certs_password }} 
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: "yogo/dawlets/**/dist/*.dmg"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
