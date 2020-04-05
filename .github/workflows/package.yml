@@ -1,10 +1,9 @@
 name: Electron CD
 
-on: [push]
-# on:
-#   push: 
-#     tags:
-#       - '*'
+on:
+  push: 
+    tags:
+      - '*'
 
 jobs:
   build:
@@ -42,7 +41,7 @@ jobs:
           mac_csc_link_password: ${{ secrets.mac_certs_password }} 
       - name: Release
         uses: softprops/action-gh-release@v1
-        # if: startsWith(github.ref, 'refs/tags/')
+        if: startsWith(github.ref, 'refs/tags/')
         with:
           draft: true
           files: "dawlets/dist/**/*.dmg"
