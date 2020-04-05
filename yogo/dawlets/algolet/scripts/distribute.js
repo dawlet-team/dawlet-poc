@@ -31,7 +31,6 @@ if (platform === 'mac') {
 
   run(
 		`npx electron-builder --${platform}`,
-		// `CSC_LINK=${process.env.MAC_CSC_LINK} CSC_KEY_PASSWORD=${process.env.MAC_CSC_LINK_PASSWORD} npx electron-builder --${platform} --publish always`,
 		process.cwd(),
 	);
 }
