@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/dawlet-team/dawlet-poc/compare/v0.5.0...v0.6.0) (2020-04-06)
+
+
+### Bug Fixes
+
+* **deps:** update dependency tone to v14.5.44 ([efce28a](https://github.com/dawlet-team/dawlet-poc/commit/efce28a7101c2fa99a6f84c5e9bf1396f211b237))
+
+
+### Features
+
+* **algolet:** add runtime logging ([3814f85](https://github.com/dawlet-team/dawlet-poc/commit/3814f85e2e8667c7cf7043e1e3e325b580812ed1))
+* **algolet:** auto-update ([38fd832](https://github.com/dawlet-team/dawlet-poc/commit/38fd8327db38c72bcf310ee3a65005ed779574a5))
+
+
+
+
+
 # [0.5.0](https://github.com/dawlet-team/dawlet-poc/compare/v0.4.0...v0.5.0) (2020-04-05)
 
 
