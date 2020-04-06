@@ -21,6 +21,10 @@
     "appId": "com.electron.algolet-beta",
     "productName": "Algolet@Beta",
     "mac": {
+      "publish": {
+        "provider": "github",
+        "releaseType": "release"
+      },
       "artifactName": "algolet-${os}-${version}.${ext}"
     }
   },
