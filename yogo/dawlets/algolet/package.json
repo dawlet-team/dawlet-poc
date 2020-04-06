@@ -19,7 +19,10 @@
   },
   "build": {
     "appId": "com.electron.algolet-beta",
-    "productName": "Algolet@Beta"
+    "productName": "Algolet@Beta",
+    "mac": {
+      "artifactName": "algolet-${os}-${version}.${ext}"  
+    }
   },
   "dawlet": {
     "localizable": true
