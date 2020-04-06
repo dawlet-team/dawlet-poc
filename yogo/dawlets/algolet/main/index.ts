@@ -16,9 +16,7 @@ function createWindow () {
     webPreferences: {
       nodeIntegration: true
     },
-    transparent: true,
-    frame: false,
-    title,
+    title
   });
 
   installDevTools()
