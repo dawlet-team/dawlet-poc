@@ -1,7 +1,9 @@
 import { app, BrowserWindow } from 'electron'
 import { version } from '../package.json'
 import { installDevTools, unhandled } from '@dawlet/utils'
+import log from 'electron-log'
 
+log.info(`Algolet ${version} started`);
 unhandled({showDialog: true})
 
 function createWindow () {
