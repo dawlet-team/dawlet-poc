@@ -1,6 +1,6 @@
 {
   "name": "@dawlet/algolet",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "private": true,
   "license": "MIT",
   "author": "Yuichi Yogo",
@@ -21,7 +21,7 @@
     "appId": "com.electron.algolet-beta",
     "productName": "Algolet@Beta",
     "mac": {
-      "artifactName": "algolet-${os}-${version}.${ext}"  
+      "artifactName": "algolet-${os}-${version}.${ext}"
     }
   },
   "dawlet": {
