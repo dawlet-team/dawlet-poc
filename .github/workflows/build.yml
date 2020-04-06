@@ -39,10 +39,4 @@ jobs:
         env:
           mac_csc_link: ${{ secrets.mac_certs }} 
           mac_csc_link_password: ${{ secrets.mac_certs_password }} 
-      - name: Release
-        uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
-        with:
-          files: "yogo/dawlets/**/dist/*.dmg"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
