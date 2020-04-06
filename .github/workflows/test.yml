@@ -2,8 +2,9 @@ name: test
 
 on:
   push:
-    branches: 
+    branches:
       - '*'
+      - '*/*'
 
 jobs:
   build:

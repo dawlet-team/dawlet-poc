@@ -29,8 +29,11 @@ if (platform === 'mac') {
   if(!CSC_LINK_PASSWORD) throw new Error("CSC_LINK_PASSWORD is not defined")
   setEnv("CSC_KEY_PASSWORD", CSC_LINK_PASSWORD);
 
+  const GH_TOKEN = process.env["GH_TOKEN"]
+  if(!GH_TOKEN) throw new Error("GH_TOKEN is not defined")
+
   run(
-		`npx electron-builder --${platform}`,
+		`npx electron-builder --${platform} --publish always`,
 		process.cwd(),
 	);
 }

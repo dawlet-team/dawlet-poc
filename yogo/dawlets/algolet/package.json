@@ -24,11 +24,17 @@
   "dawlet": {
     "localizable": true
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dawlet-team/dawlet-poc"
+  },
   "description": "Algolet lets you write your own custom logic to generate music.",
   "dependencies": {
     "@dawlet/sheetmusic-viewer": "^0.5.0",
     "@dawlet/utils": "^0.5.0",
     "apollo-boost": "0.4.7",
+    "electron-log": "^4.1.1",
+    "electron-updater": "^4.2.5",
     "graphql": "14.6.0",
     "monaco-editor": "0.20.0",
     "react": "16.13.1",
