@@ -15,6 +15,7 @@
 
 # Dawlet POC
 
+![build](https://github.com/dawlet-team/dawlet-poc/workflows/build/badge.svg)
 ![test](https://github.com/dawlet-team/dawlet-poc/workflows/test/badge.svg)
 ![github-last-commit-image](https://img.shields.io/github/last-commit/dawlet-team/dawlet-poc.svg?style=appyor)
 ![github-commit-activity-image](https://img.shields.io/github/commit-activity/y/dawlet-team/dawlet-poc.svg?style=appyor)
