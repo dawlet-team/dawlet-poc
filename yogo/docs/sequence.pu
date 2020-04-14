@@ -9,13 +9,12 @@ participant Rolelet
 database PkgRegistry
 database Github
 
-
 == Initialization ==
 
 User -> Launcher: Click Launcher App
 Launcher -> Launcher: Start the core server
-Launcher -> PkgRegistry: Fetch available Dawlets
-Launcher <-- PkgRegistry: Available Dawlets
+Launcher -> PkgRegistry: Fetch installable Dawlets
+Launcher <-- PkgRegistry: Installable Dawlets
 Launcher -> fs: Scan Installed Dawlets
 fs --> Launcher: Installed Dawlets' Paths
 User <- Launcher: Show Installed/Installable Dawlets
@@ -25,5 +24,17 @@ Launcher <-- Github: $(DawletName).app
 fs <- Launcher: Save the downloaded Dawlet
 User -> Launcher: Click on the launch button
 Launcher -> Algolet: Launch Algolet(example)
+
+
+== Import ==
+
+alt Optional
+  Cubase -> Launcher: DnD(?)/export MIDI
+  Launcher -> Launcher: parse MIDI
+  Launcher -> Launcher: createGroup(s)
+  Launcher --> Algolet: broadcast group
+  Launcher --> Sheetlet: broadcast group
+  Launcher --> Rolelet: broadcast group
+end
 
 @enduml
