@@ -37,4 +37,19 @@ alt Optional
   Launcher --> Rolelet: broadcast group
 end
 
+== Export ==
+
+autonumber
+User -> Launcher: Open Export Options
+User -> Launcher: Configure which groups to export
+alt Export as File
+  User -> Launcher: Click Export button
+  User <- Launcher: Prompt dialog
+  User --> Launcher: configure export path
+  fs <-- Launcher: Save SMF
+else Direct Export
+  autonumber 3
+  Cubase <-- Launcher: DnD SMF
+end
+
 @enduml
