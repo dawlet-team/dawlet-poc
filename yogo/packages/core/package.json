@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@types/graphql": "14.5.0",
-    "apollo-server": "2.11.0",
+    "apollo-server": "2.12.0",
     "graphql": "14.6.0",
     "reflect-metadata": "0.1.13",
     "type-graphql": "0.17.6",
@@ -25,7 +25,7 @@
   "devDependencies": {
     "@2fd/graphdoc": "2.4.0",
     "@types/jest": "25.2.1",
-    "apollo-server-testing": "2.11.0",
+    "apollo-server-testing": "2.12.0",
     "jest": "25.2.7",
     "nodemon": "2.0.2",
     "prettier": "2.0.4",
