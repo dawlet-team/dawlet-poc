@@ -33,7 +33,6 @@ alt Launch
   Launcher -> Algolet: Launch Algolet(example)
 end
 
-
 == Import ==
 
 alt Optional
@@ -43,6 +42,50 @@ alt Optional
   Launcher --> Algolet: broadcast group
   Launcher --> Sheetlet: broadcast group
   Launcher --> Rolelet: broadcast group
+end
+
+== Edit ==
+
+group Rolelet
+  group configuration
+    User -> Rolelet: Configure which groups to show
+    User <-- Rolelet: Visual Feedback as a piano-roll
+  end
+  group grouping
+    User -> Rolelet: Select and subdivide groups
+    Rolelet -> Launcher: createGroup mutation
+    Launcher --> Algolet: broadcast groups
+    Launcher --> Sheetlet: broadcast groups
+    Launcher --> Rolelet: broadcast groups
+  end
+  group edit
+    User -> Sheetlet: Drag a note to transpose
+    Launcher <- Sheetlet: updateNote mutation
+    Launcher --> Algolet: broadcast note
+    Launcher --> Sheetlet: broadcast note
+    Launcher --> Rolelet: broadcast note
+    User <-- Rolelet: Visual Feedback as a piano-roll
+  end
+end
+
+group Algolet
+  Algolet -> Launcher: getGroup with ID
+  Algolet <-- Launcher: group with associated notes
+  Algolet -> Launcher: createNote mutation
+  Launcher --> Algolet: broadcast note
+  Launcher --> Sheetlet: broadcast note
+  Launcher --> Rolelet: broadcast note
+  User <-- Rolelet: Visual Feedback as a piano-roll
+  User <-- Sheetlet: Visual Feedback as a sheet music
+end
+
+group Edit with Sheetlet
+  User -> Sheetlet: Drag a note to transpose
+  Launcher <- Sheetlet: updateNote mutation
+  Launcher --> Algolet: broadcast note
+  Launcher --> Sheetlet: broadcast note
+  Launcher --> Rolelet: broadcast note
+  User <-- Sheetlet: Visual Feedback as a sheet music
 end
 
 == Export ==
