@@ -1,32 +1,106 @@
-@startuml
+@startuml Dawlet Sequence
 actor User
 database fs
-
+participant Cubase
+participant Launcher
+participant Algolet
+participant Sheetlet
+participant Rolelet
+database PkgRegistry
+database Github
 
 == Initialization ==
 
 User -> Launcher: Click Launcher App
-Launcher -> Launcher: Opens GUI
-Launcher -> fs: Fetches Available Dawlets
-fs --> Launcher: [ Algolet, Mobilelet ]
-User -> Launcher: Sets Algolet with IPC
-User -> Launcher: Sets with http
-Launcher -> Corelet: Boots Apollo Server Up
-Corelet -> Algolet: Boots Algolet Up (Spawn)
-Launcher -> Mobilelet: Boots Mobilelet Up
+Launcher -> Launcher: Start the core server
+Launcher -> PkgRegistry: Fetch installable Dawlets
+Launcher <-- PkgRegistry: Installable Dawlets
+Launcher -> fs: Scan Installed Dawlets
+fs --> Launcher: Installed Dawlets' Paths
+User <- Launcher: Show Installed/Installable Dawlets
+alt Install
+  User -> Launcher: Click on the Install Dawlet button
+  Launcher -> Github: Fetch the latest Dawlet
+  Launcher <-- Github: $(DawletName).app
+  fs <- Launcher: Save the downloaded Dawlet
+end
+alt Uninstall
+  User -> Launcher: Click on the Uninstall Dawlet button
+  fs <- Launcher: Remove the Dawlet from Application folder
+end
+alt Launch
+  User -> Launcher: Click on the launch button
+  Launcher -> Algolet: Launch Algolet(example)
+end
 
-== Example of Algolet ==
+== Import ==
 
-Algolet -> Corelet: Dispatch mutations to generate score (IPC)
-Corelet -> Corelet: Updates State
-Corelet --> Algolet: Broadcast updated state
-Corelet --> Mobilelet: Broadcast updated state
+alt Optional
+  Cubase -> Launcher: DnD(?)/export MIDI
+  Launcher -> Launcher: parse MIDI
+  Launcher -> Launcher: createGroup(s)
+  Launcher --> Algolet: broadcast group
+  Launcher --> Sheetlet: broadcast group
+  Launcher --> Rolelet: broadcast group
+end
 
-== Example of Mobilelet ==
+== Edit ==
 
-Mobilelet -> Corelet: Dispatch Mutations to quantize (HTTP)
-Corelet -> Corelet: Updates State
-Corelet --> Algolet: Broadcast updated state
-Corelet --> Mobilelet: Broadcast updated state
+group Rolelet
+  group configuration
+    User -> Rolelet: Configure which groups to show
+    User <-- Rolelet: Visual Feedback as a piano-roll
+  end
+  group grouping
+    User -> Rolelet: Select and subdivide groups
+    Rolelet -> Launcher: createGroup mutation
+    Launcher --> Algolet: broadcast groups
+    Launcher --> Sheetlet: broadcast groups
+    Launcher --> Rolelet: broadcast groups
+  end
+  group edit
+    User -> Sheetlet: Drag a note to transpose
+    Launcher <- Sheetlet: updateNote mutation
+    Launcher --> Algolet: broadcast note
+    Launcher --> Sheetlet: broadcast note
+    Launcher --> Rolelet: broadcast note
+    User <-- Rolelet: Visual Feedback as a piano-roll
+  end
+end
+
+group Algolet
+  Algolet -> Launcher: getGroup with ID
+  Algolet <-- Launcher: group with associated notes
+  Algolet -> Launcher: createNote mutation
+  Launcher --> Algolet: broadcast note
+  Launcher --> Sheetlet: broadcast note
+  Launcher --> Rolelet: broadcast note
+  User <-- Rolelet: Visual Feedback as a piano-roll
+  User <-- Sheetlet: Visual Feedback as a sheet music
+end
+
+group Edit with Sheetlet
+  User -> Sheetlet: Drag a note to transpose
+  Launcher <- Sheetlet: updateNote mutation
+  Launcher --> Algolet: broadcast note
+  Launcher --> Sheetlet: broadcast note
+  Launcher --> Rolelet: broadcast note
+  User <-- Sheetlet: Visual Feedback as a sheet music
+end
+
+== Export ==
+
+autonumber
+User -> Launcher: Open Export Options
+User -> Launcher: Configure which groups to export
+alt Export as File
+  User -> Launcher: Click Export button
+  User <- Launcher: Prompt dialog
+  User --> Launcher: configure export path
+  fs <-- Launcher: Save SMF
+else Direct Export
+  autonumber 3
+  Cubase <-- Launcher: DnD SMF
+end
 
 @enduml
