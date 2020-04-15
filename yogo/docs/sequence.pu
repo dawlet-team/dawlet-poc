@@ -18,12 +18,20 @@ Launcher <-- PkgRegistry: Installable Dawlets
 Launcher -> fs: Scan Installed Dawlets
 fs --> Launcher: Installed Dawlets' Paths
 User <- Launcher: Show Installed/Installable Dawlets
-User -> Launcher: Click on the Install Dawlet button
-Launcher -> Github: Fetch the latest Dawlet
-Launcher <-- Github: $(DawletName).app
-fs <- Launcher: Save the downloaded Dawlet
-User -> Launcher: Click on the launch button
-Launcher -> Algolet: Launch Algolet(example)
+alt Install
+  User -> Launcher: Click on the Install Dawlet button
+  Launcher -> Github: Fetch the latest Dawlet
+  Launcher <-- Github: $(DawletName).app
+  fs <- Launcher: Save the downloaded Dawlet
+end
+alt Uninstall
+  User -> Launcher: Click on the Uninstall Dawlet button
+  fs <- Launcher: Remove the Dawlet from Application folder
+end
+alt Launch
+  User -> Launcher: Click on the launch button
+  Launcher -> Algolet: Launch Algolet(example)
+end
 
 
 == Import ==
