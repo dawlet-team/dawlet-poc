@@ -27,7 +27,7 @@
     "react-dom": "16.13.1",
     "react-split-pane": "2.0.3",
     "subscriptions-transport-ws": "0.9.16",
-    "tone": "14.5.46"
+    "tone": "14.6.0"
   },
   "devDependencies": {
     "@types/jest": "25.2.1",
