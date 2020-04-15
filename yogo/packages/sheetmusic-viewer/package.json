@@ -11,7 +11,7 @@
     "watch": "tsc --watch"
   },
   "dependencies": {
-    "opensheetmusicdisplay": "0.7.3",
+    "opensheetmusicdisplay": "0.7.5",
     "react": "16.13.1",
     "react-dom": "16.13.1"
   },
