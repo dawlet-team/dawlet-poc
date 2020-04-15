@@ -1,4 +1,5 @@
 {
   "extends": ["config:base"],
-  "ignorePaths": ["zigen/**", "satoshi/**"]
+  "ignorePaths": ["zigen/**", "satoshi/**"],
+  "assignees": ["yuichkun"]
 }
