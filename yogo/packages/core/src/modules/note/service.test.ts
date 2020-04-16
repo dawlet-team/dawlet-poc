@@ -16,7 +16,7 @@ describe('NoteService', () => {
       offset: 4
     }
     const { id } = service.create(noteInput)
-    const state = repo.get()
+    const state = repo.findAll()
     expect(state[id]).toEqual({
       id,
       ...noteInput

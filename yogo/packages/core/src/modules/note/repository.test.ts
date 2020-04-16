@@ -17,17 +17,17 @@ describe('NoteRepository', () => {
     const note = NoteFactory.build()
     repo.save(note)
   })
-  it('gets', () => {
+  it('findAll', () => {
     const note = NoteFactory.build()
     repo.save(note)
-    const state = repo.get()
+    const state = repo.findAll()
     expect(state[note.id]).toEqual(note)
   })
   it('removes', () => {
     const note = NoteFactory.build()
     repo.save(note)
     repo.remove(note.id)
-    const state = repo.get()
+    const state = repo.findAll()
     expect(state).toEqual({})
   })
 })
