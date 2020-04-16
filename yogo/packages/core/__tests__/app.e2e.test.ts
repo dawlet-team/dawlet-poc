@@ -1,4 +1,4 @@
-import { bootstrap } from "./bootstrap";
+import { bootstrap } from "../src/bootstrap";
 import { ApolloServer } from "apollo-server";
 import {
   createTestClient,

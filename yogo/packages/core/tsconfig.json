@@ -10,5 +10,5 @@
     "outDir": "./lib",
     "strictNullChecks": true
   },
-  "include": ["../../index.d.ts", "./src"]
+  "include": ["../../index.d.ts", "./src", "__tests__/*.ts"]
 }
