@@ -6,8 +6,12 @@ declare namespace Dawlet {
   }
 
   namespace IGroup {
-    type Map = {
-      [key:string]: Entity
+    type Record = {
+      id: string
+      noteIds: string[]
+    }
+    type Store = {
+      [id: string]: Record
     }
     interface Entity {
       /**
