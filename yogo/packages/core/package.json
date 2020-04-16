@@ -20,7 +20,8 @@
     "graphql": "14.6.0",
     "reflect-metadata": "0.1.13",
     "type-graphql": "0.17.6",
-    "typedi": "0.8.0"
+    "typedi": "0.8.0",
+    "uuid": "^7.0.3"
   },
   "devDependencies": {
     "@2fd/graphdoc": "2.4.0",
