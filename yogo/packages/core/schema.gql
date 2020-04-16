@@ -16,7 +16,7 @@ type Group {
 }
 
 type Mutation {
-  createNote(params: CreateNoteInput!): Score!
+  createNote(params: CreateNoteInput!): Note!
   createGroup(id: String!): Group!
   pushNote(payload: PushNoteInput!, id: String!): Group!
 }
@@ -39,15 +39,5 @@ input PushNoteInput {
 }
 
 type Query {
-  getScore: Score!
   findGroupBy(id: String!): Group!
-}
-
-type Score {
-  id: String!
-  notes: [Note!]!
-}
-
-type Subscription {
-  updateScore: Score!
 }
