@@ -40,6 +40,9 @@ declare namespace Dawlet {
   }
 
   namespace INote {
+    interface Store {
+      [key: string]: Entity
+    }
     interface Entity {
       /**
        * unique identifier

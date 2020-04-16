@@ -1,21 +1,17 @@
 import { Service } from 'typedi'
 
-export type NoteStore = {
-  [key: string]: Dawlet.INote.Entity
-}
-
 @Service()
 export class NoteRepository {
-  private data: NoteStore = {}
+  private store: Dawlet.INote.Store = {}
   save(note: Dawlet.INote.Entity) {
-    this.data[note.id] = note
+    this.store[note.id] = note
     return note
   }
   remove(id: string) {
-    delete this.data[id]
-    return this.data
+    delete this.store[id]
+    return this.store
   }
   get() {
-    return this.data
+    return this.store
   }
 }

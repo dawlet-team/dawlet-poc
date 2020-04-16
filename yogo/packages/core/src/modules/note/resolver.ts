@@ -15,6 +15,7 @@ export class NoteResolver {
   @Mutation(returns => Note)
   createNote(@Arg('params') params: CreateNoteInput): Dawlet.INote.Entity {
     const note = this.noteService.create(params)
+    // TODO: attach to group
     return note
   }
 }
