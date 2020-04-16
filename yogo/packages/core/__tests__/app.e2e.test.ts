@@ -4,6 +4,7 @@ import {
   createTestClient,
   ApolloServerTestClient
 } from "apollo-server-testing";
+import { createGroupQuery, findGroupByQuery, pushNoteMutation } from './helpers/test-queries'
 
 describe("e2e", () => {
   let server: ApolloServer;
@@ -31,19 +32,7 @@ describe("e2e", () => {
   describe("Group", () => {
     it("creates groups", async () => {
       const res = await client?.query({
-        query: `
-        mutation {
-          createGroup(id: "my-group"){
-            id
-            notes{
-              id
-              freq
-              duration
-              offset
-            }
-          }
-        }
-        `
+        query: createGroupQuery
       });
       expect(res?.data).toMatchInlineSnapshot(`
         Object {
@@ -56,19 +45,7 @@ describe("e2e", () => {
     });
     it("finds groups", async () => {
       const res = await client?.query({
-        query: `
-          query{
-            findGroupBy(id: "my-group"){
-              id
-              notes {
-                id
-                freq
-                duration
-                offset
-              }
-            }
-          }
-        `
+        query: findGroupByQuery
       });
       expect(res?.data).toMatchInlineSnapshot(`
 Object {
@@ -81,28 +58,7 @@ Object {
     });
     it("pushes notes to groups", async () => {
       const res = await client?.mutate({
-        mutation: `
-        mutation {
-          pushNote(id:"my-group", payload: {
-            notes: [
-              {
-                id: "4",
-                freq:440,
-                duration:400,
-                offset:45
-              }
-            ]
-          }){
-            id
-            notes {
-              id
-              freq
-              duration
-              offset
-            }
-          }
-        }  
-        `
+        mutation: pushNoteMutation
       });
       expect(res?.data).toMatchInlineSnapshot(`
 Object {
