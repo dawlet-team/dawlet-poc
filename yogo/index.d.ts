@@ -82,6 +82,7 @@ declare namespace Dawlet {
       freq: number
       duration: number
       offset: number
+      groupIds?: string[]
     }
 
     interface Service {

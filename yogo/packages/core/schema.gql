@@ -7,6 +7,7 @@ input CreateNoteInput {
   freq: Float!
   duration: Float!
   offset: Float!
+  groupIds: [String!]
 }
 
 type Group {

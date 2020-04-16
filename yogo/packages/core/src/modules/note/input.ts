@@ -8,4 +8,6 @@ export class CreateNoteInput implements Dawlet.INote.createNoteInputs {
   duration: number
   @Field(of => Float)
   offset: number
+  @Field(of => [String], { nullable: true })
+  groupIds?: string[]
 }
