@@ -4,7 +4,7 @@ import {
   createTestClient,
   ApolloServerTestClient
 } from "apollo-server-testing";
-import { createGroupQuery, findGroupByQuery, pushNoteMutation } from './helpers/test-queries'
+import { CREATE_GROUP, FIND_GROUP_BY, PUSH_NOTE } from './helpers/test-queries'
 
 describe("e2e", () => {
   let server: ApolloServer;
@@ -31,8 +31,11 @@ describe("e2e", () => {
 
   describe("Group", () => {
     it("creates groups", async () => {
-      const res = await client?.query({
-        query: createGroupQuery
+      const res = await client?.mutate({
+        mutation: CREATE_GROUP,
+        variables: {
+          id: 'my-group'
+        }
       });
       expect(res?.data).toMatchInlineSnapshot(`
         Object {
@@ -45,7 +48,10 @@ describe("e2e", () => {
     });
     it("finds groups", async () => {
       const res = await client?.query({
-        query: findGroupByQuery
+        query: FIND_GROUP_BY,
+        variables: {
+          id: 'my-group'
+        }
       });
       expect(res?.data).toMatchInlineSnapshot(`
 Object {
@@ -58,7 +64,20 @@ Object {
     });
     it("pushes notes to groups", async () => {
       const res = await client?.mutate({
-        mutation: pushNoteMutation
+        mutation: PUSH_NOTE,
+        variables: {
+          id: 'my-group',
+          payload: {
+            notes: [
+              {
+                id: "4",
+                freq: 440,
+                duration: 400,
+                offset: 45
+              }
+            ]
+          }
+        }
       });
       expect(res?.data).toMatchInlineSnapshot(`
 Object {

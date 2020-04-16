@@ -1,8 +1,8 @@
 import gql from 'graphql-tag'
 
-export const createGroupQuery = gql`
-  mutation {
-    createGroup(id: "my-group"){
+export const CREATE_GROUP = gql`
+  mutation CreateGroup($id: String!) {
+    createGroup(id: $id){
       id
       notes{
         id
@@ -14,9 +14,9 @@ export const createGroupQuery = gql`
   }
 `
 
-export const findGroupByQuery = gql`
-  query{
-    findGroupBy(id: "my-group"){
+export const FIND_GROUP_BY = gql`
+  query FindGroupBy($id: String!){
+    findGroupBy(id: $id){
       id
       notes {
         id
@@ -28,18 +28,9 @@ export const findGroupByQuery = gql`
   }
 `
 
-export const pushNoteMutation = gql`
-  mutation {
-    pushNote(id:"my-group", payload: {
-      notes: [
-        {
-          id: "4",
-          freq:440,
-          duration:400,
-          offset:45
-        }
-      ]
-    }){
+export const PUSH_NOTE = gql`
+  mutation PushNote($payload: PushNoteInput!, $id: String!) {
+    pushNote(id: $id, payload: $payload){
       id
       notes {
         id
