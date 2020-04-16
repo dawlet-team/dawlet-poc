@@ -4,25 +4,6 @@ declare namespace Dawlet {
     description: string;
     localizable: boolean;
   }
-  namespace IScore {
-    interface Entity {
-      /**
-       * All the notes present in the score.
-       */
-      notes: INote.Entity[]
-    }
-
-    interface Service {
-      /**
-       * Retrieves the full score.
-       */
-      get(): Entity
-      /**
-       * appends a note to score
-       */
-      append(note: INote.Entity): Entity
-    }
-  }
 
   namespace IGroup {
     type Map = {
