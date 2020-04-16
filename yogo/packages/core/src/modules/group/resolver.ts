@@ -1,5 +1,5 @@
 import { Resolver, Query, Subscription, Arg, Mutation} from 'type-graphql'
-import { Group } from './entity'
+import { Group } from './graph'
 import { Service } from 'typedi'
 import { GroupService } from './service'
 import { PushNoteInput } from './input'

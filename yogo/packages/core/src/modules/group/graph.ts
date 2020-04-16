@@ -1,5 +1,5 @@
 import { ObjectType, Field, ID } from 'type-graphql'
-import { Note } from '../note/entity'
+import { Note } from '../note/graph'
 
 @ObjectType()
 export class Group implements Dawlet.IGroup.Entity {

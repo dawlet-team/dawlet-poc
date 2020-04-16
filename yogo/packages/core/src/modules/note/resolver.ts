@@ -1,7 +1,7 @@
 
 import { Service } from 'typedi'
 import { Mutation, Arg, Resolver } from 'type-graphql'
-import { Note } from './entity'
+import { Note } from './graph'
 import { CreateNoteInput } from './input'
 import { NoteService } from './service'
 
