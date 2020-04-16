@@ -4,7 +4,7 @@ import {
   createTestClient,
   ApolloServerTestClient
 } from "apollo-server-testing";
-import { CREATE_GROUP, FIND_GROUP_BY, PUSH_NOTE } from './helpers/test-queries'
+import { CREATE_GROUP, FIND_GROUP_BY, PUSH_NOTE } from './helpers/queries'
 
 describe("e2e", () => {
   let server: ApolloServer;
