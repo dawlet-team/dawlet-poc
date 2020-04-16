@@ -1,11 +1,9 @@
 import "reflect-metadata";
 import { ApolloServer } from 'apollo-server'
 import { assembleSchema } from './modules/schema'
-import { prepareContainer } from './container'
 
 export async function bootstrap() {
-  prepareContainer()
-  const schema = await assembleSchema() 
+  const schema = await assembleSchema()
   const server = new ApolloServer({
     schema,
     playground: true
