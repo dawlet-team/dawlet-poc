@@ -29,7 +29,6 @@ type Note {
 }
 
 input NoteInput {
-  id: ID!
   freq: Float!
   duration: Float!
   offset: Float!
