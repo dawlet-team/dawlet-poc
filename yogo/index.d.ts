@@ -39,7 +39,7 @@ declare namespace Dawlet {
     }
 
     interface PushNoteInput {
-      notes: INote.Entity[]
+      notes: Omit<INote.Entity, 'id'>[]
     }
   }
 
