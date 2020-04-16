@@ -32,6 +32,12 @@ export class GroupRepository {
     return record
   }
 
+  pushNotes(id: string, noteIds: string[]): Dawlet.IGroup.Record {
+    const record = this.store[id]
+    record.noteIds.push(...noteIds)
+    return record
+  }
+
   removeGroup(id: string) {
     delete this.store[id]
     return this.store

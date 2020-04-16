@@ -74,6 +74,20 @@ describe("GroupRepository", () => {
       noteIds,
     });
   });
+  it("pushNotes", () => {
+    const id = "my-group";
+    groupRepo.save(id, ["note-id-1"]);
+    const record = groupRepo.pushNotes(id, ["note-id-2"]);
+    expect(record).toMatchInlineSnapshot(`
+      Object {
+        "id": "my-group",
+        "noteIds": Array [
+          "note-id-1",
+          "note-id-2",
+        ],
+      }
+    `);
+  });
   it("removeGroup", () => {
     groupRepo.save("my-group-id", ["note-id"]);
     const store = groupRepo.removeGroup("my-group-id");
