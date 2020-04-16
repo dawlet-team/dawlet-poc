@@ -23,6 +23,14 @@ describe('NoteRepository', () => {
     const state = repo.findAll()
     expect(state[note.id]).toEqual(note)
   })
+  it('findOne', () => {
+    const note = NoteFactory.build()
+    const secondNote = NoteFactory.build()
+    repo.save(note)
+    repo.save(secondNote)
+    const foundNote = repo.findOne(note.id)
+    expect(foundNote).toEqual(note)
+  })
   it('removes', () => {
     const note = NoteFactory.build()
     repo.save(note)

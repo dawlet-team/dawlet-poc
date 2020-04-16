@@ -6,6 +6,9 @@ export class NoteRepository {
   findAll(): Dawlet.INote.Store {
     return this.store
   }
+  findOne(id: string): Dawlet.INote.Entity {
+    return this.store[id]
+  }
   save(note: Dawlet.INote.Entity) {
     this.store[note.id] = note
     return note
