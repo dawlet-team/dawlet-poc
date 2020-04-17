@@ -19,7 +19,7 @@
     "@dawlet/sheetmusic-viewer": "^0.6.0",
     "@dawlet/utils": "^0.6.0",
     "apollo-boost": "0.4.7",
-    "electron": "8.2.2",
+    "electron": "8.2.3",
     "electron-log": "4.1.1",
     "electron-updater": "4.2.5",
     "graphql": "14.6.0",
