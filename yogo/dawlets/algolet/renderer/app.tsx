@@ -10,6 +10,7 @@ import { SheetMusicViewer } from "@dawlet/sheetmusic-viewer";
 // @ts-ignore
 import sampleFile from "./sample.xml"; // FIX_ME: hackie escape
 import * as monacoEditor from "monaco-editor/esm/vs/editor/editor.api";
+import { bindCommands } from "./editor/commands";
 
 const LIST_ALL_GROUPS = gql`
   query {
@@ -37,16 +38,8 @@ const App = () => {
       `;
   console.log({data})
 
-  /**
-   * TODO:
-   * should send mutations on enter or something.
-   */
-  const onChange = (e: any) => {
-    console.log("onchange");
-    console.log(e);
-  };
   const onDidMount = (editor: monacoEditor.editor.IStandaloneCodeEditor) => {
-    console.log("ondidmount");
+    bindCommands(editor)
   };
 
   return (
@@ -61,7 +54,6 @@ const App = () => {
               selectOnLineNumbers: true,
               automaticLayout: true,
             }}
-            onChange={onChange}
             editorDidMount={onDidMount}
           />
         </div>
