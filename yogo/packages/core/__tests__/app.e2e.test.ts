@@ -9,6 +9,7 @@ import {
   FIND_GROUP_BY,
   PUSH_NOTE,
   RESET_ALL_GROUPS,
+  LIST_ALL_GROUPS,
 } from "./helpers/queries";
 
 describe("e2e", () => {
@@ -99,6 +100,39 @@ describe("e2e", () => {
               },
             ],
           },
+        }
+      `);
+    });
+    it("lists all groups", async () => {
+      await client?.mutate({
+        mutation: CREATE_GROUP,
+        variables: {
+          id: "my-second-group",
+        },
+      });
+      const res = await client?.query({
+        query: LIST_ALL_GROUPS,
+      });
+      expect(res?.errors).toBeUndefined();
+      expect(res?.data).toMatchInlineSnapshot(`
+        Object {
+          "listAllGroups": Array [
+            Object {
+              "id": "my-group",
+              "notes": Array [
+                Object {
+                  "duration": 400,
+                  "freq": 440,
+                  "id": "bb463b8b-b76c-4f6a-9726-65ab5730b69b",
+                  "offset": 45,
+                },
+              ],
+            },
+            Object {
+              "id": "my-second-group",
+              "notes": Array [],
+            },
+          ],
         }
       `);
     });

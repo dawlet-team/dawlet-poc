@@ -42,4 +42,5 @@ input PushNoteInput {
 
 type Query {
   findGroupBy(id: String!): Group!
+  listAllGroups: [Group!]!
 }

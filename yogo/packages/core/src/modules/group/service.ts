@@ -20,6 +20,14 @@ export class GroupService implements Dawlet.IGroup.Service {
     return this.groupRepository.getEntity(record.id)
   }
 
+  findAll() {
+    const store = this.groupRepository.findAll()
+    const entities = Object.values(store).map(record => {
+      return this.groupRepository.getEntity(record.id)
+    })
+    return entities
+  }
+
   push({ groupId, notes } : Dawlet.IGroup.PushNoteInput) {
     const noteIds = notes.map(note => this.noteService.create(note).id)
     const record = this.groupRepository.pushNotes(groupId, noteIds)

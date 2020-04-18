@@ -42,6 +42,20 @@ export const PUSH_NOTE = gql`
   }
 `
 
+export const LIST_ALL_GROUPS = gql`
+  query {
+    listAllGroups{
+      id
+      notes {
+        id
+        freq
+        duration
+        offset
+      }
+    }
+  }
+`
+
 export const RESET_ALL_GROUPS = gql`
   mutation {
     resetAllGroups

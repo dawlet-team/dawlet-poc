@@ -23,6 +23,11 @@ export class GroupResolver {
     return this.groupService.findBy(id)
   }
 
+  @Query(returns => [Group])
+  listAllGroups() {
+    return this.groupService.findAll()
+  }
+
   @Mutation(returns => Group)
   pushNote(
     @Arg('pushNoteInput') pushNoteInput : PushNoteInput
