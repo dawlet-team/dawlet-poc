@@ -61,3 +61,14 @@ export const RESET_ALL_GROUPS = gql`
     resetAllGroups
   }
 `
+
+export const CREATE_NOTE = gql`
+  mutation($params: CreateNoteInput!) {
+    createNote(params: $params) {
+      id
+      freq
+      offset
+      duration
+    }
+  }
+`

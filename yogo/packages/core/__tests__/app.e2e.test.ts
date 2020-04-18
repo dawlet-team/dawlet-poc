@@ -10,6 +10,7 @@ import {
   PUSH_NOTE,
   RESET_ALL_GROUPS,
   LIST_ALL_GROUPS,
+  CREATE_NOTE,
 } from "./helpers/queries";
 
 describe("e2e", () => {
@@ -142,6 +143,110 @@ describe("e2e", () => {
       });
       expect(res?.errors).toBeUndefined();
       expect(res?.data?.resetAllGroups).toEqual(true);
+    });
+  });
+
+  describe("Note", () => {
+    it("createNote", async () => {
+      const res = await client?.mutate({
+        mutation: CREATE_NOTE,
+        variables: {
+          params: {
+            freq: 440,
+            offset: 0,
+            duration: 30,
+          },
+        },
+      });
+      expect(res?.errors).toBeUndefined();
+      expect(res?.data).toMatchInlineSnapshot(`
+        Object {
+          "createNote": Object {
+            "duration": 30,
+            "freq": 440,
+            "id": "a27218b8-6a4d-47bb-95b6-5a55334fac1c",
+            "offset": 0,
+          },
+        }
+      `);
+    });
+    it("createNote with groupIds", async () => {
+      await client?.mutate({
+        mutation: CREATE_GROUP,
+        variables: {
+          id: "my-group",
+        },
+      });
+      await client?.mutate({
+        mutation: CREATE_GROUP,
+        variables: {
+          id: "my-group-2",
+        },
+      });
+
+      let res = await client?.query({
+        query: LIST_ALL_GROUPS,
+      });
+      expect(res?.errors).toBeUndefined();
+      expect(res?.data).toMatchInlineSnapshot(`
+        Object {
+          "listAllGroups": Array [
+            Object {
+              "id": "my-group",
+              "notes": Array [],
+            },
+            Object {
+              "id": "my-group-2",
+              "notes": Array [],
+            },
+          ],
+        }
+      `);
+
+      await client?.mutate({
+        mutation: CREATE_NOTE,
+        variables: {
+          params: {
+            freq: 440,
+            offset: 0,
+            duration: 30,
+            groupIds: ["my-group", "my-group-2"],
+          },
+        },
+      });
+
+      res = await client?.query({
+        query: LIST_ALL_GROUPS,
+      });
+      expect(res?.errors).toBeUndefined();
+      expect(res?.data).toMatchInlineSnapshot(`
+        Object {
+          "listAllGroups": Array [
+            Object {
+              "id": "my-group",
+              "notes": Array [
+                Object {
+                  "duration": 30,
+                  "freq": 440,
+                  "id": "60627261-4e6c-4ebf-8879-914576ade417",
+                  "offset": 0,
+                },
+              ],
+            },
+            Object {
+              "id": "my-group-2",
+              "notes": Array [
+                Object {
+                  "duration": 30,
+                  "freq": 440,
+                  "id": "60627261-4e6c-4ebf-8879-914576ade417",
+                  "offset": 0,
+                },
+              ],
+            },
+          ],
+        }
+      `);
     });
   });
 });
