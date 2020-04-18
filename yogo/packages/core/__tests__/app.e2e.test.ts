@@ -77,11 +77,25 @@ describe("e2e", () => {
                 offset: 45,
               },
             ],
-          }
+          },
         },
       });
       expect(res?.errors).toBeUndefined();
-      // TODO: check response
+      expect(res?.data).toMatchInlineSnapshot(`
+        Object {
+          "pushNote": Object {
+            "id": "my-group",
+            "notes": Array [
+              Object {
+                "duration": 400,
+                "freq": 440,
+                "id": "bb463b8b-b76c-4f6a-9726-65ab5730b69b",
+                "offset": 45,
+              },
+            ],
+          },
+        }
+      `);
     });
   });
 });
