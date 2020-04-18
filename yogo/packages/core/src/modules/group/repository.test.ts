@@ -93,9 +93,9 @@ describe("GroupRepository", () => {
     const store = groupRepo.removeGroup("my-group-id");
     expect(store).toEqual({});
   });
-  it("reset", () => {
+  it("resetAll", () => {
     groupRepo.save("my-group", []);
-    groupRepo.reset();
+    groupRepo.resetAll();
     expect(groupRepo.findAll()).toEqual({});
   });
 });

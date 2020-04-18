@@ -43,7 +43,7 @@ export class GroupRepository {
     return this.store
   }
 
-  reset() {
+  resetAll() {
     this.store = {}
   }
 }
