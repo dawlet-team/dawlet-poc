@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/dawlet-team/dawlet-poc/compare/v0.6.3...v0.7.0) (2020-04-18)
+
+
+### Bug Fixes
+
+* **core:** build ([ecdca4f](https://github.com/dawlet-team/dawlet-poc/commit/ecdca4f2b9751efebd3f1cf2248a2780467cbcbc))
+* **core:** remove id from NoteInput since it is generated on the server-side ([b5efb54](https://github.com/dawlet-team/dawlet-poc/commit/b5efb54a3d47a264b13fe3d24a384a30f7114e3e))
+* **deps:** update apollo graphql packages ([6f59b03](https://github.com/dawlet-team/dawlet-poc/commit/6f59b033a6b774aa499ea5197811cc2e104d5863))
+
+
+### Features
+
+* **core:** add groupdIds field to createNoteInput ([95380e7](https://github.com/dawlet-team/dawlet-poc/commit/95380e75a3a9b64d064b3192fa86c2f7a20f5304))
+* **core:** add GroupRepository ([a5c3d2d](https://github.com/dawlet-team/dawlet-poc/commit/a5c3d2d0194645e9297818feaec33be27978934c))
+* **core:** add GroupRepository.pushNotes ([c46d0c8](https://github.com/dawlet-team/dawlet-poc/commit/c46d0c80b611b10bb4b35e5c0eef2e799a150b8a))
+* **core:** add listAllGroups query ([fbac755](https://github.com/dawlet-team/dawlet-poc/commit/fbac755bbf6bc277cd96dab0f176dba70135509d))
+* **core:** add NoteRepository.findOne ([99f95a8](https://github.com/dawlet-team/dawlet-poc/commit/99f95a8248a346f846248c7cd9cac2bdb93104b0))
+* **core:** add resetAllGroups mutation ([a554504](https://github.com/dawlet-team/dawlet-poc/commit/a55450475e1e3c024c38097ca2abacfc9ef03408))
+* **core:** create Note Repository ([0ce4c0f](https://github.com/dawlet-team/dawlet-poc/commit/0ce4c0ff538d48a362a7db86ef2c77d1178cecde))
+* **core:** reset groupRepo ([a80fb10](https://github.com/dawlet-team/dawlet-poc/commit/a80fb109c539b56157b48638057ea8ab48a7247d))
+
+
+
+
+
 # [0.6.0](https://github.com/dawlet-team/dawlet-poc/compare/v0.5.0...v0.6.0) (2020-04-06)
 
 **Note:** Version bump only for package @dawlet/core

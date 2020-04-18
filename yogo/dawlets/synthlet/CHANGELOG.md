@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/dawlet-team/dawlet-poc/compare/v0.6.3...v0.7.0) (2020-04-18)
+
+
+### Bug Fixes
+
+* **deps:** update apollo graphql packages ([6f59b03](https://github.com/dawlet-team/dawlet-poc/commit/6f59b033a6b774aa499ea5197811cc2e104d5863))
+* **deps:** update dependency tone to v14.5.46 ([5aa48a1](https://github.com/dawlet-team/dawlet-poc/commit/5aa48a191f32528a5c398405215469e9e72d1c1c))
+* **deps:** update dependency tone to v14.6.0 ([51d8894](https://github.com/dawlet-team/dawlet-poc/commit/51d889436c5f38317bb8d815b8ed2fde07bf1038))
+
+
+
+
+
 ## [0.6.1](https://github.com/dawlet-team/dawlet-poc/compare/v0.6.0...v0.6.1) (2020-04-06)
 
 **Note:** Version bump only for package @dawlet/synthlet

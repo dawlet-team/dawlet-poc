@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/dawlet-team/dawlet-poc/compare/v0.6.3...v0.7.0) (2020-04-18)
+
+
+### Bug Fixes
+
+* **deps:** update apollo graphql packages ([6f59b03](https://github.com/dawlet-team/dawlet-poc/commit/6f59b033a6b774aa499ea5197811cc2e104d5863))
+* **deps:** update dependency react-monaco-editor to v0.36.0 ([ac59b58](https://github.com/dawlet-team/dawlet-poc/commit/ac59b583ae7d30037e13c3e0707419b606eb1465))
+
+
+
+
+
 ## [0.6.3](https://github.com/dawlet-team/dawlet-poc/compare/v0.6.2...v0.6.3) (2020-04-06)
 
 **Note:** Version bump only for package @dawlet/algolet

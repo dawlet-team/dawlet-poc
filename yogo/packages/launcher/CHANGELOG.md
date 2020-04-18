@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/dawlet-team/dawlet-poc/compare/v0.6.3...v0.7.0) (2020-04-18)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @material-ui/core to v4.9.10 ([943b74b](https://github.com/dawlet-team/dawlet-poc/commit/943b74bfb17918b8871939da9ca57ede76a1e502))
+* **launcher:** do not require electron-devtools-installer from renderer process ([06b4762](https://github.com/dawlet-team/dawlet-poc/commit/06b47620900d20b19874654f319e6608d63df9ff))
+
+
+
+
+
 ## [0.6.1](https://github.com/dawlet-team/dawlet-poc/compare/v0.6.0...v0.6.1) (2020-04-06)
 
 **Note:** Version bump only for package @dawlet/launcher
