@@ -95,7 +95,6 @@ describe("GroupRepository", () => {
   });
   it("resetAll", () => {
     groupRepo.save("my-group", []);
-    groupRepo.resetAll();
-    expect(groupRepo.findAll()).toEqual({});
+    expect(groupRepo.resetAll()).toEqual({})
   });
 });

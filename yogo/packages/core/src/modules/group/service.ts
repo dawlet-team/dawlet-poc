@@ -26,4 +26,8 @@ export class GroupService implements Dawlet.IGroup.Service {
     return this.groupRepository.getEntity(record.id)
   }
 
+  resetAllGroups() {
+    return this.groupRepository.resetAll()
+  }
+
 }

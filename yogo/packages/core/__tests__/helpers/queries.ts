@@ -41,3 +41,9 @@ export const PUSH_NOTE = gql`
     }
   }
 `
+
+export const RESET_ALL_GROUPS = gql`
+  mutation {
+    resetAllGroups
+  }
+`

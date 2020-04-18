@@ -19,6 +19,7 @@ type Mutation {
   createNote(params: CreateNoteInput!): Note!
   createGroup(id: String!): Group!
   pushNote(pushNoteInput: PushNoteInput!): Group!
+  resetAllGroups: Boolean!
 }
 
 type Note {

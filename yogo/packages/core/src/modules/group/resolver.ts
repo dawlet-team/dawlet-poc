@@ -30,4 +30,10 @@ export class GroupResolver {
     return this.groupService.push(pushNoteInput)
   }
 
+  @Mutation(returns => Boolean)
+  resetAllGroups() {
+    this.groupService.resetAllGroups()
+    return true
+  }
+
 }

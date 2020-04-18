@@ -45,5 +45,6 @@ export class GroupRepository {
 
   resetAll() {
     this.store = {}
+    return this.store
   }
 }

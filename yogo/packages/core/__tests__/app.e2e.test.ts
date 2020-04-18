@@ -4,7 +4,12 @@ import {
   createTestClient,
   ApolloServerTestClient,
 } from "apollo-server-testing";
-import { CREATE_GROUP, FIND_GROUP_BY, PUSH_NOTE } from "./helpers/queries";
+import {
+  CREATE_GROUP,
+  FIND_GROUP_BY,
+  PUSH_NOTE,
+  RESET_ALL_GROUPS,
+} from "./helpers/queries";
 
 describe("e2e", () => {
   let server: ApolloServer;
@@ -96,6 +101,13 @@ describe("e2e", () => {
           },
         }
       `);
+    });
+    it("clears all groups", async () => {
+      const res = await client?.mutate({
+        mutation: RESET_ALL_GROUPS,
+      });
+      expect(res?.errors).toBeUndefined();
+      expect(res?.data?.resetAllGroups).toEqual(true);
     });
   });
 });
