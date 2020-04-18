@@ -2,7 +2,7 @@
   "name": "@dawlet/graphql",
   "version": "0.7.0",
   "description": "",
-  "main": "lib/sdk.js",
+  "main": "lib/index.js",
   "scripts": {
     "build": "npm run build:gql && npm run build:ts",
     "build:gql": "graphql-codegen --config codegen.yml",
