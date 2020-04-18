@@ -29,8 +29,8 @@ export const FIND_GROUP_BY = gql`
 `
 
 export const PUSH_NOTE = gql`
-  mutation PushNote($payload: PushNoteInput!, $id: String!) {
-    pushNote(id: $id, payload: $payload){
+  mutation PushNote($pushNoteInput: PushNoteInput!) {
+    pushNote(pushNoteInput: $pushNoteInput){
       id
       notes {
         id

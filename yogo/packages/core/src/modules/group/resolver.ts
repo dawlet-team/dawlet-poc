@@ -25,10 +25,9 @@ export class GroupResolver {
 
   @Mutation(returns => Group)
   pushNote(
-    @Arg('id') id: string, // TODO: rename this to groupID
-    @Arg('payload') payload : PushNoteInput
+    @Arg('pushNoteInput') pushNoteInput : PushNoteInput
   ) {
-    return this.groupService.push(id, payload)
+    return this.groupService.push(pushNoteInput)
   }
 
 }

@@ -35,10 +35,11 @@ declare namespace Dawlet {
       /**
        * Add notes to the group
        */
-      push(id:string, payload: PushNoteInput): Entity
+      push(pushNoteInput: PushNoteInput): Entity
     }
 
     interface PushNoteInput {
+      groupId: string
       notes: Omit<INote.Entity, 'id'>[]
     }
   }

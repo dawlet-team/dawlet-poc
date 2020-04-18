@@ -68,8 +68,8 @@ describe("e2e", () => {
       const res = await client?.mutate({
         mutation: PUSH_NOTE,
         variables: {
-          id: "my-group",
-          payload: {
+          pushNoteInput: {
+            groupId: "my-group",
             notes: [
               {
                 freq: 440,
@@ -77,7 +77,7 @@ describe("e2e", () => {
                 offset: 45,
               },
             ],
-          },
+          }
         },
       });
       expect(res?.errors).toBeUndefined();

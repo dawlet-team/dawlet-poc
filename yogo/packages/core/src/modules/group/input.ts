@@ -5,4 +5,6 @@ import { NoteInput } from '../note/graph'
 export class PushNoteInput implements Dawlet.IGroup.PushNoteInput {
   @Field(of => [NoteInput])
   notes: Dawlet.IGroup.PushNoteInput['notes']
+  @Field()
+  groupId: string;
 }

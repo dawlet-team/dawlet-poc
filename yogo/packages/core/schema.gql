@@ -18,7 +18,7 @@ type Group {
 type Mutation {
   createNote(params: CreateNoteInput!): Note!
   createGroup(id: String!): Group!
-  pushNote(payload: PushNoteInput!, id: String!): Group!
+  pushNote(pushNoteInput: PushNoteInput!): Group!
 }
 
 type Note {
@@ -36,6 +36,7 @@ input NoteInput {
 
 input PushNoteInput {
   notes: [NoteInput!]!
+  groupId: String!
 }
 
 type Query {
