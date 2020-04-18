@@ -1,5 +1,5 @@
 import { Resolver, Query, Subscription, Arg, Mutation} from 'type-graphql'
-import { Group } from './entity'
+import { Group } from './graph'
 import { Service } from 'typedi'
 import { GroupService } from './service'
 import { PushNoteInput } from './input'
@@ -23,12 +23,22 @@ export class GroupResolver {
     return this.groupService.findBy(id)
   }
 
+  @Query(returns => [Group])
+  listAllGroups() {
+    return this.groupService.findAll()
+  }
+
   @Mutation(returns => Group)
   pushNote(
-    @Arg('id') id: string,
-    @Arg('payload') payload : PushNoteInput
+    @Arg('pushNoteInput') pushNoteInput : PushNoteInput
   ) {
-    return this.groupService.push(id, payload)
+    return this.groupService.push(pushNoteInput)
+  }
+
+  @Mutation(returns => Boolean)
+  resetAllGroups() {
+    this.groupService.resetAllGroups()
+    return true
   }
 
 }

@@ -4,29 +4,14 @@ declare namespace Dawlet {
     description: string;
     localizable: boolean;
   }
-  namespace IScore {
-    interface Entity {
-      /**
-       * All the notes present in the score.
-       */
-      notes: INote.Entity[]
-    }
-
-    interface Service {
-      /**
-       * Retrieves the full score.
-       */
-      get(): Entity
-      /**
-       * appends a note to score
-       */
-      append(note: INote.Entity): Entity
-    }
-  }
 
   namespace IGroup {
-    type Map = {
-      [key:string]: Entity
+    type Record = {
+      id: string
+      noteIds: string[]
+    }
+    type Store = {
+      [id: string]: Record
     }
     interface Entity {
       /**
@@ -50,15 +35,19 @@ declare namespace Dawlet {
       /**
        * Add notes to the group
        */
-      push(id:string, payload: PushNoteInput): Entity
+      push(pushNoteInput: PushNoteInput): Entity
     }
 
     interface PushNoteInput {
-      notes: INote.Entity[]
+      groupId: string
+      notes: Omit<INote.Entity, 'id'>[]
     }
   }
 
   namespace INote {
+    interface Store {
+      [key: string]: Entity
+    }
     interface Entity {
       /**
        * unique identifier
@@ -82,6 +71,7 @@ declare namespace Dawlet {
       freq: number
       duration: number
       offset: number
+      groupIds?: string[]
     }
 
     interface Service {

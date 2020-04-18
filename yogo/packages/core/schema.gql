@@ -7,6 +7,7 @@ input CreateNoteInput {
   freq: Float!
   duration: Float!
   offset: Float!
+  groupIds: [String!]
 }
 
 type Group {
@@ -15,9 +16,10 @@ type Group {
 }
 
 type Mutation {
-  createNote(params: CreateNoteInput!): Score!
+  createNote(params: CreateNoteInput!): Note!
   createGroup(id: String!): Group!
-  pushNote(payload: PushNoteInput!, id: String!): Group!
+  pushNote(pushNoteInput: PushNoteInput!): Group!
+  resetAllGroups: Boolean!
 }
 
 type Note {
@@ -28,7 +30,6 @@ type Note {
 }
 
 input NoteInput {
-  id: ID!
   freq: Float!
   duration: Float!
   offset: Float!
@@ -36,18 +37,10 @@ input NoteInput {
 
 input PushNoteInput {
   notes: [NoteInput!]!
+  groupId: String!
 }
 
 type Query {
-  getScore: Score!
   findGroupBy(id: String!): Group!
-}
-
-type Score {
-  id: String!
-  notes: [Note!]!
-}
-
-type Subscription {
-  updateScore: Score!
+  listAllGroups: [Group!]!
 }

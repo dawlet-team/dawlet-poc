@@ -16,6 +16,7 @@
 
 ![build](https://github.com/dawlet-team/dawlet-poc/workflows/build/badge.svg)
 ![test](https://github.com/dawlet-team/dawlet-poc/workflows/test/badge.svg)
+[![codecov](https://codecov.io/gh/dawlet-team/dawlet-poc/branch/master/graph/badge.svg)](https://codecov.io/gh/dawlet-team/dawlet-poc)
 ![github-last-commit-image](https://img.shields.io/github/last-commit/dawlet-team/dawlet-poc.svg?style=appyor)
 ![github-commit-activity-image](https://img.shields.io/github/commit-activity/y/dawlet-team/dawlet-poc.svg?style=appyor)
 ![github-release-date-image](https://img.shields.io/github/release-date/dawlet-team/dawlet-poc.svg?style=appyor)

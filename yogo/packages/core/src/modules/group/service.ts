@@ -1,29 +1,41 @@
-import { Service, Inject } from 'typedi'
+import { Service } from 'typedi'
+import { GroupRepository } from './repository'
+import { NoteService } from '../note/service'
 
 @Service()
 export class GroupService implements Dawlet.IGroup.Service {
-  @Inject('GROUP')
-  private readonly groupMap: Dawlet.IGroup.Map
 
-  create(id: string) {
-    if(this.groupMap[id]) throw new Error(`Group id: ${id} already exists`)
-    const group = {
-      id,
-      notes: []
-    } as Dawlet.IGroup.Entity
-    this.groupMap[id] = group
+  constructor(
+    private groupRepository: GroupRepository,
+    private noteService: NoteService
+  ) { }
 
-    return group
+  create(id: string){
+    const record = this.groupRepository.save(id, [])
+    return this.groupRepository.getEntity(record.id)
   }
 
-  findBy(id: string) {
-    return this.groupMap[id]
+  findBy(id: string){
+    const record = this.groupRepository.findOne(id)
+    return this.groupRepository.getEntity(record.id)
   }
 
-  push(id: string, { notes } : Dawlet.IGroup.PushNoteInput) {
-    const map = this.groupMap[id]
-    map.notes.push(...notes)
-    return this.groupMap[id]
+  findAll() {
+    const store = this.groupRepository.findAll()
+    const entities = Object.values(store).map(record => {
+      return this.groupRepository.getEntity(record.id)
+    })
+    return entities
+  }
+
+  push({ groupId, notes } : Dawlet.IGroup.PushNoteInput) {
+    const noteIds = notes.map(note => this.noteService.create(note).id)
+    const record = this.groupRepository.pushNotes(groupId, noteIds)
+    return this.groupRepository.getEntity(record.id)
+  }
+
+  resetAllGroups() {
+    return this.groupRepository.resetAll()
   }
 
 }
