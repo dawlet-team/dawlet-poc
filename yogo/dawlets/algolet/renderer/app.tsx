@@ -33,8 +33,24 @@ const App = () => {
   if (error) console.error(error);
   const title = remote.getCurrentWindow().getTitle();
   const code = `
-      /* ${title} */
-      const pitch = Math.floor(Math.random() * 60)
+  /* ${title} */
+  console.log(sdk)
+  const group = await sdk.CreateGroup({ id: 'my-group' })
+  console.log('created group', group)
+  await sdk.PushNote({
+        pushNoteInput: {
+              groupId: 'my-group',
+              notes: [
+                    {
+                          freq: 440,
+                          duration: 0,
+                          offset: 0,
+                    }
+              ]
+        }
+  })
+  const allGroups = await sdk.ListAllGroups()
+  console.log('all groups', allGroups)
       `;
   console.log({data})
 

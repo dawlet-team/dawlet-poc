@@ -1,4 +1,5 @@
 import * as monaco from "monaco-editor/esm/vs/editor/editor.api";
+import { initDawletSdk } from '@dawlet/graphql'
 
 export const bindCommands = (editor: monaco.editor.IStandaloneCodeEditor) => {
   // Cmd + T
@@ -19,13 +20,21 @@ export const bindCommands = (editor: monaco.editor.IStandaloneCodeEditor) => {
     keybindings: [
       monaco.KeyMod.CtrlCmd | monaco.KeyMod.Shift | monaco.KeyCode.KEY_E
     ],
-    precondition: null,
-    keybindingContext: null,
     contextMenuGroupId: 'navigation',
     contextMenuOrder: 1.5,
     run() {
-      // TODO: eval and query/mutate gql
-      console.log('eval all', editor.getValue())
+      exec(editor.getValue())
     }
   });
 };
+
+function exec(code: string) {
+  //@ts-ignore
+  const sdk = initDawletSdk()
+  const ctx = `
+(async function() {
+  ${code}
+})()
+`
+  eval(ctx)
+}
