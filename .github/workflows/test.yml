@@ -30,3 +30,10 @@ jobs:
     - name: test
       working-directory: ./yogo
       run: npm run test
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v1
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        flags: unittests
+        name: dawlet-poc
+        fail_ci_if_error: true
