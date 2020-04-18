@@ -42,4 +42,8 @@ export class GroupRepository {
     delete this.store[id]
     return this.store
   }
+
+  reset() {
+    this.store = {}
+  }
 }
