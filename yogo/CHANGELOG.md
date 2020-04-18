@@ -3,6 +3,39 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/dawlet-team/dawlet-poc/compare/v0.6.3...v0.7.0) (2020-04-18)
+
+
+### Bug Fixes
+
+* **core:** build ([ecdca4f](https://github.com/dawlet-team/dawlet-poc/commit/ecdca4f2b9751efebd3f1cf2248a2780467cbcbc))
+* **core:** remove id from NoteInput since it is generated on the server-side ([b5efb54](https://github.com/dawlet-team/dawlet-poc/commit/b5efb54a3d47a264b13fe3d24a384a30f7114e3e))
+* **deps:** update apollo graphql packages ([6f59b03](https://github.com/dawlet-team/dawlet-poc/commit/6f59b033a6b774aa499ea5197811cc2e104d5863))
+* **deps:** update dependency @material-ui/core to v4.9.10 ([943b74b](https://github.com/dawlet-team/dawlet-poc/commit/943b74bfb17918b8871939da9ca57ede76a1e502))
+* **deps:** update dependency electron-devtools-installer to v3 ([606822f](https://github.com/dawlet-team/dawlet-poc/commit/606822fbc3ec76a680ea4f76fa4595a8a33d66da))
+* **deps:** update dependency opensheetmusicdisplay to v0.7.5 ([f4c6be8](https://github.com/dawlet-team/dawlet-poc/commit/f4c6be8e1f7aa9fa3259e79917f1d0789a0ff360))
+* **deps:** update dependency opensheetmusicdisplay to v0.7.6 ([da4306d](https://github.com/dawlet-team/dawlet-poc/commit/da4306d01466b2ea45bd805d2c1eec382502810a))
+* **deps:** update dependency react-monaco-editor to v0.36.0 ([ac59b58](https://github.com/dawlet-team/dawlet-poc/commit/ac59b583ae7d30037e13c3e0707419b606eb1465))
+* **deps:** update dependency tone to v14.5.46 ([5aa48a1](https://github.com/dawlet-team/dawlet-poc/commit/5aa48a191f32528a5c398405215469e9e72d1c1c))
+* **deps:** update dependency tone to v14.6.0 ([51d8894](https://github.com/dawlet-team/dawlet-poc/commit/51d889436c5f38317bb8d815b8ed2fde07bf1038))
+* **launcher:** do not require electron-devtools-installer from renderer process ([06b4762](https://github.com/dawlet-team/dawlet-poc/commit/06b47620900d20b19874654f319e6608d63df9ff))
+
+
+### Features
+
+* **core:** add groupdIds field to createNoteInput ([95380e7](https://github.com/dawlet-team/dawlet-poc/commit/95380e75a3a9b64d064b3192fa86c2f7a20f5304))
+* **core:** add GroupRepository ([a5c3d2d](https://github.com/dawlet-team/dawlet-poc/commit/a5c3d2d0194645e9297818feaec33be27978934c))
+* **core:** add GroupRepository.pushNotes ([c46d0c8](https://github.com/dawlet-team/dawlet-poc/commit/c46d0c80b611b10bb4b35e5c0eef2e799a150b8a))
+* **core:** add listAllGroups query ([fbac755](https://github.com/dawlet-team/dawlet-poc/commit/fbac755bbf6bc277cd96dab0f176dba70135509d))
+* **core:** add NoteRepository.findOne ([99f95a8](https://github.com/dawlet-team/dawlet-poc/commit/99f95a8248a346f846248c7cd9cac2bdb93104b0))
+* **core:** add resetAllGroups mutation ([a554504](https://github.com/dawlet-team/dawlet-poc/commit/a55450475e1e3c024c38097ca2abacfc9ef03408))
+* **core:** create Note Repository ([0ce4c0f](https://github.com/dawlet-team/dawlet-poc/commit/0ce4c0ff538d48a362a7db86ef2c77d1178cecde))
+* **core:** reset groupRepo ([a80fb10](https://github.com/dawlet-team/dawlet-poc/commit/a80fb109c539b56157b48638057ea8ab48a7247d))
+
+
+
+
+
 ## [0.6.3](https://github.com/dawlet-team/dawlet-poc/compare/v0.6.2...v0.6.3) (2020-04-06)
 
 **Note:** Version bump only for package dawlet-poc

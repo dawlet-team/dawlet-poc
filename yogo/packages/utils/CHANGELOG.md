@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/dawlet-team/dawlet-poc/compare/v0.6.3...v0.7.0) (2020-04-18)
+
+
+### Bug Fixes
+
+* **deps:** update dependency electron-devtools-installer to v3 ([606822f](https://github.com/dawlet-team/dawlet-poc/commit/606822fbc3ec76a680ea4f76fa4595a8a33d66da))
+
+
+
+
+
 # [0.6.0](https://github.com/dawlet-team/dawlet-poc/compare/v0.5.0...v0.6.0) (2020-04-06)
 
 **Note:** Version bump only for package @dawlet/utils
