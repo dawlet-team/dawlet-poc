@@ -16,7 +16,7 @@
   },
   "description": "Sheetlet displays the music represented as a sheetmusic.",
   "dependencies": {
-    "@dawlet/sheetmusic-viewer": "^0.7.0",
+    "@dawlet/ui": "^0.7.0",
     "@dawlet/utils": "^0.7.0",
     "apollo-boost": "0.4.7",
     "electron": "8.2.3",
