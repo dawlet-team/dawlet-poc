@@ -12,7 +12,7 @@ const GET_HELLO = gql`
 `;
 
 const sampleFile = readFileSync(
-  join(process.cwd(), "../../packages/sheetmusic-viewer/public/sample.xml"), // TODO: rename folder
+  join(process.cwd(), "../../packages/ui/public/sample.xml"),
   { encoding: "utf-8" }
 );
 
