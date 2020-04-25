@@ -1,0 +1,59 @@
+mutation CreateGroup($id: String!) {
+  createGroup(id: $id){
+    id
+    notes{
+      id
+      freq
+      duration
+      offset
+    }
+  }
+}
+
+query FindGroupBy($id: String!){
+  findGroupBy(id: $id){
+    id
+    notes {
+      id
+      freq
+      duration
+      offset
+    }
+  }
+}
+
+mutation PushNote($pushNoteInput: PushNoteInput!) {
+  pushNote(pushNoteInput: $pushNoteInput){
+    id
+    notes {
+      id
+      freq
+      duration
+      offset
+    }
+  }
+}
+
+query ListAllGroups {
+  listAllGroups{
+    id
+    notes {
+      id
+      freq
+      duration
+      offset
+    }
+  }
+}
+mutation ResetAllGroups {
+  resetAllGroups
+}
+
+mutation CreateNote ($params: CreateNoteInput!) {
+  createNote(params: $params) {
+    id
+    freq
+    offset
+    duration
+  }
+}
