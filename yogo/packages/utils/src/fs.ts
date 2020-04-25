@@ -11,7 +11,9 @@ export const pkgNameWithoutPrefix = (pkgName: string) => {
 }
 
 export const fetchAvailableDawlets = () => {
-  return readDawletsDir().map(retrieveDawletConfig)
+  return readDawletsDir()
+    .filter(dir => dir !== 'launcher')
+    .map(retrieveDawletConfig)
 }
 
 export const readDawletsDir = () => {

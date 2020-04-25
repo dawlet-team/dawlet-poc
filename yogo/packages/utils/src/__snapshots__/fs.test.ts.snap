@@ -23,6 +23,7 @@ Array [
 exports[`fetchAvailableDawlets reads dawlets folder 1`] = `
 Array [
   "algolet",
+  "launcher",
   "sheetlet",
   "synthlet",
 ]
