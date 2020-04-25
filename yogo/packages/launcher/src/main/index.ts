@@ -2,7 +2,7 @@ import { app, BrowserWindow, ipcMain } from 'electron'
 import { installDevTools } from '@dawlet/utils'
 import { spawnDawlet } from './utils'
 import { DawletIPC } from '../common/types'
-import { bootstrap } from '@dawlet/core'
+import { bootstrap } from '@dawlet/engine'
 
 function createWindow () {
   const win = new BrowserWindow({
