@@ -3,7 +3,7 @@ import { gql } from "apollo-boost";
 import { Query } from "react-apollo";
 import { join } from "path";
 import { readFileSync } from "fs";
-import { SheetMusicViewer } from "@dawlet/sheetmusic-viewer";
+import { SheetMusicViewer } from "@dawlet/ui";
 
 const GET_HELLO = gql`
   query {
@@ -12,7 +12,7 @@ const GET_HELLO = gql`
 `;
 
 const sampleFile = readFileSync(
-  join(process.cwd(), "../../packages/sheetmusic-viewer/public/sample.xml"),
+  join(process.cwd(), "../../packages/ui/public/sample.xml"),
   { encoding: "utf-8" }
 );
 

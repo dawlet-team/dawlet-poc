@@ -1,5 +1,5 @@
 overwrite: true
-schema: "../core/schema.gql"
+schema: "../engine/schema.gql"
 documents: "src/**/*.graphql"
 generates:
   src/sdk.ts:

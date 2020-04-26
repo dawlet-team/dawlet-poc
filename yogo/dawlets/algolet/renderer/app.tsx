@@ -6,7 +6,7 @@ import MonacoEditor from "react-monaco-editor";
 import SplitPane from "react-split-pane";
 // @ts-ignore
 import Pane from "react-split-pane/lib/Pane";
-import { SheetMusicViewer } from "@dawlet/sheetmusic-viewer";
+import { SheetMusicViewer } from "@dawlet/ui";
 // @ts-ignore
 import sampleFile from "./sample.xml"; // FIX_ME: hackie escape
 import * as monacoEditor from "monaco-editor/esm/vs/editor/editor.api";
