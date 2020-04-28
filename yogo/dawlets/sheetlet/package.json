@@ -19,7 +19,7 @@
     "@dawlet/ui": "^0.7.0",
     "@dawlet/utils": "^0.7.0",
     "apollo-boost": "0.4.7",
-    "electron": "8.2.3",
+    "electron": "8.2.4",
     "electron-log": "4.1.1",
     "electron-updater": "4.3.1",
     "graphql": "14.6.0",
