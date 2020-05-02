@@ -10,7 +10,8 @@
     "build:ts": "tsc",
     "build:storybook": "build-storybook -s ./public",
     "storybook": "start-storybook -s ./public",
-    "watch": "tsc --watch"
+    "watch": "tsc --watch",
+    "test": "jest"
   },
   "dependencies": {
     "opensheetmusicdisplay": "0.7.6",
