@@ -7,6 +7,10 @@ export const Sample = () => (
   <SheetMusicViewer options={{autoResize: true}} file="/sample.xml" />
 )
 
+export const QuarterTones = () => (
+  <SheetMusicViewer options={{autoResize: true}} file="/quarter-tones.xml" />
+)
+
 export const InlineSheetMusic = () => {
   const inlineFile = 
 `<?xml version="1.0" encoding="UTF-8"?>
