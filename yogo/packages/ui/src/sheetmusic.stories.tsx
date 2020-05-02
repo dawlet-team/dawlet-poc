@@ -1,5 +1,5 @@
 import React from 'react';
-import { SheetMusicViewer } from '../lib'
+import { SheetMusicViewer } from './'
 
 export default { title: 'SheetMusic' };
 
