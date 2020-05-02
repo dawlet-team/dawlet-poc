@@ -5,5 +5,6 @@ module.exports = {
   collectCoverage: true,
   transform: {
     '\\.xml$': "jest-raw-loader",
-  }
+  },
+  collectCoverageFrom: ['./src/**/*.ts']
 };
