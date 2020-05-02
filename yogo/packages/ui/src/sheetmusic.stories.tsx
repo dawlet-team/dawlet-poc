@@ -1,6 +1,6 @@
 import React from 'react';
 import { MusicXMLBuilder } from '@dawlet/utils/lib/musicXmlBuilder' // hackie escape
-import { SheetMusicViewer } from './'
+import { SheetMusicViewer } from './sheeetmusic'
 import { ScoreFactory } from './helper/sheetMusicFactory'
 
 export default { title: 'SheetMusic' };
