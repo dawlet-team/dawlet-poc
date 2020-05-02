@@ -62,8 +62,7 @@
   </defaults>
   <credit page="1">
     <credit-words default-x="680" default-y="1678" font-size="24" justify="center" valign="top">An die ferne Geliebte</credit-words>
-    <credit-words font-size="24" font-weight="bold"> 
-</credit-words>
+    <credit-words font-size="24" font-weight="bold"></credit-words>
     <credit-words font-size="14" font-weight="normal">Op. 98</credit-words>
   </credit>
   <credit page="1">
