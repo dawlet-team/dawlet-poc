@@ -6,7 +6,8 @@
   "author": "Yuichi Yogo",
   "main": "./lib/index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "run-p build:*",
+    "build:ts": "tsc",
     "build:storybook": "build-storybook -s ./public",
     "storybook": "start-storybook -s ./public",
     "watch": "tsc --watch"
