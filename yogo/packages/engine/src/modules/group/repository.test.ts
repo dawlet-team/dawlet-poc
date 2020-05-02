@@ -1,7 +1,7 @@
 import { Container } from "typedi";
 import { GroupRepository } from "./repository";
 import { NoteRepository } from "../note/repository";
-import { NoteFactory } from "../note/factory";
+import { NoteFactory } from "@dawlet/factory";
 describe("GroupRepository", () => {
   let noteRepo: NoteRepository;
   let groupRepo: GroupRepository;
@@ -95,6 +95,6 @@ describe("GroupRepository", () => {
   });
   it("resetAll", () => {
     groupRepo.save("my-group", []);
-    expect(groupRepo.resetAll()).toEqual({})
+    expect(groupRepo.resetAll()).toEqual({});
   });
 });

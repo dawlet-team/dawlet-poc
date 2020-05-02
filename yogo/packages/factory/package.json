@@ -2,7 +2,7 @@
   "name": "@dawlet/factory",
   "version": "0.7.0",
   "description": "Factory for Dawlet Entities",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "build": "tsc"
   },
