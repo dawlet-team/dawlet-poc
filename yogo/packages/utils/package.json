@@ -13,7 +13,8 @@
   },
   "dependencies": {
     "electron-devtools-installer": "3.0.0",
-    "electron-unhandled": "3.0.2"
+    "electron-unhandled": "3.0.2",
+    "xmlbuilder": "^15.1.1"
   },
   "devDependencies": {
     "@types/jest": "25.2.1",
