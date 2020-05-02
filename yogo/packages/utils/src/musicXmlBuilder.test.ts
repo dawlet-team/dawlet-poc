@@ -8,18 +8,33 @@ describe('musicXmlBuilder', () => {
       'part-list': {
         'score-part': {
           '@id': 'P1',
-          'part-name': 'my-part'
+          'part-name': 'Music'
         }
       },
       part: {
         '@id': 'P1',
         measure: {
+          '@number': 1,
+          attributes: {
+            divisions: 1,
+            key: {
+              fifths: 0
+            },
+            time: {
+              beats: 4,
+              'beat-type': 4
+            },
+            clef: {
+              sign: 'G',
+              line: 2
+            }
+          },
           note: [{
             pitch: {
               step: 'C',
               octave: 4
             },
-            duration: 1,
+            duration: 4,
             type: 'whole'
           }]
         }

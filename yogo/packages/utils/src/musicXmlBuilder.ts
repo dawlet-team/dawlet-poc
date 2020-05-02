@@ -17,6 +17,7 @@ type Part = {
   measure: Measure
 }
 type Measure = {
+  '@number': number
   attributes?: {
     divisions: number
     key: {
@@ -53,7 +54,10 @@ export class MusicXMLBuilder {
 
   render(score: Score) {
     const xmlObject = {
-      [this.scoreType]: score
+      [this.scoreType]: {
+        '@version': '3.1',
+        ...score
+      }
     }
     return xmlBuilder.create(xmlObject)
       .dec('1.0', 'UTF-8', false)
