@@ -1,0 +1,18 @@
+{
+  "name": "@dawlet/factory",
+  "version": "0.7.0",
+  "description": "Factory for Dawlet Entities",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "author": "Yuichi Yogo",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/faker": "^4.1.11",
+    "@types/rosie": "0.0.37",
+    "faker": "^4.1.0",
+    "rosie": "^2.0.1",
+    "typescript": "^3.8.3"
+  }
+}
