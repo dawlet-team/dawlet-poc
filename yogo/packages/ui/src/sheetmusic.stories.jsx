@@ -1,9 +1,8 @@
 import React from 'react';
-import { Button } from '@storybook/react/demo';
 import { SheetMusicViewer } from '../lib'
 
 export default { title: 'SheetMusic' };
 
-export const withSheetMusic = () => (
+export const Sample = () => (
   <SheetMusicViewer options={{autoResize: true}} file="/sample.xml" />
 )
