@@ -9,7 +9,8 @@
     "build": "tsc",
     "test": "jest",
     "lint": "tsc --noEmit",
-    "watch": "tsc --watch"
+    "watch": "tsc --watch",
+    "generate:schema": "npx beaulac/cxsd file://schema/musicxml.xsd"
   },
   "dependencies": {
     "electron-devtools-installer": "3.0.0",
