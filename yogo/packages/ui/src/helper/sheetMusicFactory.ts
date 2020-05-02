@@ -21,7 +21,6 @@ export const ScoreFactory = Factory.define<Score>('Score')
               type: random.arrayElement(['quarter', 'whole', 'eighth'])
 
       }))
-      console.log({notes})
       return {
         '@id': 'P1',
         measure: {
