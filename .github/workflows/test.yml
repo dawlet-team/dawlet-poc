@@ -23,7 +23,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: install
       working-directory: ./yogo
-      run: npm install
+      run: npm ci
     - name: build
       working-directory: ./yogo
       run: npm run build

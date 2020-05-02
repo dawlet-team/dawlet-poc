@@ -29,7 +29,7 @@ jobs:
           node-version: 12.x
       - name: Install
         working-directory: ./yogo # WHEN MIGRATED TO A SEPARATE REPO, REMOVE THIS
-        run: npm install
+        run: npm ci
       - name: Build 
         working-directory: ./yogo # WHEN MIGRATED TO A SEPARATE REPO, REMOVE THIS
         run: npm run build
