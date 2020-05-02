@@ -1,4 +1,6 @@
 import { MusicXMLBuilder, Score } from './musicXmlBuilder'
+//@ts-ignore
+import expectedFile from './test.xml'
 
 describe('musicXmlBuilder', () => {
   it('', () => {
@@ -24,6 +26,6 @@ describe('musicXmlBuilder', () => {
       }
     }
     const musicXmlBuilder = new MusicXMLBuilder()
-    expect(musicXmlBuilder.render(score)).toBeDefined()
+    expect(musicXmlBuilder.render(score)).toEqual(expectedFile)
   })
 })

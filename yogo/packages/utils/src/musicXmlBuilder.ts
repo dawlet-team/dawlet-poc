@@ -1,11 +1,5 @@
 import xmlBuilder from 'xmlbuilder'
 
-type ConstructorOptions = {
-  timeWise?: boolean
-}
-const defaultOptions: ConstructorOptions = {
-  timeWise: false
-}
 type ScoreType = 'score-partwise' | 'score-timewise'
 
 export type Score = {
@@ -49,9 +43,8 @@ type Note = {
 }
 
 export class MusicXMLBuilder {
-  private DOCTYPE = `<!DOCTYPE score-partwise PUBLIC
-"-//Recordare//DTD MusicXML 3.1 Partwise//EN"
-"http://www.musicxml.org/dtds/partwise.dtd" >`
+  private pubId = `-//Recordare//DTD MusicXML 3.1 Partwise//EN`
+  private sysId = `http://www.musicxml.org/dtds/partwise.dtd`
   private scoreType: ScoreType
 
   constructor() {
@@ -62,11 +55,10 @@ export class MusicXMLBuilder {
     const xmlObject = {
       [this.scoreType]: score
     }
-    return xmlBuilder.create(
-      xmlObject
-      , {
-      sysID: this.DOCTYPE
-    }).end({
+    return xmlBuilder.create(xmlObject)
+      .dec('1.0', 'UTF-8', false)
+      .dtd(this.pubId, this.sysId)
+      .end({
       pretty: true
     })
   }
