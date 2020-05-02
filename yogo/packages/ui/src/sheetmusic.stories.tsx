@@ -1,5 +1,7 @@
 import React from 'react';
+import { MusicXMLBuilder } from '@dawlet/utils/lib/musicXmlBuilder' // hackie escape
 import { SheetMusicViewer } from './'
+import { ScoreFactory } from './helper/sheetMusicFactory'
 
 export default { title: 'SheetMusic' };
 
@@ -49,5 +51,13 @@ export const InlineSheetMusic = () => {
 `
   return (
     <SheetMusicViewer options={{ autoResize: true }} file={inlineFile} />
+  )
+}
+
+export const RandomSheetMusic = () => {
+  const score = ScoreFactory.build()
+  const randomFile = new MusicXMLBuilder().render(score)
+  return (
+    <SheetMusicViewer options={{ autoResize: true }} file={randomFile} />
   )
 }
