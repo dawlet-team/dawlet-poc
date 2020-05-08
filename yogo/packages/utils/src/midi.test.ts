@@ -2,7 +2,6 @@ import {
   groupsToMidi,
   noteToMidi
 } from "./midi";
-import { NoteFactory } from "../../factory/lib";
 
 describe("noteToMidi", () => {
   it("converts a single note into some MIDI messages and offset times", () => {
