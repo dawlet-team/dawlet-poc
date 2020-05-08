@@ -1,5 +1,5 @@
 import * as JZZ from 'jzz'
-import * as JzzMidiSmf from 'jzz-midi-smf'
+import JzzMidiSmf from 'jzz-midi-smf'
 
 type int = number;
 type uint = number;
