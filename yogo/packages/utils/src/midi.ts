@@ -1,4 +1,5 @@
 import * as JZZ from 'jzz'
+import * as JzzMidiSmf from 'jzz-midi-smf'
 
 type int = number;
 type uint = number;
@@ -15,6 +16,7 @@ type NormalizedFloat = number;
 type Id = uint;
 type Sec = ufloat;
 type Ms = ufloat;
+type Tick = uint;
 /** the unit is Hz */
 type Freq = ufloat;
 
@@ -26,8 +28,14 @@ declare namespace Midi {
   type Message = [StatusByte, DataByte] | [StatusByte, DataByte, DataByte]
 }
 
+type FIX_ME = any;
+
 const DEFAULT_VELOCITY = 100;
 const DEFAULT_CHANNEL = 1;
+const bpm = 120;
+/** ticks per beat `ticks = minutes * bpm * tpb` */
+const ticksPerBeat = 480;
+const msPerTick = 60 * 1e3 / bpm / ticksPerBeat;
 
 /** Convert frequency into MIDI NoteNumber */
 const ftom = (freq: Freq): Midi.NoteNumber => {
@@ -44,9 +52,39 @@ const ftom = (freq: Freq): Midi.NoteNumber => {
   return midiNoteNumber;
 };
 
-type FIX_ME = any;
-
 const jzzMidiToMidiMessage = (jzzMidi: FIX_ME): Midi.Message => jzzMidi.map(v => v);
+
+const msToTick = (ms: Ms): Tick => {
+  return ms / msPerTick;
+};
+
+const str2ab = (str) => {
+  const buf = new ArrayBuffer(str.length*2); // 2 bytes for each char
+  const bufView = new Uint16Array(buf);
+  for (let i = 0, strLen = str.length; i < strLen; i++) {
+    bufView[i] = str.charCodeAt(i);
+  }
+  return buf;
+};
+
+const initJzzMidiSmf = (): void => { JzzMidiSmf(JZZ) };
+
+export const groupsToSmf = (groups: Dawlet.IGroup.Entity[]): ArrayBuffer => {
+  return genSmf(groupsToMidi(groups));
+};
+
+export const genSmf = (msgAndOffsets: { midiMessage: Midi.Message, offset: Ms}[]): ArrayBuffer => {
+  initJzzMidiSmf();
+  // @ts-ignore
+  const mtrk = new JZZ.MIDI.SMF.MTrk();
+  msgAndOffsets.forEach(({midiMessage, offset}) => {
+    mtrk.add(msToTick(offset), new JZZ.MIDI(midiMessage));
+  });
+  // @ts-ignore
+  const smf = new JZZ.MIDI.SMF(0, ticksPerBeat);
+  smf.push(mtrk);
+  return str2ab(smf.dump());
+};
 
 export const groupsToMidi = (groups: Dawlet.IGroup.Entity[]): { midiMessage: Midi.Message, offset: Ms}[] => {
   return groups.flatMap(group => group.notes.flatMap(noteToMidi))
