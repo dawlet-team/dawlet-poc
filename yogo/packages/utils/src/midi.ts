@@ -49,7 +49,7 @@ type FIX_ME = any;
 const jzzMidiToMidiMessage = (jzzMidi: FIX_ME): Midi.Message => jzzMidi.map(v => v);
 
 export const groupsToMidi = (groups: Dawlet.IGroup.Entity[]): { midiMessage: Midi.Message, offset: Ms}[] => {
-  return [{ midiMessage: [60, 60, 60], offset: 1000}]
+  return groups.flatMap(group => group.notes.flatMap(noteToMidi))
 };
 
 export const noteToMidi = (note: Dawlet.INote.Entity): { midiMessage: Midi.Message, offset: Ms}[] => {
