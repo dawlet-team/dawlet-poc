@@ -37,7 +37,7 @@
     "file-loader": "6.0.0",
     "html-webpack-plugin": "4.3.0",
     "jest": "26.0.1",
-    "ts-jest": "25.4.0",
+    "ts-jest": "25.5.1",
     "ts-loader": "7.0.3",
     "ts-node": "8.10.1",
     "typescript": "3.8.3",
