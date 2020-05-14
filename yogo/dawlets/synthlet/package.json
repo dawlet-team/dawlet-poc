@@ -17,7 +17,7 @@
   "description": "Synthlet provides a simple synthesizer to playback the music. It has a dedicated local transport on its own. ",
   "dependencies": {
     "@dawlet/utils": "^0.7.0",
-    "apollo-boost": "0.4.8",
+    "apollo-boost": "0.4.9",
     "apollo-link-ws": "1.0.20",
     "electron-log": "4.1.2",
     "electron-updater": "4.3.1",
