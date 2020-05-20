@@ -13,6 +13,6 @@
     "@types/rosie": "0.0.37",
     "faker": "4.1.0",
     "rosie": "2.0.1",
-    "typescript": "3.9.2"
+    "typescript": "3.9.3"
   }
 }
