@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "conventional-changelog-cli": "2.0.34",
-    "lerna": "3.21.0",
+    "lerna": "3.22.0",
     "rimraf": "3.0.2"
   },
   "dependencies": {}
