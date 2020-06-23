@@ -31,7 +31,7 @@
     "apollo-server-testing": "2.15.0",
     "faker": "4.1.0",
     "graphql-tag": "2.10.3",
-    "jest": "26.0.1",
+    "jest": "26.1.0",
     "nodemon": "2.0.4",
     "prettier": "2.0.5",
     "rosie": "2.0.1",
