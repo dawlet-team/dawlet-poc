@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@types/graphql": "14.5.0",
-    "apollo-server": "2.15.0",
+    "apollo-server": "2.15.1",
     "graphql": "14.6.0",
     "reflect-metadata": "0.1.13",
     "type-graphql": "0.17.6",
@@ -28,7 +28,7 @@
     "@types/faker": "4.1.12",
     "@types/jest": "25.2.3",
     "@types/rosie": "0.0.37",
-    "apollo-server-testing": "2.15.0",
+    "apollo-server-testing": "2.15.1",
     "faker": "4.1.0",
     "graphql-tag": "2.10.3",
     "jest": "26.1.0",
