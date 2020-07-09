@@ -57,7 +57,7 @@
     "@types/react-dom": "16.9.8",
     "@types/webpack": "4.41.21",
     "css-loader": "3.5.3",
-    "electron": "8.3.1",
+    "electron": "8.4.0",
     "electron-builder": "22.6.1",
     "file-loader": "6.0.0",
     "html-webpack-plugin": "4.3.0",
