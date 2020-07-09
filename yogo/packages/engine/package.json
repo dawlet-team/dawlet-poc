@@ -30,7 +30,7 @@
     "@types/rosie": "0.0.37",
     "apollo-server-testing": "2.15.1",
     "faker": "4.1.0",
-    "graphql-tag": "2.10.3",
+    "graphql-tag": "2.10.4",
     "jest": "26.1.0",
     "nodemon": "2.0.4",
     "prettier": "2.0.5",
