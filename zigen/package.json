@@ -13,7 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "debug": "^4.1.1",
-    "electron": "^7.1.5",
+    "electron": "^7.2.4",
     "eventemitter3": "^4.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
