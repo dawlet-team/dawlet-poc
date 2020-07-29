@@ -11,10 +11,10 @@
   "author": "Yuichi Yogo",
   "license": "ISC",
   "devDependencies": {
-    "@graphql-codegen/cli": "1.17.4",
-    "@graphql-codegen/typescript": "1.17.4",
-    "@graphql-codegen/typescript-graphql-request": "1.17.4",
-    "@graphql-codegen/typescript-operations": "1.17.4",
+    "@graphql-codegen/cli": "1.17.6",
+    "@graphql-codegen/typescript": "1.17.6",
+    "@graphql-codegen/typescript-graphql-request": "1.17.6",
+    "@graphql-codegen/typescript-operations": "1.17.6",
     "typescript": "3.9.7"
   },
   "dependencies": {
