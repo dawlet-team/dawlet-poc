@@ -58,7 +58,7 @@
     "@types/webpack": "4.41.21",
     "css-loader": "4.2.1",
     "electron": "9.1.2",
-    "electron-builder": "22.6.1",
+    "electron-builder": "22.8.0",
     "file-loader": "6.0.0",
     "html-webpack-plugin": "4.3.0",
     "jest": "26.1.0",
