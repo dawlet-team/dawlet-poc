@@ -17,13 +17,13 @@
   },
   "devDependencies": {
     "@babel/core": "7.11.1",
-    "@storybook/react": "6.0.1",
+    "@storybook/react": "6.0.2",
     "@types/jest": "26.0.9",
     "@types/react": "16.9.44",
     "@types/react-dom": "16.9.8",
     "babel-loader": "8.1.0",
     "jest": "26.1.0",
-    "storybook": "6.0.1",
+    "storybook": "6.0.2",
     "ts-jest": "26.2.0",
     "ts-node": "8.10.2",
     "typescript": "3.9.7"
