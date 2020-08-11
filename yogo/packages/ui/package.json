@@ -24,7 +24,7 @@
     "babel-loader": "8.1.0",
     "jest": "26.1.0",
     "storybook": "6.0.1",
-    "ts-jest": "26.1.4",
+    "ts-jest": "26.2.0",
     "ts-node": "8.10.2",
     "typescript": "3.9.7"
   }
