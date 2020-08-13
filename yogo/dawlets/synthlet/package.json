@@ -19,7 +19,7 @@
     "@dawlet/utils": "^0.7.0",
     "apollo-boost": "0.4.9",
     "apollo-link-ws": "1.0.20",
-    "electron-log": "4.2.3",
+    "electron-log": "4.2.4",
     "electron-updater": "4.3.4",
     "graphql": "14.7.0",
     "react": "16.13.1",
