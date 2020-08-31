@@ -34,7 +34,7 @@
     "@types/react-dom": "16.9.8",
     "@types/webpack": "4.41.21",
     "electron-builder": "22.8.0",
-    "file-loader": "6.0.0",
+    "file-loader": "6.1.0",
     "html-webpack-plugin": "4.4.1",
     "jest": "26.1.0",
     "ts-jest": "26.3.0",
