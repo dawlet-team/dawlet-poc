@@ -9,7 +9,7 @@
   "author": "Yuichi Yogo",
   "license": "ISC",
   "devDependencies": {
-    "@types/faker": "4.1.12",
+    "@types/faker": "5.1.0",
     "@types/rosie": "0.0.37",
     "faker": "5.1.0",
     "rosie": "2.0.1",
