@@ -17,8 +17,8 @@
     "generate:docs": "lerna run generate:docs"
   },
   "devDependencies": {
-    "conventional-changelog-cli": "2.0.31",
-    "lerna": "3.20.2",
+    "conventional-changelog-cli": "2.1.0",
+    "lerna": "3.22.1",
     "rimraf": "3.0.2"
   },
   "dependencies": {}
