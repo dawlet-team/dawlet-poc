@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/dawlet-team/dawlet-poc/compare/v0.7.0...v0.8.0) (2020-09-10)
+
+
+### Bug Fixes
+
+* **ui:** fix package location ([e7767cd](https://github.com/dawlet-team/dawlet-poc/commit/e7767cde431706dab5dc519849e824896ecd529e))
+* **ui:** mv storyshots test file ([f4a56da](https://github.com/dawlet-team/dawlet-poc/commit/f4a56dab0854adfd2f7191106785378a5086b8ec))
+* **ui:** skipLibCheck ([c945361](https://github.com/dawlet-team/dawlet-poc/commit/c945361d11594c62be439f3b168d2052ec43bbd3))
+
+
+
+
+
 # [0.7.0](https://github.com/dawlet-team/dawlet-poc/compare/v0.6.3...v0.7.0) (2020-04-18)
 
 

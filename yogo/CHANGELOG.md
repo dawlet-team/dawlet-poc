@@ -3,6 +3,43 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/dawlet-team/dawlet-poc/compare/v0.7.0...v0.8.0) (2020-09-10)
+
+
+### Bug Fixes
+
+* **algolet:** set enableRemoteModule to true ([fd2075a](https://github.com/dawlet-team/dawlet-poc/commit/fd2075ab86501ce74f3991e638e386afe7e89776))
+* **deps:** update apollo graphql packages to v2.13.0 ([53c2f2c](https://github.com/dawlet-team/dawlet-poc/commit/53c2f2cc142c568501700da3944f236e2defe898))
+* **deps:** update dependency @material-ui/core to v4.9.12 ([bb9e426](https://github.com/dawlet-team/dawlet-poc/commit/bb9e426d29e332864140574b785597bbb1ed75c5))
+* **deps:** update dependency @material-ui/core to v4.9.13 ([8efe296](https://github.com/dawlet-team/dawlet-poc/commit/8efe296aae426ba329a41608ede9e7d5813e1d06))
+* **deps:** update dependency apollo-boost to v0.4.8 ([cdb3ac2](https://github.com/dawlet-team/dawlet-poc/commit/cdb3ac20d7acfb77f0baf7fbc615cee40e84a296))
+* **deps:** update dependency electron-log to v4.1.2 ([1c3c125](https://github.com/dawlet-team/dawlet-poc/commit/1c3c1258892bbbca86f7a8f77ca8b9e807fd5336))
+* **deps:** update dependency electron-updater to v4.3.1 ([3a56819](https://github.com/dawlet-team/dawlet-poc/commit/3a56819e3c57459d98b9ca99fd9b7659c69d0000))
+* **deps:** update dependency tone to v14.6.10 ([3fdb7b6](https://github.com/dawlet-team/dawlet-poc/commit/3fdb7b66e5e5a26c75989072c01450351ae13ac3))
+* **deps:** update dependency tone to v14.6.11 ([0580c4e](https://github.com/dawlet-team/dawlet-poc/commit/0580c4e5cc9cee828d4f6fa4b2d53c2f1c87ba19))
+* **deps:** update dependency tone to v14.6.12 ([f7f0f01](https://github.com/dawlet-team/dawlet-poc/commit/f7f0f01141bcb0ba9b5ccf89a137844fe0fc40ff))
+* **deps:** update dependency tone to v14.6.13 ([9fe9d7d](https://github.com/dawlet-team/dawlet-poc/commit/9fe9d7d061a561ec205a5cc98a479f4d14e3872c))
+* **deps:** update dependency tone to v14.6.4 ([eaf9828](https://github.com/dawlet-team/dawlet-poc/commit/eaf9828887a98294468e25ca1b1f9de33a4a7a3f))
+* **deps:** update dependency tone to v14.6.8 ([edbc522](https://github.com/dawlet-team/dawlet-poc/commit/edbc522bc63d358eb24136e9cf511b7c8f939595))
+* **deps:** update dependency tone to v14.6.9 ([93e8512](https://github.com/dawlet-team/dawlet-poc/commit/93e8512f393cd4342d2fae332f453c160ee9d4f4))
+* **graphql:** path of schema file ([76e9b3b](https://github.com/dawlet-team/dawlet-poc/commit/76e9b3bd46967d961a3ed5422520d6d7643eb9f6))
+* **ui:** fix package location ([e7767cd](https://github.com/dawlet-team/dawlet-poc/commit/e7767cde431706dab5dc519849e824896ecd529e))
+* **ui:** mv storyshots test file ([f4a56da](https://github.com/dawlet-team/dawlet-poc/commit/f4a56dab0854adfd2f7191106785378a5086b8ec))
+* **ui:** skipLibCheck ([c945361](https://github.com/dawlet-team/dawlet-poc/commit/c945361d11594c62be439f3b168d2052ec43bbd3))
+
+
+### Features
+
+* **algolet:** bind keyCommands ([d224e5a](https://github.com/dawlet-team/dawlet-poc/commit/d224e5a98a36b37e226e8cd97b57bb8dee85ec39))
+* **algolet:** eval sdk ([e419c13](https://github.com/dawlet-team/dawlet-poc/commit/e419c13ff0af74c54a3d614ea8593481f19874f6))
+* **graphql:** add auto-generator for graphql-client ([b50f825](https://github.com/dawlet-team/dawlet-poc/commit/b50f8253d806a460bc6585cd232700cf27e532b9))
+* **utils:** auto-generate definitions from musicxml schema ([ba4eb13](https://github.com/dawlet-team/dawlet-poc/commit/ba4eb13eda70693468079b12d2c5fff3b310a3ea))
+* **utils:** musicXmlBuilder ([83137c1](https://github.com/dawlet-team/dawlet-poc/commit/83137c17f024714d653cec8d24e1edf0a6baca79))
+
+
+
+
+
 # [0.7.0](https://github.com/dawlet-team/dawlet-poc/compare/v0.6.3...v0.7.0) (2020-04-18)
 
 

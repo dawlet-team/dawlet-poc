@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/dawlet-team/dawlet-poc/compare/v0.7.0...v0.8.0) (2020-09-10)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @material-ui/core to v4.9.12 ([bb9e426](https://github.com/dawlet-team/dawlet-poc/commit/bb9e426d29e332864140574b785597bbb1ed75c5))
+* **deps:** update dependency @material-ui/core to v4.9.13 ([8efe296](https://github.com/dawlet-team/dawlet-poc/commit/8efe296aae426ba329a41608ede9e7d5813e1d06))
+* **deps:** update dependency electron-log to v4.1.2 ([1c3c125](https://github.com/dawlet-team/dawlet-poc/commit/1c3c1258892bbbca86f7a8f77ca8b9e807fd5336))
+* **deps:** update dependency electron-updater to v4.3.1 ([3a56819](https://github.com/dawlet-team/dawlet-poc/commit/3a56819e3c57459d98b9ca99fd9b7659c69d0000))
+
+
+
+
+
 # [0.7.0](https://github.com/dawlet-team/dawlet-poc/compare/v0.6.3...v0.7.0) (2020-04-18)
 
 

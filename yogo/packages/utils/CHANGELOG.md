@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/dawlet-team/dawlet-poc/compare/v0.7.0...v0.8.0) (2020-09-10)
+
+
+### Features
+
+* **utils:** auto-generate definitions from musicxml schema ([ba4eb13](https://github.com/dawlet-team/dawlet-poc/commit/ba4eb13eda70693468079b12d2c5fff3b310a3ea))
+* **utils:** musicXmlBuilder ([83137c1](https://github.com/dawlet-team/dawlet-poc/commit/83137c17f024714d653cec8d24e1edf0a6baca79))
+
+
+
+
+
 # [0.7.0](https://github.com/dawlet-team/dawlet-poc/compare/v0.6.3...v0.7.0) (2020-04-18)
 
 

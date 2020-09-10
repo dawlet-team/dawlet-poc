@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/dawlet-team/dawlet-poc/compare/v0.7.0...v0.8.0) (2020-09-10)
+
+
+### Bug Fixes
+
+* **algolet:** set enableRemoteModule to true ([fd2075a](https://github.com/dawlet-team/dawlet-poc/commit/fd2075ab86501ce74f3991e638e386afe7e89776))
+* **deps:** update dependency apollo-boost to v0.4.8 ([cdb3ac2](https://github.com/dawlet-team/dawlet-poc/commit/cdb3ac20d7acfb77f0baf7fbc615cee40e84a296))
+* **deps:** update dependency electron-log to v4.1.2 ([1c3c125](https://github.com/dawlet-team/dawlet-poc/commit/1c3c1258892bbbca86f7a8f77ca8b9e807fd5336))
+* **deps:** update dependency electron-updater to v4.3.1 ([3a56819](https://github.com/dawlet-team/dawlet-poc/commit/3a56819e3c57459d98b9ca99fd9b7659c69d0000))
+
+
+### Features
+
+* **algolet:** bind keyCommands ([d224e5a](https://github.com/dawlet-team/dawlet-poc/commit/d224e5a98a36b37e226e8cd97b57bb8dee85ec39))
+* **algolet:** eval sdk ([e419c13](https://github.com/dawlet-team/dawlet-poc/commit/e419c13ff0af74c54a3d614ea8593481f19874f6))
+
+
+
+
+
 # [0.7.0](https://github.com/dawlet-team/dawlet-poc/compare/v0.6.3...v0.7.0) (2020-04-18)
 
 
