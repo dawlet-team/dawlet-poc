@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Storyshots SheetMusic Inline Sheet Music 1`] = `<div />`;
-
-exports[`Storyshots SheetMusic Quarter Tones 1`] = `<div />`;
-
-exports[`Storyshots SheetMusic Random Sheet Music 1`] = `<div />`;
-
-exports[`Storyshots SheetMusic Sample 1`] = `<div />`;
