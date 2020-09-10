@@ -7,7 +7,7 @@
     "strict": true,                           /* Enable all strict type-checking options. */
     "esModuleInterop": true,
     "outDir": "./lib",
-    "declaration": true
-  },
-  "exclude": ["src/**/*.stories.jsx", "./lib/*"]
+    "declaration": true,
+    "skipLibCheck": true
+  }
 }

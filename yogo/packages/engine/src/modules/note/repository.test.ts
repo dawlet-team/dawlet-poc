@@ -1,6 +1,6 @@
 import { Container } from 'typedi'
 import { NoteRepository } from './repository'
-import { NoteFactory } from './factory'
+import { NoteFactory } from '@dawlet/factory'
 
 describe('NoteRepository', () => {
   let repo: NoteRepository

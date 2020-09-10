@@ -8,11 +8,6 @@ Array [
     "name": "@dawlet/algolet",
   },
   Object {
-    "description": "Sheetlet displays the music represented as a sheetmusic.",
-    "localizable": true,
-    "name": "@dawlet/sheetlet",
-  },
-  Object {
     "description": "Synthlet provides a simple synthesizer to playback the music. It has a dedicated local transport on its own. ",
     "localizable": true,
     "name": "@dawlet/synthlet",
@@ -24,7 +19,6 @@ exports[`fetchAvailableDawlets reads dawlets folder 1`] = `
 Array [
   "algolet",
   "launcher",
-  "sheetlet",
   "synthlet",
 ]
 `;

@@ -1,4 +1,8 @@
 {
   "coverage-gutters.showGutterCoverage": false,
-  "coverage-gutters.showLineCoverage": true
+  "coverage-gutters.showLineCoverage": true,
+  "cSpell.words": [
+    "partwise",
+    "timewise"
+  ]
 }

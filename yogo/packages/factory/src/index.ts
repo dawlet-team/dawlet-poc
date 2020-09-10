@@ -1,5 +1,6 @@
 import { random } from 'faker'
 import { Factory } from 'rosie'
+export { seed } from 'faker'
 
 export const NoteFactory = Factory.define<Dawlet.INote.Entity>('note')
   .sequence('id')

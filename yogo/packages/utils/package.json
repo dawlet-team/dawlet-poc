@@ -9,18 +9,21 @@
     "build": "tsc",
     "test": "jest",
     "lint": "tsc --noEmit",
-    "watch": "tsc --watch"
+    "watch": "tsc --watch",
+    "generate:schema": "npx beaulac/cxsd file://schema/musicxml.xsd"
   },
   "dependencies": {
     "electron-devtools-installer": "3.1.1",
     "electron-unhandled": "3.0.2",
     "jzz": "1.0.9",
-    "jzz-midi-smf": "1.3.9"
+    "jzz-midi-smf": "1.3.9",
+    "xmlbuilder": "^15.1.1"
   },
   "devDependencies": {
     "@types/jest": "26.0.13",
     "@types/node": "13.13.15",
     "jest": "26.1.0",
+    "jest-raw-loader": "^1.0.1",
     "ts-jest": "26.3.0",
     "ts-node": "9.0.0",
     "typescript": "4.0.2"
