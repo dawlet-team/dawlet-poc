@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/dawlet-team/dawlet-poc/compare/v0.7.0...v0.8.0) (2020-09-10)
+
+
+### Bug Fixes
+
+* **deps:** update apollo graphql packages to v2.13.0 ([53c2f2c](https://github.com/dawlet-team/dawlet-poc/commit/53c2f2cc142c568501700da3944f236e2defe898))
+
+
+
+
+
 # [0.7.0](https://github.com/dawlet-team/dawlet-poc/compare/v0.6.3...v0.7.0) (2020-04-18)
 
 

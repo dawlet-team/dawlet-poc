@@ -1,6 +1,6 @@
 {
   "name": "@dawlet/ui",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "private": true,
   "license": "MIT",
   "author": "Yuichi Yogo",
@@ -14,10 +14,10 @@
     "test": "jest --passWithNoTests"
   },
   "dependencies": {
+    "@dawlet/utils": "^0.8.0",
     "opensheetmusicdisplay": "0.8.4",
     "react": "16.13.1",
-    "react-dom": "16.13.1",
-    "@dawlet/utils": "0.7.0"
+    "react-dom": "16.13.1"
   },
   "devDependencies": {
     "@babel/core": "7.11.6",
