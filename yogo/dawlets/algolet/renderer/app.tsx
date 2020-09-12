@@ -55,13 +55,14 @@ const App = () => {
   console.log({data})
 
   const onDidMount = (editor: monacoEditor.editor.IStandaloneCodeEditor) => {
+    editor.focus()
     bindCommands(editor)
   };
 
   return (
     <SplitPane split="vertical">
       <Pane>
-        <div id="monaco-wrapper" style={{ height: "100%", opacity: 0.9 }}>
+        <div id="monaco-wrapper" style={{ height: "100vh", opacity: 0.9 }}>
           <MonacoEditor
             language="javascript"
             theme="vs-dark"
