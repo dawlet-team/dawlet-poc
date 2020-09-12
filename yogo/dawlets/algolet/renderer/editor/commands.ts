@@ -31,25 +31,20 @@ export const bindCommands = (editor: monaco.editor.IStandaloneCodeEditor) => {
       exec(editor.getValue())
     }
   });
-
-  editor.addAction({
-    id: 'export-midi',
-    label: 'export midi',
-    keybindings: [
-      monaco.KeyMod.CtrlCmd | monaco.KeyMod.Shift | monaco.KeyCode.KEY_M
-    ],
-    async run() {
-      const { listAllGroups } = await sdk.ListAllGroups()
-      const midi = groupsToSmf(listAllGroups)
-      writeFileSync(join(process.cwd(), 'tmp.mid'), midi, {encoding: 'binary'})
-    }
-  })
 };
 
 function exec(code: string) {
+  const exportMidi = async () => {
+      const { listAllGroups } = await sdk.ListAllGroups()
+      const midi = groupsToSmf(listAllGroups)
+      console.log("exporting midi", midi)
+      writeFileSync(join(process.cwd(), 'tmp.mid'), midi, {encoding: 'binary'})
+  }
+
   const ctx = `
 (async function() {
   ${code}
+  await exportMidi()
 })()
 `
   eval(ctx)
