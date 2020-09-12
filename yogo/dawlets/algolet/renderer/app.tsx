@@ -10,8 +10,10 @@ import SplitPane from "react-split-pane";
 // @ts-ignore
 import Pane from "react-split-pane/lib/Pane";
 import { bindCommands } from "./editor/commands";
-// @ts-ignore
-import sampleFile from "./sample.xml"; // FIX_ME: hackie escape
+import { MusicXMLBuilder } from '@dawlet/utils/lib/musicXmlBuilder'
+import { initDawletSdk } from '@dawlet/graphql'
+
+const sdk = initDawletSdk()
 
 const LIST_ALL_GROUPS = gql`
   query {
@@ -27,9 +29,11 @@ const LIST_ALL_GROUPS = gql`
   }
 `;
 
+const musicXmlBuilder = new MusicXMLBuilder()
 const App = () => {
   const { data, loading, error } = useQuery(LIST_ALL_GROUPS);
   const [editor, setEditor] = useState<monacoEditor.editor.IStandaloneCodeEditor | null>(null)
+  const [score, setScore] = useState<string>('')
   const dndAreaRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     function onDragStart(event) {
@@ -69,7 +73,12 @@ const App = () => {
   const onDidMount = (_editor: monacoEditor.editor.IStandaloneCodeEditor) => {
     setEditor(_editor)
     _editor.focus();
-    bindCommands(_editor);
+    const onEvalEnd = (group) => {
+      const score = musicXmlBuilder.convertDawletGroupToXmlScore(group)
+      const scoreStr = musicXmlBuilder.render(score)
+      setScore(scoreStr)
+    }
+    bindCommands(_editor, onEvalEnd);
   };
 
   return (
@@ -95,7 +104,7 @@ const App = () => {
         </Pane>
         <Pane>
           <div style={{ height: "100%" }} ref={dndAreaRef} draggable>
-            <SheetMusicViewer options={{ autoResize: true }} file={sampleFile} />
+            <SheetMusicViewer options={{ autoResize: true }} file={score} />
           </div>
         </Pane>
       </SplitPane>

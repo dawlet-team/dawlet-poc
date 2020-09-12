@@ -3,10 +3,11 @@ import { groupsToSmf } from "@dawlet/utils/lib/midi"
 import { initDawletSdk } from '@dawlet/graphql'
 import { writeFileSync } from 'fs'
 import { join } from 'path'
+import { ListAllGroupsQuery } from "@dawlet/graphql/lib/sdk";
 
 const sdk = initDawletSdk()
 
-export const bindCommands = (editor: monaco.editor.IStandaloneCodeEditor) => {
+export const bindCommands = (editor: monaco.editor.IStandaloneCodeEditor, onEvalEnd: (group: unknown) => unknown) => {
   // Cmd + T
   editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_T, () => {
     editor.getAction('editor.action.formatDocument').run()
@@ -27,13 +28,18 @@ export const bindCommands = (editor: monaco.editor.IStandaloneCodeEditor) => {
     ],
     contextMenuGroupId: 'navigation',
     contextMenuOrder: 1.5,
-    run() {
-      exec(editor.getValue())
+    async run() {
+      const action = evalAsyncFunc(editor.getValue())
+      const [group] = await action()
+      console.log('group', group)
+      console.log('onevalend', onEvalEnd)
+      onEvalEnd(group)
     }
   });
 };
 
-function exec(code: string) {
+function evalAsyncFunc(code: string): () => Promise<ListAllGroupsQuery['listAllGroups']> {
+  // TODO: refactor
   const exportMidi = async () => {
       const { listAllGroups } = await sdk.ListAllGroups()
       const midi = groupsToSmf(listAllGroups)
@@ -41,11 +47,13 @@ function exec(code: string) {
       writeFileSync(join(process.cwd(), 'tmp.mid'), midi, {encoding: 'binary'})
   }
 
-  const ctx = `
+  const action = `
 (async function() {
   ${code}
   await exportMidi()
-})()
+  const { listAllGroups } = await sdk.ListAllGroups()
+  return listAllGroups
+})
 `
-  eval(ctx)
+  return eval(action)
 }
