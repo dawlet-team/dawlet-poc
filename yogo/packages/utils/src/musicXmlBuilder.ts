@@ -65,7 +65,6 @@ export class MusicXMLBuilder {
         let step = 'C'
         let alter = 0
         const mod = midiNoteNumber % 12
-        console.log('m', midiNoteNumber, mod)
         switch (mod) {
           // C
           case 0:
@@ -121,7 +120,7 @@ export class MusicXMLBuilder {
             step = 'B'
             break;
         }
-        let octave = 4
+        const octave = ((midiNoteNumber - mod) / 12) - 1
         return {
           step,
           octave,
