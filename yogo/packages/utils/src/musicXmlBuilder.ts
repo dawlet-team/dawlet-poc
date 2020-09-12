@@ -169,6 +169,9 @@ export class MusicXMLBuilder {
     const xmlObject = {
       [this.scoreType]: {
         '@version': '3.1',
+        work: {
+          "work-title": "Algolet@Beta"
+        },
         ...score
       }
     }
