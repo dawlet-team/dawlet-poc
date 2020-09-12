@@ -23,7 +23,7 @@ export class SheetMusicViewer extends Component<Props, State> {
     }
   }
 
-  resize() {
+  resize = () => {
     this.forceUpdate();
   }
 
