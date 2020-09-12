@@ -37,7 +37,8 @@ type Measure = {
 type Note = {
   pitch: {
     step: 'C' | 'D' | 'E' | 'F' | 'G' | 'B'
-    octave: number
+    octave: number,
+    alter?: number
   }
   duration: number
   type?: 'whole' | 'quarter'
@@ -59,12 +60,76 @@ export class MusicXMLBuilder {
     };
     const xmlNotes: Note[] = notes.map(note => {
       const midiNoteNumber = Math.round(12 * getBaseLog(2, note.freq / 440) + 69);
-      // TODO: convert
+      // TODO: test
+      const convertMidiToPitch = (midiNoteNumber: number): Note['pitch'] => {
+        let step = 'C'
+        let alter = 0
+        const mod = midiNoteNumber % 12
+        console.log('m', midiNoteNumber, mod)
+        switch (mod) {
+          // C
+          case 0:
+            step = 'C'
+            break;
+          // C#
+          case 1:
+            step = 'C';
+            alter = 1;
+            break;
+          // D
+          case 2:
+            step = 'D'
+            break;
+          // Eb
+          case 3:
+            step = 'E'
+            alter = -1;
+            break;
+          // E
+          case 4:
+            step = 'E'
+            break;
+          // F
+          case 5:
+            step = 'F'
+            break;
+          // F#
+          case 6:
+            step = 'F'
+            alter = 1
+            break;
+          // G
+          case 7:
+            step = 'G'
+            break;
+          // Ab
+          case 8:
+            step = 'A'
+            alter = -1
+            break;
+          // A
+          case 9:
+            step = 'A'
+            break;
+          // Bb
+          case 10:
+            step = 'B'
+            alter = -1
+            break;
+          // B
+          case 11:
+            step = 'B'
+            break;
+        }
+        let octave = 4
+        return {
+          step,
+          octave,
+          alter
+        } as any
+      }
       return {
-        pitch: {
-          step: 'C',
-          octave: 4
-        },
+        pitch: convertMidiToPitch(midiNoteNumber),
         duration: 4,
         type: 'quarter'
       } as Note
