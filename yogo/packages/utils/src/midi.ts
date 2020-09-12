@@ -42,7 +42,7 @@ const ftom = (freq: Freq): Midi.NoteNumber => {
   const getBaseLog = (x, y) => {
     return Math.log(y) / Math.log(x);
   };
-  const midiNoteNumber = 12 * getBaseLog(2, freq / 440) + 69;
+  const midiNoteNumber = Math.round(12 * getBaseLog(2, freq / 440) + 69);
   if (midiNoteNumber < 0) {
     return 0;
   }
