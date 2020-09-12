@@ -1,8 +1,9 @@
 import { SheetMusicViewer } from "@dawlet/ui";
 import { gql } from "apollo-boost";
-import { remote } from "electron";
+import { ipcRenderer, remote } from "electron";
 import * as monacoEditor from "monaco-editor/esm/vs/editor/editor.api";
-import React, { useState } from "react";
+import { join } from 'path';
+import React, { useEffect, useRef, useState } from "react";
 import { useQuery } from "react-apollo";
 import MonacoEditor from "react-monaco-editor";
 import SplitPane from "react-split-pane";
@@ -29,29 +30,40 @@ const LIST_ALL_GROUPS = gql`
 const App = () => {
   const { data, loading, error } = useQuery(LIST_ALL_GROUPS);
   const [editor, setEditor] = useState<monacoEditor.editor.IStandaloneCodeEditor | null>(null)
+  const dndAreaRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    function onDragStart(event) {
+      event.preventDefault()
+      const filePath= join(process.cwd(), 'tmp.mid')
+      ipcRenderer.send('ondragstart', filePath)
+    }
+    if (dndAreaRef.current) {
+      dndAreaRef.current.addEventListener('dragstart', onDragStart)
+    }
+    return () => {
+      dndAreaRef.current.removeEventListener('dragstart', onDragStart)
+    }
+  }, [dndAreaRef.current])
 
   if (loading) return <div>Loading...</div>;
   if (error) console.error(error);
   const title = remote.getCurrentWindow().getTitle();
   const code = `
   /* ${title} */
-  console.log(sdk)
   const group = await sdk.CreateGroup({ id: 'my-group' })
-  console.log('created group', group)
   await sdk.PushNote({
         pushNoteInput: {
               groupId: 'my-group',
               notes: [
                     {
                           freq: 440,
-                          duration: 0,
+                          duration: 40,
                           offset: 0,
                     }
               ]
         }
   })
   const allGroups = await sdk.ListAllGroups()
-  console.log('all groups', allGroups)
       `;
 
   const onDidMount = (_editor: monacoEditor.editor.IStandaloneCodeEditor) => {
@@ -81,18 +93,11 @@ const App = () => {
             />
           </div>
         </Pane>
-        <SplitPane split="horizontal">
-          <Pane>
-            <div style={{ height: "100%" }}>
-              <SheetMusicViewer options={{ autoResize: true }} file={sampleFile} />
-            </div>
-          </Pane>
-          <Pane>
-            <div style={{ height: '100%' }}>
-              drop area
-            </div>
-          </Pane>
-        </SplitPane>
+        <Pane>
+          <div style={{ height: "100%" }} ref={dndAreaRef} draggable>
+            <SheetMusicViewer options={{ autoResize: true }} file={sampleFile} />
+          </div>
+        </Pane>
       </SplitPane>
     </div>
   );

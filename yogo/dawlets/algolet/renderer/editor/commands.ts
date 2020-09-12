@@ -1,5 +1,10 @@
 import * as monaco from "monaco-editor/esm/vs/editor/editor.api";
+import { groupsToSmf } from "@dawlet/utils/lib/midi"
 import { initDawletSdk } from '@dawlet/graphql'
+import { writeFileSync } from 'fs'
+import { join } from 'path'
+
+const sdk = initDawletSdk()
 
 export const bindCommands = (editor: monaco.editor.IStandaloneCodeEditor) => {
   // Cmd + T
@@ -26,11 +31,22 @@ export const bindCommands = (editor: monaco.editor.IStandaloneCodeEditor) => {
       exec(editor.getValue())
     }
   });
+
+  editor.addAction({
+    id: 'export-midi',
+    label: 'export midi',
+    keybindings: [
+      monaco.KeyMod.CtrlCmd | monaco.KeyMod.Shift | monaco.KeyCode.KEY_M
+    ],
+    async run() {
+      const { listAllGroups } = await sdk.ListAllGroups()
+      const midi = groupsToSmf(listAllGroups)
+      writeFileSync(join(process.cwd(), 'tmp.mid'), midi, {encoding: 'binary'})
+    }
+  })
 };
 
 function exec(code: string) {
-  //@ts-ignore
-  const sdk = initDawletSdk()
   const ctx = `
 (async function() {
   ${code}

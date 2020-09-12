@@ -73,7 +73,8 @@ export const groupsToSmf = (groups: Dawlet.IGroup.Entity[]): ArrayBuffer => {
   return genSmf(groupsToMidi(groups));
 };
 
-export const genSmf = (msgAndOffsets: { midiMessage: Midi.Message, offset: Ms}[]): ArrayBuffer => {
+// TODO: fix types
+export const genSmf = (msgAndOffsets: { midiMessage: Midi.Message, offset: Ms}[]) => {
   initJzzMidiSmf();
   // @ts-ignore
   const mtrk = new JZZ.MIDI.SMF.MTrk();
@@ -83,7 +84,7 @@ export const genSmf = (msgAndOffsets: { midiMessage: Midi.Message, offset: Ms}[]
   // @ts-ignore
   const smf = new JZZ.MIDI.SMF(0, ticksPerBeat);
   smf.push(mtrk);
-  return str2ab(smf.dump());
+  return smf.dump()
 };
 
 export const groupsToMidi = (groups: Dawlet.IGroup.Entity[]): { midiMessage: Midi.Message, offset: Ms}[] => {
