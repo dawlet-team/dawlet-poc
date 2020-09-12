@@ -11,7 +11,7 @@ export const ScoreFactory = Factory.define<Score>('Score')
       }
     },
     part: () => {
-      const notes: any = Array(random.number({ min: 20, max: 60 })).fill(null).map(() => ({
+      const notes = Array(random.number({ min: 20, max: 60 })).fill(null).map(() => ({
               pitch: {
                 alter: random.arrayElement([0, 0.5, 1, 2, -0,5, -1, -2]),
                 step: random.arrayElement(['C', 'D', 'E', 'F', 'G', 'B']), // FIXME: missing A
@@ -39,7 +39,7 @@ export const ScoreFactory = Factory.define<Score>('Score')
               line: 2
             }
           },
-          note: notes
+          note: notes as any
         }
 
       }
