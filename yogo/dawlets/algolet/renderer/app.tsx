@@ -34,6 +34,7 @@ const App = () => {
   const { data, loading, error } = useQuery(LIST_ALL_GROUPS);
   const [editor, setEditor] = useState<monacoEditor.editor.IStandaloneCodeEditor | null>(null)
   const [score, setScore] = useState<string>('')
+  const appContainerDivRef = useRef<HTMLDivElement>(null);
   const dndAreaRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     function onDragStart(event) {
@@ -77,12 +78,18 @@ const App = () => {
       const score = musicXmlBuilder.convertDawletGroupToXmlScore(group)
       const scoreStr = musicXmlBuilder.render(score)
       setScore(scoreStr)
+      if (appContainerDivRef.current) {
+          appContainerDivRef.current.classList.add("flash-effect")
+        setTimeout(() => {
+          appContainerDivRef.current.classList.remove("flash-effect")
+        }, 300)
+      }
     }
     bindCommands(_editor, onEvalEnd);
   };
 
   return (
-    <div style={{ height: "100vh", width: "100vw" }}>
+    <div style={{ height: "100vh", width: "100vw" }} ref={appContainerDivRef}>
       <SplitPane split="vertical" onChange={() => {
         if (editor) {
           editor.layout()
