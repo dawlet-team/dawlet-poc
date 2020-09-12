@@ -1,5 +1,4 @@
 import { SheetMusicViewer } from "@dawlet/ui";
-import { gql } from "apollo-boost";
 import { ipcRenderer, remote } from "electron";
 import * as monacoEditor from "monaco-editor/esm/vs/editor/editor.api";
 import { join } from 'path';
@@ -11,23 +10,6 @@ import SplitPane from "react-split-pane";
 import Pane from "react-split-pane/lib/Pane";
 import { bindCommands } from "./editor/commands";
 import { MusicXMLBuilder } from '@dawlet/utils/lib/musicXmlBuilder'
-import { initDawletSdk } from '@dawlet/graphql'
-
-const sdk = initDawletSdk()
-
-const LIST_ALL_GROUPS = gql`
-  query {
-    listAllGroups {
-      id
-      notes {
-        id
-        freq
-        duration
-        offset
-      }
-    }
-  }
-`;
 
 const title = remote.getCurrentWindow().getTitle();
 const initialCode = `
@@ -50,7 +32,6 @@ const initialCode = `
 
 const musicXmlBuilder = new MusicXMLBuilder()
 const App = () => {
-  const { data, loading, error } = useQuery(LIST_ALL_GROUPS);
   const [editor, setEditor] = useState<monacoEditor.editor.IStandaloneCodeEditor | null>(null)
   const [score, setScore] = useState<string>('')
   const [code, setCode] = useState(initialCode)
@@ -69,9 +50,6 @@ const App = () => {
       dndAreaRef.current.removeEventListener('dragstart', onDragStart)
     }
   }, [dndAreaRef.current])
-
-  if (loading) return <div>Loading...</div>;
-  if (error) console.error(error);
 
   const onDidMount = (_editor: monacoEditor.editor.IStandaloneCodeEditor) => {
     setEditor(_editor)
