@@ -13,6 +13,7 @@
     "dist": "node ./scripts/distribute",
     "electron": "electron .",
     "start": "run-p watch electron",
+    "test": "jest",
     "watch": "run-p watch:*",
     "watch:main": "tsc --watch",
     "watch:renderer": "webpack --mode=development --watch"
