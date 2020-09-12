@@ -29,11 +29,31 @@ const LIST_ALL_GROUPS = gql`
   }
 `;
 
+const title = remote.getCurrentWindow().getTitle();
+const initialCode = `
+  /* ${title} */
+  const group = await sdk.CreateGroup({ id: 'my-group' })
+  await sdk.PushNote({
+        pushNoteInput: {
+              groupId: 'my-group',
+              notes: [
+                    {
+                          freq: 440,
+                          duration: 40,
+                          offset: 0,
+                    }
+              ]
+        }
+  })
+  const allGroups = await sdk.ListAllGroups()
+`
+
 const musicXmlBuilder = new MusicXMLBuilder()
 const App = () => {
   const { data, loading, error } = useQuery(LIST_ALL_GROUPS);
   const [editor, setEditor] = useState<monacoEditor.editor.IStandaloneCodeEditor | null>(null)
   const [score, setScore] = useState<string>('')
+  const [code, setCode] = useState(initialCode)
   const appContainerDivRef = useRef<HTMLDivElement>(null);
   const dndAreaRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -52,34 +72,17 @@ const App = () => {
 
   if (loading) return <div>Loading...</div>;
   if (error) console.error(error);
-  const title = remote.getCurrentWindow().getTitle();
-  const code = `
-  /* ${title} */
-  const group = await sdk.CreateGroup({ id: 'my-group' })
-  await sdk.PushNote({
-        pushNoteInput: {
-              groupId: 'my-group',
-              notes: [
-                    {
-                          freq: 440,
-                          duration: 40,
-                          offset: 0,
-                    }
-              ]
-        }
-  })
-  const allGroups = await sdk.ListAllGroups()
-      `;
 
   const onDidMount = (_editor: monacoEditor.editor.IStandaloneCodeEditor) => {
     setEditor(_editor)
     _editor.focus();
-    const onEvalEnd = (group) => {
+    const onEvalEnd = ({ group, code }) => {
+      setCode(code)
       const score = musicXmlBuilder.convertDawletGroupToXmlScore(group)
       const scoreStr = musicXmlBuilder.render(score)
       setScore(scoreStr)
       if (appContainerDivRef.current) {
-          appContainerDivRef.current.classList.add("flash-effect")
+        appContainerDivRef.current.classList.add("flash-effect")
         setTimeout(() => {
           appContainerDivRef.current.classList.remove("flash-effect")
         }, 300)

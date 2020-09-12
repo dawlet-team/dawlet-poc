@@ -29,11 +29,11 @@ export const bindCommands = (editor: monaco.editor.IStandaloneCodeEditor, onEval
     contextMenuGroupId: 'navigation',
     contextMenuOrder: 1.5,
     async run() {
-      const action = evalAsyncFunc(editor.getValue())
+      const code = editor.getValue()
+      const action = evalAsyncFunc(code)
       const [group] = await action()
       console.log('group', group)
-      console.log('onevalend', onEvalEnd)
-      onEvalEnd(group)
+      onEvalEnd({ group, code })
     }
   });
 };
