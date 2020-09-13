@@ -34,8 +34,14 @@ class Builder {
       this.pitches.push(pitch)
     } else {
       const { from, to } = pitch
-      for (let i = from; i <= to; i++) {
-        this.pitches.push(i)
+      if (from < to) {
+        for (let i = from; i <= to; i++) {
+          this.pitches.push(i)
+        }
+      } else {
+        for (let i = from; i >= to; i--) {
+          this.pitches.push(i)
+        }
       }
     }
     return this
