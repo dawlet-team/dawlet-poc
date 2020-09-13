@@ -2,7 +2,10 @@ import { initDawletSdk } from '@dawlet/graphql'
 import { ListAllGroupsQuery } from '@dawlet/graphql/lib/sdk'
 
 type Sdk = ReturnType<typeof initDawletSdk>
-type Pitch = number
+type Pitch = number | {
+  from: number
+  to: number
+}
 type Length = number
 
 const GROUP_ID = 'algolet-beta-group'
@@ -22,12 +25,22 @@ class Builder {
   }
 
   addPitch(pitch: Pitch) {
-    this.pitches.push(pitch)
+    if (typeof pitch === 'number') {
+      this.pitches.push(pitch)
+    } else {
+      const { from, to } = pitch
+      for (let i = from; i <= to; i++) {
+        this.pitches.push(i)
+      }
+    }
     return this
   }
   addLens(lens: Length) {
     this.lens.push(lens)
     return this
+  }
+  span(unit: number) {
+    this.lens = this.pitches.map(() => unit)
   }
 
   async clear() {

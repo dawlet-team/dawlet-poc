@@ -16,12 +16,10 @@ const initialCode = `
 /* ${title} */
 await builder.clear()
 builder
-    .addPitch(60)
-    .addPitch(62)
-    .addLens(300)
-    .addLens(300)
-
+    .addPitch({from: 60, to: 70})
+    .span(300)
 await builder.eval()
+
 `
 
 const musicXmlBuilder = new MusicXMLBuilder()
