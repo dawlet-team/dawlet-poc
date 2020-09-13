@@ -59,7 +59,9 @@ export class MusicXMLBuilder {
       return Math.log(y) / Math.log(x);
     };
     const xmlNotes: Note[] = notes.map(note => {
-      const midiNoteNumber = Math.round(12 * getBaseLog(2, note.freq / 440) + 69);
+      // TODO: convert freq to midi
+      // const midiNoteNumber = Math.round(12 * getBaseLog(2, note.freq / 440) + 69);
+      const midiNoteNumber = note.freq
       // TODO: test
       const convertMidiToPitch = (midiNoteNumber: number): Note['pitch'] => {
         let step = 'C'

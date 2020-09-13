@@ -1,11 +1,8 @@
 import * as monaco from "monaco-editor/esm/vs/editor/editor.api";
 import { groupsToSmf } from "@dawlet/utils/lib/midi"
-import { initDawletSdk } from '@dawlet/graphql'
 import { writeFileSync } from 'fs'
 import { join } from 'path'
-import { ListAllGroupsQuery } from "@dawlet/graphql/lib/sdk";
-
-const sdk = initDawletSdk()
+import { evalAsyncFunc } from "./adapter/yogo";
 
 export const bindCommands = (editor: monaco.editor.IStandaloneCodeEditor, onEvalEnd: (group: unknown) => unknown) => {
   // Cmd + T
@@ -39,14 +36,3 @@ export const bindCommands = (editor: monaco.editor.IStandaloneCodeEditor, onEval
     }
   });
 };
-
-function evalAsyncFunc(code: string): () => Promise<ListAllGroupsQuery['listAllGroups']> {
-  const action = `
-(async function() {
-  ${code}
-  const { listAllGroups } = await sdk.ListAllGroups()
-  return listAllGroups
-})
-`
-  return eval(action)
-}

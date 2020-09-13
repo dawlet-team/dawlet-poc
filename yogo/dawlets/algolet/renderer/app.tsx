@@ -13,21 +13,15 @@ import { MusicXMLBuilder } from '@dawlet/utils/lib/musicXmlBuilder'
 
 const title = remote.getCurrentWindow().getTitle();
 const initialCode = `
-  /* ${title} */
-  const group = await sdk.CreateGroup({ id: 'my-group' })
-  await sdk.PushNote({
-        pushNoteInput: {
-              groupId: 'my-group',
-              notes: [
-                    {
-                          freq: 440,
-                          duration: 40,
-                          offset: 0,
-                    }
-              ]
-        }
-  })
-  const allGroups = await sdk.ListAllGroups()
+/* ${title} */
+await builder.clear()
+builder
+    .addPitch(60)
+    .addPitch(62)
+    .addLens(300)
+    .addLens(300)
+
+await builder.eval()
 `
 
 const musicXmlBuilder = new MusicXMLBuilder()
