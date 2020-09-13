@@ -16,17 +16,15 @@ const GROUP_ID = 'algolet-beta-group'
 class Algolet {
   pitches: Pitch[]
   lens: Length[]
-  offsets: Offset[]
   constructor() {
     this.pitches = []
     this.lens = []
-    this.offsets = []
   }
 
   clear() {
     this.pitches = []
     this.lens = []
-    this.offsets = []
+    return this
   }
 
   addPitch(pitch: PitchInput) {
@@ -48,18 +46,23 @@ class Algolet {
   }
 
   addLens(lens: Length) {
-    const offset = this.lens.reduce((len, accum) => {
-      return accum + len
-    }, 0)
     this.lens.push(lens)
-    this.offsets.push(offset)
+    return this
+  }
+
+  repeat(times: number) {
+    const pitches = this.pitches;
+    const lens = this.lens;
+    for (let i = 0; i < times; i++) {
+      this.pitches = [...this.pitches, ...pitches]
+      this.lens = [...this.lens, ...lens]
+    }
     return this
   }
 
   reverse() {
     this.pitches.reverse()
     this.lens.reverse()
-    this.offsets.reverse()
     return this
   }
 
@@ -67,6 +70,7 @@ class Algolet {
     this.pitches.forEach(() => {
       this.addLens(unit)
     })
+    return this
   }
 
   static create() {
@@ -81,10 +85,21 @@ class Algolet {
   static eval(algo: InstanceType<typeof Algolet>) {
     console.log('eval', algo)
     // TODO: convert freq to pitch
+
+    const offsets = []
+    let offsetCursor = 0;
+    for (let i = 0; i < algo.lens.length; i++){
+      if (i !== 0) {
+        offsetCursor += algo.lens[i]
+      }
+      offsets.push(offsetCursor)
+    }
+
+
     const notes = algo.lens.map((duration, i) => ({
       freq: algo.pitches[i],
       duration,
-      offset: algo.offsets[i]
+      offset: offsets[i]
     }))
     return sdk.PushNote({
       pushNoteInput: {
