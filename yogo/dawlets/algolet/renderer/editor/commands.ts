@@ -30,7 +30,6 @@ export const bindCommands = (editor: monaco.editor.IStandaloneCodeEditor, onEval
       const action = evalAsyncFunc(code)
       const groups = await action()
       const midi = groupsToSmf(groups)
-      console.log("exporting midi", midi)
       writeFileSync(join(process.cwd(), 'tmp.mid'), midi, {encoding: 'binary'})
       onEvalEnd({ groups, code })
     }

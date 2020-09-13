@@ -70,7 +70,6 @@ const str2ab = (str) => {
 const initJzzMidiSmf = (): void => { JzzMidiSmf(JZZ) };
 
 export const groupsToSmf = (groups: Dawlet.IGroup.Entity[]): ArrayBuffer => {
-  console.log("g", groups)
   return genSmf(groupsToMidi(groups));
 };
 

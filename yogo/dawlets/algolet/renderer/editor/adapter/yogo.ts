@@ -23,11 +23,6 @@ class Algolet {
     this.offsets = []
   }
 
-  clone() {
-    const clone = Object.assign( Object.create( Object.getPrototypeOf(this)), this)
-    return clone
-  }
-
   clear() {
     this.pitches = []
     this.lens = []
@@ -61,6 +56,13 @@ class Algolet {
     return this
   }
 
+  reverse() {
+    this.pitches.reverse()
+    this.lens.reverse()
+    this.offsets.reverse()
+    return this
+  }
+
   span(unit: number) {
     this.pitches.forEach(() => {
       this.addLens(unit)
@@ -71,18 +73,23 @@ class Algolet {
     return new Algolet()
   }
 
+  static clone(obj: InstanceType<typeof Algolet>) {
+    const clone = Object.assign( Object.create( Object.getPrototypeOf(obj)), JSON.parse(JSON.stringify(obj)))
+    return clone
+  }
+
   static eval(algo: InstanceType<typeof Algolet>) {
+    console.log('eval', algo)
     // TODO: convert freq to pitch
     const notes = algo.lens.map((duration, i) => ({
       freq: algo.pitches[i],
       duration,
       offset: algo.offsets[i]
     }))
-    console.log('algo',algo)
     return sdk.PushNote({
       pushNoteInput: {
         groupId: GROUP_ID,
-        notes
+        notes: notes
       }
     })
   }
@@ -120,5 +127,7 @@ const al = new Algolet()
 al
     .addPitch({ from: 60, to: 70 })
     .span(300)
-await Algolet.eval(al)
+const al2 = Algolet.clone(al).reverse()
+await Algolet.eval(al2)
+
 `
