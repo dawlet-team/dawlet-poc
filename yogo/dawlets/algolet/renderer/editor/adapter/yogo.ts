@@ -2,21 +2,26 @@ import { initDawletSdk } from '@dawlet/graphql'
 import { ListAllGroupsQuery } from '@dawlet/graphql/lib/sdk'
 
 type Sdk = ReturnType<typeof initDawletSdk>
-type Pitch = number | {
+type Pitch = number
+
+type PitchInput = number | {
   from: number
   to: number
 }
 type Length = number
+type Offset = number
 
 const GROUP_ID = 'algolet-beta-group'
 class Builder {
   sdk: Sdk
   pitches: Pitch[]
   lens: Length[]
+  offsets: Offset[]
   constructor(sdk: Sdk) {
     this.sdk = sdk
     this.pitches = []
     this.lens = []
+    this.offsets = []
     this.init()
   }
 
@@ -24,7 +29,7 @@ class Builder {
     this.sdk.CreateGroup({ id: GROUP_ID })
   }
 
-  addPitch(pitch: Pitch) {
+  addPitch(pitch: PitchInput) {
     if (typeof pitch === 'number') {
       this.pitches.push(pitch)
     } else {
@@ -36,11 +41,18 @@ class Builder {
     return this
   }
   addLens(lens: Length) {
+    const offset = this.lens.reduce((len, accum) => {
+      return accum + len
+    }, 0)
     this.lens.push(lens)
+    this.offsets.push(offset)
     return this
   }
+
   span(unit: number) {
-    this.lens = this.pitches.map(() => unit)
+    this.pitches.forEach(() => {
+      this.addLens(unit)
+    })
   }
 
   async clear() {
@@ -53,8 +65,9 @@ class Builder {
     const notes = this.lens.map((duration, i) => ({
       freq: this.pitches[i],
       duration,
-      offset: 0
+      offset: this.offsets[i]
     }))
+    console.log(this)
     return this.sdk.PushNote({
       pushNoteInput: {
         groupId: GROUP_ID,
