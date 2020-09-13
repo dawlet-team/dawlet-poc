@@ -1,27 +1,16 @@
 import { SheetMusicViewer } from "@dawlet/ui";
-import { ipcRenderer, remote } from "electron";
+import { MusicXMLBuilder } from '@dawlet/utils/lib/musicXmlBuilder';
+import { ipcRenderer } from "electron";
 import * as monacoEditor from "monaco-editor/esm/vs/editor/editor.api";
 import { join } from 'path';
 import React, { useEffect, useRef, useState } from "react";
-import { useQuery } from "react-apollo";
 import MonacoEditor from "react-monaco-editor";
 import SplitPane from "react-split-pane";
 // @ts-ignore
 import Pane from "react-split-pane/lib/Pane";
+import { initialCode } from "./editor/adapter/yogo";
 import { bindCommands } from "./editor/commands";
-import { MusicXMLBuilder } from '@dawlet/utils/lib/musicXmlBuilder'
 
-const title = remote.getCurrentWindow().getTitle();
-const initialCode = `
-/* ${title} */
-await algo.clear()
-algo
-    .addPitch({ from: 60, to: 70 })
-    .span(300)
-await algo.eval()
-
-
-`
 
 const musicXmlBuilder = new MusicXMLBuilder()
 const App = () => {

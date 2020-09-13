@@ -1,5 +1,6 @@
 import { initDawletSdk } from '@dawlet/graphql'
 import { ListAllGroupsQuery } from '@dawlet/graphql/lib/sdk'
+import { remote } from 'electron'
 
 type Sdk = ReturnType<typeof initDawletSdk>
 type Pitch = number
@@ -12,7 +13,7 @@ type Length = number
 type Offset = number
 
 const GROUP_ID = 'algolet-beta-group'
-class Builder {
+class Algolet {
   sdk: Sdk
   pitches: Pitch[]
   lens: Length[]
@@ -22,11 +23,17 @@ class Builder {
     this.pitches = []
     this.lens = []
     this.offsets = []
-    this.init()
   }
 
-  init() {
-    this.sdk.CreateGroup({ id: GROUP_ID })
+  clone() {
+    const clone = Object.assign( Object.create( Object.getPrototypeOf(this)), this)
+    return clone
+  }
+
+  clear() {
+    this.pitches = []
+    this.lens = []
+    this.offsets = []
   }
 
   addPitch(pitch: PitchInput) {
@@ -46,6 +53,7 @@ class Builder {
     }
     return this
   }
+
   addLens(lens: Length) {
     const offset = this.lens.reduce((len, accum) => {
       return accum + len
@@ -61,20 +69,16 @@ class Builder {
     })
   }
 
-  async clear() {
-    await this.sdk.ResetAllGroups();
-    await this.init()
-  }
 
-  eval() {
+  static eval(algo: InstanceType<typeof Algolet>) {
     // TODO: convert freq to pitch
-    const notes = this.lens.map((duration, i) => ({
-      freq: this.pitches[i],
+    const notes = algo.lens.map((duration, i) => ({
+      freq: algo.pitches[i],
       duration,
-      offset: this.offsets[i]
+      offset: algo.offsets[i]
     }))
-    console.log(this)
-    return this.sdk.PushNote({
+    console.log('algo',algo)
+    return algo.sdk.PushNote({
       pushNoteInput: {
         groupId: GROUP_ID,
         notes
@@ -82,21 +86,39 @@ class Builder {
     })
   }
 
-  async show() {
-    const { listAllGroups } = await this.sdk.ListAllGroups()
+  static async clear(sdk: Sdk) {
+    await sdk.ResetAllGroups();
+  }
+
+  static async init(sdk: Sdk) {
+    await sdk.CreateGroup({ id: GROUP_ID })
+  }
+
+  static async show(sdk: Sdk) {
+    const { listAllGroups } = await sdk.ListAllGroups()
     return listAllGroups
   }
 }
 
 export function evalAsyncFunc(code: string): () => Promise<ListAllGroupsQuery['listAllGroups']> {
   const sdk = initDawletSdk()
-  const algo = new Builder(sdk)
+  const al = new Algolet(sdk)
   const action = `
 (async function() {
-  await algo.init()
+  await Algolet.clear(sdk)
+  await Algolet.init(sdk)
   ${code}
-  return algo.show()
+  return Algolet.show(sdk)
 })
 `
   return eval(action)
 }
+
+const title = remote.getCurrentWindow().getTitle();
+export const initialCode = `
+/* ${title} */
+al
+    .addPitch({ from: 60, to: 70 })
+    .span(300)
+await Algolet.eval(al)
+`
