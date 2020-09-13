@@ -2,7 +2,7 @@ import { initDawletSdk } from '@dawlet/graphql'
 import { ListAllGroupsQuery } from '@dawlet/graphql/lib/sdk'
 import { remote } from 'electron'
 
-type Sdk = ReturnType<typeof initDawletSdk>
+const sdk = initDawletSdk()
 type Pitch = number
 
 type PitchInput = number | {
@@ -14,12 +14,10 @@ type Offset = number
 
 const GROUP_ID = 'algolet-beta-group'
 class Algolet {
-  sdk: Sdk
   pitches: Pitch[]
   lens: Length[]
   offsets: Offset[]
-  constructor(sdk: Sdk) {
-    this.sdk = sdk
+  constructor() {
     this.pitches = []
     this.lens = []
     this.offsets = []
@@ -69,6 +67,9 @@ class Algolet {
     })
   }
 
+  static create() {
+    return new Algolet()
+  }
 
   static eval(algo: InstanceType<typeof Algolet>) {
     // TODO: convert freq to pitch
@@ -78,7 +79,7 @@ class Algolet {
       offset: algo.offsets[i]
     }))
     console.log('algo',algo)
-    return algo.sdk.PushNote({
+    return sdk.PushNote({
       pushNoteInput: {
         groupId: GROUP_ID,
         notes
@@ -86,29 +87,27 @@ class Algolet {
     })
   }
 
-  static async clear(sdk: Sdk) {
+  static async clear() {
     await sdk.ResetAllGroups();
   }
 
-  static async init(sdk: Sdk) {
+  static async init() {
     await sdk.CreateGroup({ id: GROUP_ID })
   }
 
-  static async show(sdk: Sdk) {
+  static async show() {
     const { listAllGroups } = await sdk.ListAllGroups()
     return listAllGroups
   }
 }
 
 export function evalAsyncFunc(code: string): () => Promise<ListAllGroupsQuery['listAllGroups']> {
-  const sdk = initDawletSdk()
-  const al = new Algolet(sdk)
   const action = `
 (async function() {
-  await Algolet.clear(sdk)
-  await Algolet.init(sdk)
+  await Algolet.clear()
+  await Algolet.init()
   ${code}
-  return Algolet.show(sdk)
+  return Algolet.show()
 })
 `
   return eval(action)
@@ -117,6 +116,7 @@ export function evalAsyncFunc(code: string): () => Promise<ListAllGroupsQuery['l
 const title = remote.getCurrentWindow().getTitle();
 export const initialCode = `
 /* ${title} */
+const al = new Algolet()
 al
     .addPitch({ from: 60, to: 70 })
     .span(300)
