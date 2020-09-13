@@ -84,12 +84,12 @@ class Builder {
 
 export function evalAsyncFunc(code: string): () => Promise<ListAllGroupsQuery['listAllGroups']> {
   const sdk = initDawletSdk()
-  const builder = new Builder(sdk)
+  const algo = new Builder(sdk)
   const action = `
 (async function() {
-  await builder.init()
+  await algo.init()
   ${code}
-  return builder.show()
+  return algo.show()
 })
 `
   return eval(action)

@@ -14,11 +14,12 @@ import { MusicXMLBuilder } from '@dawlet/utils/lib/musicXmlBuilder'
 const title = remote.getCurrentWindow().getTitle();
 const initialCode = `
 /* ${title} */
-await builder.clear()
-builder
-    .addPitch({from: 60, to: 70})
+await algo.clear()
+algo
+    .addPitch({ from: 60, to: 70 })
     .span(300)
-await builder.eval()
+await algo.eval()
+
 
 `
 
