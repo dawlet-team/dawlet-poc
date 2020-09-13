@@ -31,26 +31,19 @@ export const bindCommands = (editor: monaco.editor.IStandaloneCodeEditor, onEval
     async run() {
       const code = editor.getValue()
       const action = evalAsyncFunc(code)
-      const [group] = await action()
-      console.log('group', group)
-      onEvalEnd({ group, code })
+      const groups = await action()
+      const midi = groupsToSmf(groups)
+      console.log("exporting midi", midi)
+      writeFileSync(join(process.cwd(), 'tmp.mid'), midi, {encoding: 'binary'})
+      onEvalEnd({ groups, code })
     }
   });
 };
 
 function evalAsyncFunc(code: string): () => Promise<ListAllGroupsQuery['listAllGroups']> {
-  // TODO: refactor
-  const exportMidi = async () => {
-      const { listAllGroups } = await sdk.ListAllGroups()
-      const midi = groupsToSmf(listAllGroups)
-      console.log("exporting midi", midi)
-      writeFileSync(join(process.cwd(), 'tmp.mid'), midi, {encoding: 'binary'})
-  }
-
   const action = `
 (async function() {
   ${code}
-  await exportMidi()
   const { listAllGroups } = await sdk.ListAllGroups()
   return listAllGroups
 })

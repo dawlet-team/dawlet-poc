@@ -54,8 +54,9 @@ const App = () => {
   const onDidMount = (_editor: monacoEditor.editor.IStandaloneCodeEditor) => {
     setEditor(_editor)
     _editor.focus();
-    const onEvalEnd = ({ group, code }) => {
+    const onEvalEnd = ({ groups, code }) => {
       setCode(code)
+      const [group] = groups //TODO: render multiple groups
       const score = musicXmlBuilder.convertDawletGroupToXmlScore(group)
       const scoreStr = musicXmlBuilder.render(score)
       setScore(scoreStr)
