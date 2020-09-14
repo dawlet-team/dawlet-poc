@@ -1,7 +1,19 @@
 import {
   groupsToMidi,
-  noteToMidi
+  noteToMidi,
+  ftom
 } from "./midi";
+
+describe("ftom", () => {
+  it("takes freq and returns midi note number", () => {
+    // C4
+    expect(ftom(261)).toBe(60)
+    // C3
+    expect(ftom(130.5)).toBe(48)
+    // A4
+    expect(ftom(440)).toBe(69)
+  })
+})
 
 describe("noteToMidi", () => {
   it("converts a single note into some MIDI messages and offset times", () => {
