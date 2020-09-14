@@ -13,6 +13,15 @@ describe("ftom", () => {
     // A4
     expect(ftom(440)).toBe(69)
   })
+  it("frequency lower than midi number 0 is rounded up to 0", () => {
+    expect(ftom(0)).toBe(0);
+    expect(() => {
+      ftom(-1)
+    }).toThrowError('frequency must be bigger than 0')
+  })
+  it("frequency bigger than midi number 127 is rounded down to 127", () => {
+    expect(ftom(3000000)).toBe(127)
+  })
 })
 
 describe("noteToMidi", () => {

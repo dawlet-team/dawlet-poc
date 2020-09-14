@@ -39,6 +39,7 @@ const msPerTick = 60 * 1e3 / bpm / ticksPerBeat;
 
 /** Convert frequency into MIDI NoteNumber */
 export const ftom = (freq: Freq): Midi.NoteNumber => {
+  if(freq < 0) throw RangeError("frequency must be bigger than 0")
   const getBaseLog = (x, y) => {
     return Math.log(y) / Math.log(x);
   };
