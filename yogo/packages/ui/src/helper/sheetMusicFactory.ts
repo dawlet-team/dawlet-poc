@@ -14,7 +14,7 @@ export const ScoreFactory = Factory.define<Score>('Score')
       const notes = Array(random.number({ min: 20, max: 60 })).fill(null).map(() => ({
               pitch: {
                 alter: random.arrayElement([0, 0.5, 1, 2, -0,5, -1, -2]),
-                step: random.arrayElement(['C', 'D', 'E', 'F', 'G', 'B']), // FIXME: missing A
+                step: random.arrayElement(['C', 'D', 'E', 'F', 'G', 'A', 'B']),
                 octave: random.number({ min: 3, max: 6 })
               },
               duration: 1,

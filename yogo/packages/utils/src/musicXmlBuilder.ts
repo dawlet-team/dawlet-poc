@@ -34,14 +34,15 @@ type Measure = {
   }
   note: Note[]
 }
+type Step = 'C' | 'D' | 'E' | 'F' | 'G' | 'A' | 'B'
 type Note = {
   pitch: {
-    step: 'C' | 'D' | 'E' | 'F' | 'G' | 'B'
+    step: Step
     octave: number,
     alter?: number
   }
   duration: number
-  type?: 'whole' | 'quarter'
+  type?: 'whole' | 'quarter' // TODO: Add support for more rhythm units
 }
 
 export class MusicXMLBuilder {
@@ -64,7 +65,7 @@ export class MusicXMLBuilder {
       const midiNoteNumber = note.freq
       // TODO: test
       const convertMidiToPitch = (midiNoteNumber: number): Note['pitch'] => {
-        let step = 'C'
+        let step: Step = 'C'
         let alter = 0
         const mod = midiNoteNumber % 12
         switch (mod) {
@@ -127,7 +128,7 @@ export class MusicXMLBuilder {
           step,
           octave,
           alter
-        } as any
+        }
       }
       return {
         pitch: convertMidiToPitch(midiNoteNumber),
