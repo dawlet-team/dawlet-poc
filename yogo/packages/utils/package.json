@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "@types/jest": "26.0.13",
-    "@types/node": "13.13.19",
+    "@types/node": "13.13.21",
     "jest": "26.1.0",
     "jest-raw-loader": "1.0.1",
     "ts-jest": "26.3.0",
