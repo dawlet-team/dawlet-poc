@@ -39,7 +39,7 @@
     "html-webpack-plugin": "4.4.1",
     "jest": "26.1.0",
     "ts-jest": "26.4.0",
-    "ts-loader": "8.0.3",
+    "ts-loader": "8.0.4",
     "ts-node": "9.0.0",
     "typescript": "4.0.3",
     "webpack": "4.44.2",
