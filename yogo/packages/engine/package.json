@@ -26,7 +26,7 @@
   },
   "devDependencies": {
     "@2fd/graphdoc": "2.4.0",
-    "@types/faker": "5.1.0",
+    "@types/faker": "5.1.1",
     "@types/jest": "26.0.13",
     "@types/rosie": "0.0.37",
     "apollo-server-testing": "2.18.0",
