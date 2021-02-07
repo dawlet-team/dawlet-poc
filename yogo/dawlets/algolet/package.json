@@ -44,7 +44,7 @@
     "electron-log": "4.2.4",
     "electron-updater": "4.3.5",
     "graphql": "14.7.0",
-    "monaco-editor": "0.20.0",
+    "monaco-editor": "0.22.3",
     "react": "16.13.1",
     "react-apollo": "3.1.5",
     "react-dom": "16.13.1",
