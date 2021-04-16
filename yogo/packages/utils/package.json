@@ -9,7 +9,9 @@
     "build": "node ./build.js",
     "test": "jest",
     "lint": "tsc --noEmit",
-    "watch": "WATCH=true node ./build.js",
+    "watch": "run-p watch:*",
+    "watch:tsc": "tsc",
+    "watch:esbuild": "WATCH=true node ./build.js",
     "generate:schema": "npx beaulac/cxsd file://schema/musicxml.xsd"
   },
   "dependencies": {

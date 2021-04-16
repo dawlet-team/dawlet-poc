@@ -9,7 +9,8 @@
     "strict": true,
     "noImplicitAny": true,
     "skipLibCheck": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+    "emitDeclarationOnly": true
   },
   "include": ["./src", "../../index.d.ts"]
 }
