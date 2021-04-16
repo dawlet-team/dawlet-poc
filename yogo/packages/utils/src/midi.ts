@@ -1,5 +1,6 @@
-import * as JZZ from 'jzz'
+import JZZ from 'jzz'
 import JzzMidiSmf from 'jzz-midi-smf'
+JzzMidiSmf(JZZ)
 
 type int = number;
 type uint = number;
@@ -28,8 +29,6 @@ declare namespace Midi {
   type Message = [StatusByte, DataByte] | [StatusByte, DataByte, DataByte]
 }
 
-type FIX_ME = any;
-
 const DEFAULT_VELOCITY = 100;
 const DEFAULT_CHANNEL = 1;
 const bpm = 120;
@@ -40,7 +39,7 @@ const msPerTick = 60 * 1e3 / bpm / ticksPerBeat;
 /** Convert frequency into MIDI NoteNumber */
 export const ftom = (freq: Freq): Midi.NoteNumber => {
   if(freq < 0) throw RangeError("frequency must be bigger than 0")
-  const getBaseLog = (x, y) => {
+  const getBaseLog = (x: number, y: number) => {
     return Math.log(y) / Math.log(x);
   };
   const midiNoteNumber = Math.round(12 * getBaseLog(2, freq / 440) + 69);
@@ -53,13 +52,12 @@ export const ftom = (freq: Freq): Midi.NoteNumber => {
   return midiNoteNumber;
 };
 
-const jzzMidiToMidiMessage = (jzzMidi: FIX_ME): Midi.Message => jzzMidi.map(v => v);
 
 const msToTick = (ms: Ms): Tick => {
   return ms / msPerTick;
 };
 
-const str2ab = (str) => {
+const str2ab = (str: string) => {
   const buf = new ArrayBuffer(str.length*2); // 2 bytes for each char
   const bufView = new Uint16Array(buf);
   for (let i = 0, strLen = str.length; i < strLen; i++) {
@@ -68,15 +66,12 @@ const str2ab = (str) => {
   return buf;
 };
 
-const initJzzMidiSmf = (): void => { JzzMidiSmf(JZZ) };
 
-export const groupsToSmf = (groups: Dawlet.IGroup.Entity[]): ArrayBuffer => {
-  return genSmf(groupsToMidi(groups));
+export const groupsToMidi = (groups: Dawlet.IGroup.Entity[]): { midiMessage: Midi.Message, offset: Ms}[] => {
+  return groups.flatMap(group => group.notes.flatMap(noteToMidi))
 };
 
-// TODO: fix types
 export const genSmf = (msgAndOffsets: { midiMessage: Midi.Message, offset: Ms}[]) => {
-  initJzzMidiSmf();
   // @ts-ignore
   const mtrk = new JZZ.MIDI.SMF.MTrk();
   msgAndOffsets.forEach(({midiMessage, offset}) => {
@@ -88,23 +83,22 @@ export const genSmf = (msgAndOffsets: { midiMessage: Midi.Message, offset: Ms}[]
   return smf.dump()
 };
 
-export const groupsToMidi = (groups: Dawlet.IGroup.Entity[]): { midiMessage: Midi.Message, offset: Ms}[] => {
-  return groups.flatMap(group => group.notes.flatMap(noteToMidi))
+export const groupsToSmf = (groups: Dawlet.IGroup.Entity[]): ArrayBuffer => {
+  return genSmf(groupsToMidi(groups));
 };
 
 export const noteToMidi = (note: Dawlet.INote.Entity): { midiMessage: Midi.Message, offset: Ms}[] => {
-  const noteNumber = note.freq;
-  // TODO: enable using freq as param
-  // const noteNumber = ftom(note.freq);
+  const noteNumber = ftom(note.freq);
+  const jzzMidiToMidiMessage = (jzzMidi: any): Midi.Message => jzzMidi.map(v => v);
   const noteOnMsg = jzzMidiToMidiMessage(JZZ.MIDI.noteOn(DEFAULT_CHANNEL - 1, noteNumber, DEFAULT_VELOCITY));
   const noteOffMsg = jzzMidiToMidiMessage(JZZ.MIDI.noteOff(DEFAULT_CHANNEL - 1, noteNumber, DEFAULT_VELOCITY));
   return [
     {
-      midiMessage: noteOnMsg as FIX_ME,
+      midiMessage: noteOnMsg,
       offset: note.offset
     },
     {
-      midiMessage: noteOffMsg as FIX_ME,
+      midiMessage: noteOffMsg,
       offset: note.offset + note.duration
     }
   ];
