@@ -6,10 +6,10 @@
   "author": "Yuichi Yogo",
   "main": "lib/index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "node ./build.js",
     "test": "jest",
     "lint": "tsc --noEmit",
-    "watch": "tsc --watch",
+    "watch": "WATCH=true node ./build.js",
     "generate:schema": "npx beaulac/cxsd file://schema/musicxml.xsd"
   },
   "dependencies": {
