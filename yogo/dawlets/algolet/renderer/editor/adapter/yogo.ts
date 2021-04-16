@@ -86,7 +86,7 @@ class Algolet {
     console.log('eval', algo)
     // TODO: convert freq to pitch
 
-    const offsets = []
+    const offsets: number[] = []
     let offsetCursor = 0;
     for (let i = 0; i < algo.lens.length; i++){
       if (i !== 0) {

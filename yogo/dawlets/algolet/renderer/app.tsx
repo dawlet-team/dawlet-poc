@@ -9,7 +9,7 @@ import SplitPane from "react-split-pane";
 // @ts-ignore
 import Pane from "react-split-pane/lib/Pane";
 import { initialCode } from "./editor/adapter/yogo";
-import { bindCommands } from "./editor/commands";
+import { bindCommands, OnEvalEnd } from "./editor/commands";
 
 
 const musicXmlBuilder = new MusicXMLBuilder()
@@ -20,7 +20,7 @@ const App = () => {
   const appContainerDivRef = useRef<HTMLDivElement>(null);
   const dndAreaRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    function onDragStart(event) {
+    function onDragStart(event: Event) {
       event.preventDefault()
       const filePath= join(process.cwd(), 'tmp.mid')
       ipcRenderer.send('ondragstart', filePath)
@@ -29,14 +29,14 @@ const App = () => {
       dndAreaRef.current.addEventListener('dragstart', onDragStart)
     }
     return () => {
-      dndAreaRef.current.removeEventListener('dragstart', onDragStart)
+      dndAreaRef.current?.removeEventListener('dragstart', onDragStart)
     }
   }, [dndAreaRef.current])
 
   const onDidMount = (_editor: monacoEditor.editor.IStandaloneCodeEditor) => {
     setEditor(_editor)
     _editor.focus();
-    const onEvalEnd = ({ groups, code }) => {
+    const onEvalEnd: OnEvalEnd = ({ groups, code }) => {
       setCode(code)
       const [group] = groups //TODO: render multiple groups
       const score = musicXmlBuilder.convertDawletGroupToXmlScore(group)
@@ -45,7 +45,7 @@ const App = () => {
       if (appContainerDivRef.current) {
         appContainerDivRef.current.classList.add("flash-effect")
         setTimeout(() => {
-          appContainerDivRef.current.classList.remove("flash-effect")
+          appContainerDivRef.current?.classList.remove("flash-effect")
         }, 300)
       }
     }
