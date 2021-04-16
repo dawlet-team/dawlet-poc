@@ -4,9 +4,9 @@ export const unhandled = _unhandled
 
 export function installDevTools() {
   installExtension(REACT_DEVELOPER_TOOLS)
-    .then(name => console.log(`Added Extension:  ${name}`))
-    .catch(err => console.log('An error occurred: ', err));
+    .then((name: string) => console.log(`Added Extension:  ${name}`))
+    .catch((err: Error) => console.log('An error occurred: ', err));
   installExtension(REDUX_DEVTOOLS)
-    .then(name => console.log(`Added Extension:  ${name}`))
-    .catch(err => console.log('An error occurred: ', err));
+    .then((name: string) => console.log(`Added Extension:  ${name}`))
+    .catch((err: Error) => console.log('An error occurred: ', err));
 }

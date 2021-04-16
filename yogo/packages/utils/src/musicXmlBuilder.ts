@@ -56,7 +56,7 @@ export class MusicXMLBuilder {
 
   convertDawletGroupToXmlScore(group: Dawlet.IGroup.Entity): Score {
     const { notes } = group
-    const getBaseLog = (x, y) => {
+    const getBaseLog = (x: number, y: number) => {
       return Math.log(y) / Math.log(x);
     };
     const xmlNotes: Note[] = notes.map(note => {

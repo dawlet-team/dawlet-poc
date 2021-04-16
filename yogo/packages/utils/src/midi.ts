@@ -89,7 +89,7 @@ export const groupsToSmf = (groups: Dawlet.IGroup.Entity[]): ArrayBuffer => {
 
 export const noteToMidi = (note: Dawlet.INote.Entity): { midiMessage: Midi.Message, offset: Ms}[] => {
   const noteNumber = ftom(note.freq);
-  const jzzMidiToMidiMessage = (jzzMidi: any): Midi.Message => jzzMidi.map(v => v);
+  const jzzMidiToMidiMessage = (jzzMidi: any): Midi.Message => jzzMidi.map((v: any) => v);
   const noteOnMsg = jzzMidiToMidiMessage(JZZ.MIDI.noteOn(DEFAULT_CHANNEL - 1, noteNumber, DEFAULT_VELOCITY));
   const noteOffMsg = jzzMidiToMidiMessage(JZZ.MIDI.noteOff(DEFAULT_CHANNEL - 1, noteNumber, DEFAULT_VELOCITY));
   return [
