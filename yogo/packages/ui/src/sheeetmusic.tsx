@@ -23,7 +23,7 @@ export class SheetMusicViewer extends Component<Props, State> {
     }
   }
 
-  resize() {
+  resize = () => {
     this.forceUpdate();
   }
 
@@ -46,6 +46,6 @@ export class SheetMusicViewer extends Component<Props, State> {
   }
 
   render() {
-    return (<div ref={this.divRef} />);
+    return (<div ref={this.divRef} style={{ width: '100%', height: '100%', overflow: 'scroll'}} />);
   }
 }

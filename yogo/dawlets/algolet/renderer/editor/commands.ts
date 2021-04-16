@@ -1,7 +1,12 @@
 import * as monaco from "monaco-editor/esm/vs/editor/editor.api";
-import { initDawletSdk } from '@dawlet/graphql'
+import { groupsToSmf } from "@dawlet/utils/lib/midi"
+import { writeFileSync } from 'fs'
+import { join } from 'path'
+import { evalAsyncFunc } from "./adapter/yogo";
 
-export const bindCommands = (editor: monaco.editor.IStandaloneCodeEditor) => {
+export type OnEvalEnd = ({ groups, code }: { groups: Dawlet.IGroup.Entity[], code: string}) => void;
+
+export const bindCommands = (editor: monaco.editor.IStandaloneCodeEditor, onEvalEnd: OnEvalEnd) => {
   // Cmd + T
   editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_T, () => {
     editor.getAction('editor.action.formatDocument').run()
@@ -22,19 +27,13 @@ export const bindCommands = (editor: monaco.editor.IStandaloneCodeEditor) => {
     ],
     contextMenuGroupId: 'navigation',
     contextMenuOrder: 1.5,
-    run() {
-      exec(editor.getValue())
+    async run() {
+      const code = editor.getValue()
+      const action = evalAsyncFunc(code)
+      const groups = await action()
+      const midi = groupsToSmf(groups) as any
+      writeFileSync(join(process.cwd(), 'tmp.mid'), midi, {encoding: 'binary'})
+      onEvalEnd({ groups, code })
     }
   });
 };
-
-function exec(code: string) {
-  //@ts-ignore
-  const sdk = initDawletSdk()
-  const ctx = `
-(async function() {
-  ${code}
-})()
-`
-  eval(ctx)
-}

@@ -12,6 +12,18 @@
       -webkit-app-region: drag;
     }
 
+    .flash-effect {
+      animation: 0.6s flash ease-out;
+    }
+    @keyframes flash {
+      from {
+        filter: brightness(100%);
+      }
+      to {
+        filter: brightness(500%);
+      }
+    }
+
     .Resizer {
       background: #000;
       opacity: 0.2;
