@@ -7,11 +7,10 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "node ./build.js",
-    "gen:tds": "tsc",
     "test": "jest",
-    "lint": "tsc --noEmit",
+    "lint": "tsc",
     "watch": "run-p watch:*",
-    "watch:tsc": "tsc",
+    "watch:tsc": "tsc --watch",
     "watch:esbuild": "WATCH=true node ./build.js",
     "generate:schema": "npx beaulac/cxsd file://schema/musicxml.xsd"
   },
