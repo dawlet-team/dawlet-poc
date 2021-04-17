@@ -40,3 +40,5 @@ jobs:
           mac_csc_link: ${{ secrets.mac_certs }} 
           mac_csc_link_password: ${{ secrets.mac_certs_password }} 
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          APPLEID: ${{ secrets.APPLEID }}
+          APPLEID_PASSWORD: ${{ secrets.APPLEID_PASSWORD }}
