@@ -1,6 +1,6 @@
 {
   "name": "@dawlet/engine",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "private": true,
   "license": "MIT",
   "author": "Yuichi Yogo",
@@ -15,7 +15,7 @@
     "generate:docs": "graphdoc -s ./schema.gql -o ../../docs/schema"
   },
   "dependencies": {
-    "@dawlet/factory": "^0.9.1",
+    "@dawlet/factory": "^0.9.2",
     "@types/graphql": "14.5.0",
     "apollo-server": "2.18.0",
     "graphql": "14.7.0",
