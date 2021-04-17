@@ -6,7 +6,8 @@
   "scripts": {
     "build": "npm run build:gql && npm run build:ts",
     "build:gql": "graphql-codegen --config codegen.yml",
-    "build:ts": "tsc"
+    "build:ts": "tsc",
+    "tmp": "npm run build"
   },
   "author": "Yuichi Yogo",
   "license": "ISC",

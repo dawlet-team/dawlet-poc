@@ -25,7 +25,7 @@ jobs:
       working-directory: ./yogo
       run: npm ci
     # TODO: MUST DELETE THIS STEP AFTER CLEANED UP COMMANDS
-    # This is a tmp hack to generate @dawlet/factory before linting @dawlet/core
+    # This is a tmp hack to generate @dawlet/factory and @dawlet/graphql before linting @dawlet/core
     - name: tmp
       working-directory: ./yogo
       run: npm run tmp
