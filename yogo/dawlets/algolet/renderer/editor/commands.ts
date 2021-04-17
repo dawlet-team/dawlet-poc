@@ -3,6 +3,8 @@ import { groupsToSmf } from "@dawlet/utils/lib/midi"
 import { writeFileSync } from 'fs'
 import { join } from 'path'
 import { evalAsyncFunc } from "./adapter/yogo";
+import { remote } from 'electron'
+const { app } = remote
 
 export type OnEvalEnd = ({ groups, code }: { groups: Dawlet.IGroup.Entity[], code: string}) => void;
 
@@ -32,7 +34,7 @@ export const bindCommands = (editor: monaco.editor.IStandaloneCodeEditor, onEval
       const action = evalAsyncFunc(code)
       const groups = await action()
       const midi = groupsToSmf(groups) as any
-      writeFileSync(join(process.cwd(), 'tmp.mid'), midi, {encoding: 'binary'})
+      writeFileSync(join(app.getPath('temp'), 'algolet-wip.mid'), midi, {encoding: 'binary'})
       onEvalEnd({ groups, code })
     }
   });

@@ -1,6 +1,7 @@
 import { SheetMusicViewer } from "@dawlet/ui";
 import { MusicXMLBuilder } from '@dawlet/utils/lib/musicXmlBuilder';
-import { ipcRenderer } from "electron";
+import { ipcRenderer, remote } from "electron";
+const { app } = remote
 import * as monacoEditor from "monaco-editor/esm/vs/editor/editor.api";
 import { join } from 'path';
 import React, { useEffect, useRef, useState } from "react";
@@ -22,7 +23,8 @@ const App = () => {
   useEffect(() => {
     function onDragStart(event: Event) {
       event.preventDefault()
-      const filePath= join(process.cwd(), 'tmp.mid')
+      const filePath= join(app.getPath('temp'), 'algolet-wip.mid')
+      console.log('filepath', filePath)
       ipcRenderer.send('ondragstart', filePath)
     }
     if (dndAreaRef.current) {

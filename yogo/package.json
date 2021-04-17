@@ -6,11 +6,16 @@
   "author": "Yuichi Yogo",
   "main": "index.js",
   "scripts": {
+    "dev": "run-p watch run-engine run-algolet",
+    "run-engine": "lerna run --scope @dawlet/engine start",
+    "run-algolet": "lerna run --scope @dawlet/algolet electron",
     "postinstall": "lerna bootstrap",
     "build": "lerna run build",
     "dist": "lerna run dist --parallel",
     "test": "lerna run test --parallel",
-    "clean": "rimraf ./**/node_modules/ ./**/lib/",
+    "lint": "lerna run lint",
+    "tmp": "lerna run tmp",
+    "clean": "node ./scripts/clean",
     "launch": "lerna run --stream --scope @dawlet/launcher electron",
     "watch": "lerna run watch --parallel",
     "storybook": "lerna run storybook --parallel",
@@ -19,6 +24,7 @@
   "devDependencies": {
     "conventional-changelog-cli": "2.1.0",
     "lerna": "3.22.1",
+    "npm-run-all": "4.1.5",
     "rimraf": "3.0.2"
   },
   "dependencies": {}

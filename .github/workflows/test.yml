@@ -21,9 +21,24 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+    - name: restore dependencies cache
+      uses: actions/cache@v2
+      with:
+        path: |
+          node_modules
+          **/*/node_modules
+        key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
     - name: install
       working-directory: ./yogo
-      run: npm ci
+      run: npm install
+    # TODO: MUST DELETE THIS STEP AFTER CLEANED UP COMMANDS
+    # This is a tmp hack to generate @dawlet/factory and @dawlet/graphql before linting @dawlet/core
+    - name: tmp
+      working-directory: ./yogo
+      run: npm run tmp
+    - name: lint
+      working-directory: ./yogo
+      run: npm run lint
     - name: build
       working-directory: ./yogo
       run: npm run build
