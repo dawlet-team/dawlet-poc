@@ -22,7 +22,12 @@ module.exports = {
       {
         test: /\.ts(x?)$/,
         include: /renderer/,
-        use: [{ loader: "ts-loader" }]
+        use: [{
+          loader: "esbuild-loader",
+          options: {
+            loader: "tsx"
+          }
+        }]
       },
       {
         test: /\.xml$/,
