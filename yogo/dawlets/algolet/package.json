@@ -23,8 +23,10 @@
     "appId": "com.electron.algolet-beta",
     "productName": "Algolet@Beta",
     "mac": {
-      "hardenedRuntime": true,
-      "entitlements": "./build/entitlements.mac.inherit.plist",
+      "hardenedRuntime" : true,
+      "gatekeeperAssess": false,
+      "entitlements": "build/entitlements.mac.plist",
+      "entitlementsInherit": "build/entitlements.mac.plist",
       "publish": {
         "provider": "github",
         "releaseType": "release"
