@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0](https://github.com/dawlet-team/dawlet-poc/compare/v0.8.0...v0.9.0) (2021-04-17)
+
+
+### Bug Fixes
+
+* **ui:** fix resize problem of sheetmusic ([d64a1b4](https://github.com/dawlet-team/dawlet-poc/commit/d64a1b40bae8c64ad52b1ccc9387fc83fc75eea4))
+
+
+
+
+
 # [0.8.0](https://github.com/dawlet-team/dawlet-poc/compare/v0.7.0...v0.8.0) (2020-09-10)
 
 
