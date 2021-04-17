@@ -9,6 +9,7 @@
     "build": "run-p build:*",
     "build:main": "tsc -p tsconfig.build.json",
     "build:renderer": "webpack --mode=production",
+    "lint": "run-p lint:*",
     "lint:ts": "tsc -p tsconfig.json --noEmit",
     "pack": "electron-builder --dir",
     "dist": "node ./scripts/distribute",
