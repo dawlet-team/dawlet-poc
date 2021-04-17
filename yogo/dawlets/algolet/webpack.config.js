@@ -1,5 +1,6 @@
 const MonacoWebpackPlugin = require("monaco-editor-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 const monacoRules = [
   {
@@ -46,6 +47,14 @@ module.exports = {
     }),
     new MonacoWebpackPlugin({
       languages: ["javascript", "typescript"]
+    }),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: 'assets',
+          to: '../assets'
+        }
+      ]
     })
   ],
   resolve: {
