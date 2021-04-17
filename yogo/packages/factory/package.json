@@ -4,7 +4,8 @@
   "description": "Factory for Dawlet Entities",
   "main": "lib/index.js",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "tmp": "tsc"
   },
   "author": "Yuichi Yogo",
   "license": "ISC",
