@@ -24,6 +24,9 @@ jobs:
     - name: install
       working-directory: ./yogo
       run: npm ci
+    - name: lint
+      working-directory: ./yogo
+      run: npm run lint
     - name: build
       working-directory: ./yogo
       run: npm run build
