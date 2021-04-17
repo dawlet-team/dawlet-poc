@@ -8,6 +8,7 @@
     "esModuleInterop": true,
     "outDir": "./lib",
     "declaration": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "emitDeclarationOnly": true
   }
 }
