@@ -1,6 +1,6 @@
 {
   "name": "@dawlet/factory",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "description": "Factory for Dawlet Entities",
   "main": "lib/index.js",
   "scripts": {
