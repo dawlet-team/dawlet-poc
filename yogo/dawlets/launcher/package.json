@@ -11,7 +11,7 @@
     "build:renderer": "webpack --mode=production",
     "electron": "electron .",
     "start": "npm run build && electron .",
-    "watch": "run-p watch:*",
+    "watch": "echo '@dawlet/launcher is temporarily disabled because currently it is not under active development'",
     "watch:main": "tsc --watch",
     "watch:renderer": "webpack --mode=development --watch"
   },
