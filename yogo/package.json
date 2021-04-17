@@ -11,7 +11,7 @@
     "dist": "lerna run dist --parallel",
     "test": "lerna run test --parallel",
     "lint": "lerna run lint",
-    "clean": "rimraf ./**/node_modules/ ./**/lib/",
+    "clean": "rimraf ./**/lib/",
     "launch": "lerna run --stream --scope @dawlet/launcher electron",
     "watch": "lerna run watch --parallel",
     "storybook": "lerna run storybook --parallel",
