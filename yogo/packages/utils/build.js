@@ -11,7 +11,13 @@ build({
   bundle: true,
   outbase: './src',
   outdir: './lib',
+  external: ['electron'],
   watch,
   logLevel: 'error',
   target: 'esnext'
+}).then(() => {
+  // For some weird reasons, jazz-midi needs package.json to be present in the lib folder, so manually copy it
+  const { join } = require('path')
+  const { copyFileSync, constants }  = require('fs')
+  copyFileSync(join(__dirname, 'package.json'), join(__dirname, './lib/package.json'))
 })
