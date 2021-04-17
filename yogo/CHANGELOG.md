@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.9.2](https://github.com/dawlet-team/dawlet-poc/compare/v0.9.1...v0.9.2) (2021-04-17)
+
+
+### Bug Fixes
+
+* quick fix for build workflow (temporal) ([2def13c](https://github.com/dawlet-team/dawlet-poc/commit/2def13cf3fbf8e22561d209040a69f5e8f48b51c))
+* **algolet:** properly load midi icon for drag handler ([31ca44a](https://github.com/dawlet-team/dawlet-poc/commit/31ca44a251e56d1c6d58b86383e1fbddffd21919))
+* **algolet:** properly save tmp midi file ([c60fc19](https://github.com/dawlet-team/dawlet-poc/commit/c60fc19ece757b930dd9279752056dc4621c5b43))
+* prevent clean command from deleting lib folders in deps ([fe0cf5d](https://github.com/dawlet-team/dawlet-poc/commit/fe0cf5dd1f93a042f985fee59cb3408f8baae486))
+
+
+
+
+
 ## [0.9.1](https://github.com/dawlet-team/dawlet-poc/compare/v0.9.0...v0.9.1) (2021-04-17)
 
 **Note:** Version bump only for package dawlet-poc
