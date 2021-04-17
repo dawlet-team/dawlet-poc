@@ -30,7 +30,7 @@ jobs:
         key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
     - name: install
       working-directory: ./yogo
-      run: npm ci
+      run: npm install
     # TODO: MUST DELETE THIS STEP AFTER CLEANED UP COMMANDS
     # This is a tmp hack to generate @dawlet/factory and @dawlet/graphql before linting @dawlet/core
     - name: tmp
