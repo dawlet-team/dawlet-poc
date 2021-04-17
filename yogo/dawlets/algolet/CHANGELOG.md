@@ -3,6 +3,35 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0](https://github.com/dawlet-team/dawlet-poc/compare/v0.8.0...v0.9.0) (2021-04-17)
+
+
+### Bug Fixes
+
+* **algolet:** fix type errors ([527a7e6](https://github.com/dawlet-team/dawlet-poc/commit/527a7e611fd6f804c7a713888553b62892dee279))
+* **algolet:** fix white-out on first page render ([254ad20](https://github.com/dawlet-team/dawlet-poc/commit/254ad20c921019de23a2c3cd5873ec1efa55075e))
+* **algolet:** preserve code after eval ([07fdef5](https://github.com/dawlet-team/dawlet-poc/commit/07fdef54c07f054c30d49a6ba9911e88a88f476b))
+* **algolet:** prevent clone from effecting the original ([acec172](https://github.com/dawlet-team/dawlet-poc/commit/acec17211b9f725691452d1dee4e7b774c27be0a))
+* **deps:** update dependency electron-updater to v4.3.5 ([f87f628](https://github.com/dawlet-team/dawlet-poc/commit/f87f62880f0002bcc4fa4815534c4d59ea29a4a0))
+
+
+### Features
+
+* **algolet:** add builder ([c8f954a](https://github.com/dawlet-team/dawlet-poc/commit/c8f954a172a9b3629ef3425d07350485cd42c6e5))
+* **algolet:** add drag handler for main process ([2976e38](https://github.com/dawlet-team/dawlet-poc/commit/2976e38c6b7bdcc32eedcb3094249f83693f3bdb))
+* **algolet:** add span method ([467904d](https://github.com/dawlet-team/dawlet-poc/commit/467904d52e7c8513f16684394e496b3d9df6a9be))
+* **algolet:** apply offsets ([3a41fc0](https://github.com/dawlet-team/dawlet-poc/commit/3a41fc068bb67dc97fd22464bdbe1db191ea7e03))
+* **algolet:** enable add pitch from top to down ([5caf7dd](https://github.com/dawlet-team/dawlet-poc/commit/5caf7ddbd93a69ef708078cd2eee5db117a24141))
+* **algolet:** enable cloning ([85dcb57](https://github.com/dawlet-team/dawlet-poc/commit/85dcb571a3770dd93eb7da7ec51ad87fc473ac3a))
+* **algolet:** enable dnd midi file ([cd8df17](https://github.com/dawlet-team/dawlet-poc/commit/cd8df17707715e01c76f8a48e5e953b4893c002c))
+* **algolet:** enable repeat ([cee3590](https://github.com/dawlet-team/dawlet-poc/commit/cee3590e3a4ab21219250fd6447b1e52dc6f9f7e))
+* **algolet:** enable showing score after eval ([a96db97](https://github.com/dawlet-team/dawlet-poc/commit/a96db97fdbb9ad4b412e8d38f2957ded1ef4e17f))
+* **algolet:** flash after eval ([c6e6c0c](https://github.com/dawlet-team/dawlet-poc/commit/c6e6c0c1be12299bfe564e98300c11b3e9e8f22b))
+
+
+
+
+
 # [0.8.0](https://github.com/dawlet-team/dawlet-poc/compare/v0.7.0...v0.8.0) (2020-09-10)
 
 

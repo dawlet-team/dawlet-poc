@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0](https://github.com/dawlet-team/dawlet-poc/compare/v0.8.0...v0.9.0) (2021-04-17)
+
+
+### Bug Fixes
+
+* **deps:** update dependency electron-updater to v4.3.5 ([f87f628](https://github.com/dawlet-team/dawlet-poc/commit/f87f62880f0002bcc4fa4815534c4d59ea29a4a0))
+
+
+
+
+
 # [0.8.0](https://github.com/dawlet-team/dawlet-poc/compare/v0.7.0...v0.8.0) (2020-09-10)
 
 

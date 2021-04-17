@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0](https://github.com/dawlet-team/dawlet-poc/compare/v0.8.0...v0.9.0) (2021-04-17)
+
+
+### Bug Fixes
+
+* **algolet:** prevent clone from effecting the original ([acec172](https://github.com/dawlet-team/dawlet-poc/commit/acec17211b9f725691452d1dee4e7b774c27be0a))
+* **algolet:** reflect freq in preview score ([062063f](https://github.com/dawlet-team/dawlet-poc/commit/062063fd53f4b90f7a09131f43a870d545d33e68))
+* **deps:** update dependency jzz-midi-smf to v1.4.0 ([4552823](https://github.com/dawlet-team/dawlet-poc/commit/4552823e270f5edb2f344616e82d0f639501132e))
+* **utils:** resolve type errors by annotations ([668e2b1](https://github.com/dawlet-team/dawlet-poc/commit/668e2b13b06088d3c643138d0a32f168ef5e1539))
+* **utils:** round midi note number ([2282b81](https://github.com/dawlet-team/dawlet-poc/commit/2282b8186a606b7525c4c145530d492f4ca2afae))
+
+
+### Features
+
+* **algolet:** add builder ([c8f954a](https://github.com/dawlet-team/dawlet-poc/commit/c8f954a172a9b3629ef3425d07350485cd42c6e5))
+* **algolet:** enable dnd midi file ([cd8df17](https://github.com/dawlet-team/dawlet-poc/commit/cd8df17707715e01c76f8a48e5e953b4893c002c))
+* **algolet:** enable reflecting octave in preview score ([592c655](https://github.com/dawlet-team/dawlet-poc/commit/592c65506eb9f697a7748ec1a9a3c7090f1809e7))
+* **algolet:** enable showing score after eval ([a96db97](https://github.com/dawlet-team/dawlet-poc/commit/a96db97fdbb9ad4b412e8d38f2957ded1ef4e17f))
+
+
+
+
+
 # [0.8.0](https://github.com/dawlet-team/dawlet-poc/compare/v0.7.0...v0.8.0) (2020-09-10)
 
 
