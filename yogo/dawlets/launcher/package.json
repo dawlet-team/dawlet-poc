@@ -6,7 +6,7 @@
   "author": "Yuichi Yogo",
   "main": "lib/main/index.js",
   "scripts": {
-    "build": "run-p build:*",
+    "build": "echo '@dawlet/launcher is temporarily disabled because currently it is not under active development'",
     "build:main": "tsc --outDir lib/",
     "build:renderer": "webpack --mode=production",
     "electron": "electron .",
