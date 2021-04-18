@@ -2,6 +2,7 @@ import { app, BrowserWindow } from 'electron'
 import { autoUpdater } from "electron-updater"
 import { version } from '../package.json'
 import { installDevTools, unhandled } from '@dawlet/utils'
+import { bootstrap } from '@dawlet/engine'
 import log from 'electron-log'
 import { registerDragHandler } from './dragHandler'
 
@@ -22,10 +23,11 @@ function createWindow () {
   });
 
   installDevTools()
- 
+
   registerDragHandler()
   win.loadFile('lib/renderer/index.html')
   autoUpdater.checkForUpdatesAndNotify()
+  bootstrap()
 }
- 
+
 app.on('ready', createWindow);
