@@ -1,6 +1,6 @@
 {
   "name": "@dawlet/algolet",
-  "version": "0.9.2",
+  "version": "0.10.0",
   "private": true,
   "license": "MIT",
   "author": "Yuichi Yogo",
@@ -45,10 +45,10 @@
   },
   "description": "Algolet lets you write your own custom logic to generate music.",
   "dependencies": {
-    "@dawlet/engine": "^0.9.2",
-    "@dawlet/graphql": "^0.9.2",
-    "@dawlet/ui": "^0.9.2",
-    "@dawlet/utils": "^0.9.2",
+    "@dawlet/engine": "^0.10.0",
+    "@dawlet/graphql": "^0.10.0",
+    "@dawlet/ui": "^0.10.0",
+    "@dawlet/utils": "^0.10.0",
     "apollo-boost": "0.4.9",
     "electron-log": "4.2.4",
     "electron-updater": "4.3.5",

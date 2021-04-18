@@ -1,6 +1,6 @@
 {
   "name": "@dawlet/synthlet",
-  "version": "0.9.2",
+  "version": "0.10.0",
   "private": true,
   "license": "MIT",
   "author": "Yuichi Yogo",
@@ -16,7 +16,7 @@
   },
   "description": "Synthlet provides a simple synthesizer to playback the music. It has a dedicated local transport on its own. ",
   "dependencies": {
-    "@dawlet/utils": "^0.9.2",
+    "@dawlet/utils": "^0.10.0",
     "apollo-boost": "0.4.9",
     "apollo-link-ws": "1.0.20",
     "electron-log": "4.2.4",
