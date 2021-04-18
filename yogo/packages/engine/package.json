@@ -28,7 +28,7 @@
     "@2fd/graphdoc": "2.4.0",
     "@types/faker": "5.1.2",
     "@types/jest": "26.0.13",
-    "@types/rosie": "0.0.38",
+    "@types/rosie": "0.0.39",
     "apollo-server-testing": "2.18.0",
     "faker": "5.1.0",
     "graphql-tag": "2.11.0",
