@@ -3,7 +3,7 @@ export type DawletEngineOptions = {
   port?: number
 }
 
-type DeterminedOptions = Required<DawletEngineOptions>
+export type DeterminedOptions = Required<DawletEngineOptions>
 
 const defaultOptions = {
     isProd: true,
