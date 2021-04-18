@@ -22,7 +22,7 @@
     "generate:docs": "lerna run generate:docs"
   },
   "devDependencies": {
-    "conventional-changelog-cli": "2.1.0",
+    "conventional-changelog-cli": "2.1.1",
     "lerna": "3.22.1",
     "npm-run-all": "4.1.5",
     "rimraf": "3.0.2"
