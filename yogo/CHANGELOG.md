@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.10.0](https://github.com/dawlet-team/dawlet-poc/compare/v0.9.2...v0.10.0) (2021-04-18)
+
+
+### Features
+
+* **algolet:** integrate @dawlet/engine 🎉 ([bd5dc5d](https://github.com/dawlet-team/dawlet-poc/commit/bd5dc5d767cbfa83f9c40ba63496bb72271f435a))
+* **engine:** enable passing bootstrap options ([43cf2db](https://github.com/dawlet-team/dawlet-poc/commit/43cf2db7a6b5ffc02ad70a88d8d89eda692f6da9))
+
+
+
+
+
 ## [0.9.2](https://github.com/dawlet-team/dawlet-poc/compare/v0.9.1...v0.9.2) (2021-04-17)
 
 

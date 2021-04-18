@@ -1,6 +1,6 @@
 {
   "name": "@dawlet/ui",
-  "version": "0.9.2",
+  "version": "0.10.0",
   "private": true,
   "license": "MIT",
   "author": "Yuichi Yogo",
@@ -16,7 +16,7 @@
     "storybook": "start-storybook -s ./public"
   },
   "dependencies": {
-    "@dawlet/utils": "^0.9.2",
+    "@dawlet/utils": "^0.10.0",
     "opensheetmusicdisplay": "0.8.4",
     "react": "16.13.1",
     "react-dom": "16.13.1"
