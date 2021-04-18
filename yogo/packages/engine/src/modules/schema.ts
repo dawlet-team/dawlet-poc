@@ -4,11 +4,12 @@ import { Container } from 'typedi'
 import { NoteResolver } from './note/resolver'
 import { GroupResolver } from './group/resolver'
 
-export function assembleSchema() {
+export function assembleSchema(isProd: boolean) {
+  const schemaPath = path.resolve(process.cwd(), "schema.gql")
   return buildSchema(
     {
       resolvers: [NoteResolver, GroupResolver],
-      emitSchemaFile: path.resolve(process.cwd(), "schema.gql"),
+      emitSchemaFile: isProd ? false : schemaPath,
       container: Container
     }
   )
