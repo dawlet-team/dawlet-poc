@@ -17,7 +17,7 @@
   "dependencies": {
     "electron-devtools-installer": "3.1.1",
     "electron-unhandled": "3.0.2",
-    "jzz": "1.0.9",
+    "jzz": "1.2.9",
     "jzz-midi-smf": "1.4.0",
     "xmlbuilder": "15.1.1"
   },
