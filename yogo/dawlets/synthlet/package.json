@@ -20,7 +20,7 @@
     "apollo-boost": "0.4.9",
     "apollo-link-ws": "1.0.20",
     "electron-log": "4.2.4",
-    "electron-updater": "4.3.5",
+    "electron-updater": "4.3.8",
     "graphql": "14.7.0",
     "react": "16.13.1",
     "react-apollo": "3.1.5",
