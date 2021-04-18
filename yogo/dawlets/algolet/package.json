@@ -45,6 +45,7 @@
   },
   "description": "Algolet lets you write your own custom logic to generate music.",
   "dependencies": {
+    "@dawlet/engine": "^0.9.2",
     "@dawlet/graphql": "^0.9.2",
     "@dawlet/ui": "^0.9.2",
     "@dawlet/utils": "^0.9.2",
