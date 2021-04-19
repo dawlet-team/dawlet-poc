@@ -22,9 +22,9 @@
     "electron-log": "4.3.4",
     "electron-updater": "4.3.8",
     "graphql": "14.7.0",
-    "react": "16.13.1",
+    "react": "16.14.0",
     "react-apollo": "3.1.5",
-    "react-dom": "16.13.1",
+    "react-dom": "16.14.0",
     "react-split-pane": "2.0.3",
     "subscriptions-transport-ws": "0.9.18",
     "tone": "14.7.77"
