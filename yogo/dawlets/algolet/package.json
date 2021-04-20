@@ -54,9 +54,9 @@
     "electron-updater": "4.3.8",
     "graphql": "14.7.0",
     "monaco-editor": "0.20.0",
-    "react": "16.14.0",
+    "react": "17.0.2",
     "react-apollo": "3.1.5",
-    "react-dom": "16.14.0",
+    "react-dom": "17.0.2",
     "react-monaco-editor": "0.43.0",
     "react-split-pane": "2.0.3"
   },
