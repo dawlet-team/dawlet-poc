@@ -28,7 +28,7 @@
     "@types/faker": "5.1.2",
     "@types/jest": "26.0.22",
     "@types/react": "17.0.3",
-    "@types/react-dom": "16.9.12",
+    "@types/react-dom": "17.0.3",
     "@types/rosie": "0.0.39",
     "babel-loader": "8.2.2",
     "canvas": "2.7.0",
