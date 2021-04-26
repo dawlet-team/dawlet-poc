@@ -26,7 +26,7 @@
     "@storybook/preset-typescript": "3.0.0",
     "@storybook/react": "5.3.21",
     "@types/faker": "5.1.2",
-    "@types/jest": "26.0.22",
+    "@types/jest": "26.0.23",
     "@types/react": "17.0.3",
     "@types/react-dom": "17.0.3",
     "@types/rosie": "0.0.39",
