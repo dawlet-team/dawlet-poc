@@ -16,7 +16,7 @@
     "@graphql-codegen/typescript": "1.22.1",
     "@graphql-codegen/typescript-graphql-request": "3.2.1",
     "@graphql-codegen/typescript-operations": "1.18.0",
-    "typescript": "4.2.4"
+    "typescript": "4.3.2"
   },
   "dependencies": {
     "graphql": "^15.0.0"
