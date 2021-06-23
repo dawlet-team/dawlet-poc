@@ -24,7 +24,7 @@
   "devDependencies": {
     "@types/electron-devtools-installer": "2.2.0",
     "@types/jest": "26.0.23",
-    "@types/node": "14.17.3",
+    "@types/node": "14.17.4",
     "electron": "13.1.4",
     "esbuild": "0.12.9",
     "glob": "7.1.7",
