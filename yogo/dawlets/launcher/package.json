@@ -18,7 +18,7 @@
   "dependencies": {
     "@dawlet/engine": "^0.10.0",
     "@dawlet/utils": "^0.10.0",
-    "@material-ui/core": "4.12.0",
+    "@material-ui/core": "4.12.1",
     "electron-log": "4.3.5",
     "electron-updater": "4.3.9",
     "react": "17.0.2",
