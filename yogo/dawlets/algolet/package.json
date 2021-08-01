@@ -50,7 +50,7 @@
     "@dawlet/ui": "^0.10.0",
     "@dawlet/utils": "^0.10.0",
     "apollo-boost": "0.4.9",
-    "electron-log": "4.4.0",
+    "electron-log": "4.4.1",
     "electron-updater": "4.3.9",
     "graphql": "14.7.0",
     "monaco-editor": "0.20.0",
