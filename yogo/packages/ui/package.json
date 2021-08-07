@@ -32,7 +32,7 @@
     "@types/rosie": "0.0.40",
     "babel-loader": "8.2.2",
     "canvas": "2.8.0",
-    "esbuild": "0.12.18",
+    "esbuild": "0.12.19",
     "faker": "5.1.0",
     "fork-ts-checker-webpack-plugin": "6.3.1",
     "glob": "7.1.7",
