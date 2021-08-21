@@ -70,7 +70,7 @@
     "electron": "13.2.1",
     "electron-builder": "22.11.7",
     "electron-notarize": "1.1.0",
-    "esbuild-loader": "2.14.0",
+    "esbuild-loader": "2.15.1",
     "file-loader": "6.2.0",
     "html-webpack-plugin": "4.5.2",
     "jest": "26.6.3",
