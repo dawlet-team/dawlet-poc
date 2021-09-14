@@ -67,7 +67,7 @@
     "@types/webpack": "5.28.0",
     "copy-webpack-plugin": "9.0.1",
     "css-loader": "6.2.0",
-    "electron": "13.3.0",
+    "electron": "13.4.0",
     "electron-builder": "22.11.7",
     "electron-notarize": "1.1.1",
     "esbuild-loader": "2.15.1",
