@@ -24,7 +24,7 @@
   "devDependencies": {
     "@babel/core": "7.16.5",
     "@storybook/preset-typescript": "3.0.0",
-    "@storybook/react": "5.3.21",
+    "@storybook/react": "8.3.6",
     "@types/faker": "5.1.2",
     "@types/jest": "27.0.2",
     "@types/react": "17.0.35",
@@ -40,7 +40,7 @@
     "npm-run-all": "4.1.5",
     "react-test-renderer": "17.0.2",
     "rosie": "2.1.0",
-    "storybook": "5.3.21",
+    "storybook": "8.3.6",
     "ts-jest": "26.5.6",
     "ts-loader": "9.2.6",
     "ts-node": "10.4.0",
