@@ -27,11 +27,11 @@
   },
   "devDependencies": {
     "@2fd/graphdoc": "2.4.0",
-    "@types/faker": "5.1.2",
+    "@types/faker": "5.5.9",
     "@types/jest": "27.0.2",
     "@types/rosie": "0.0.40",
     "apollo-server-testing": "2.25.3",
-    "faker": "5.1.0",
+    "faker": "5.5.3",
     "graphql-tag": "2.12.5",
     "jest": "26.6.3",
     "nodemon": "2.0.13",
